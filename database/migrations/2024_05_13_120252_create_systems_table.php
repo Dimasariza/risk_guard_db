@@ -12,6 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('systems', function (Blueprint $table) {
+            $table->string("system_name");
+            $table->string("system_type");
+            $table->string("system_description");
+            $table->string("system_unit_id");
             $table->id();
             $table->timestamps();
         });

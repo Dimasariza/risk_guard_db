@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('company', function (Blueprint $table) {
-            $table->string("name")->required();
-            $table->text("location")->required();
-            $table->string("type")->required();
+            $table->string("company_name")->required();
+            $table->text("company_location")->required();
+            $table->string("company_type")->required();
             $table->id();
             $table->timestamps();
         });

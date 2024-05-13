@@ -12,6 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('component', function (Blueprint $table) {
+            $table->string("component_name");
+            $table->string("component_type");
+            $table->string("component_description");
+            $table->string("component_equipment_id");
             $table->id();
             $table->timestamps();
         });
