@@ -11,10 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('company', function (Blueprint $table) {
-            $table->string("company_name")->required();
-            $table->text("company_location")->required();
-            $table->string("company_type")->required();
+        Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('company');
+        Schema::dropIfExists('items');
     }
 };

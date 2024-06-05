@@ -11,11 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('systems', function (Blueprint $table) {
-            $table->string("system_name");
-            $table->string("system_type");
-            $table->string("system_description");
-            $table->string("system_unit_id");
+        Schema::create('asset_summaries', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('systems');
+        Schema::dropIfExists('asset_summaries');
     }
 };
