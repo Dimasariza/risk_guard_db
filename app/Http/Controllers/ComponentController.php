@@ -13,7 +13,12 @@ class ComponentController extends Controller
      */
     public function index()
     {
-        //
+        $data = Component::all();
+        return response()->json([
+            "status" => true,
+            "message" => "Data ready",
+            "data" => $data
+        ], 200);
     }
 
     /**

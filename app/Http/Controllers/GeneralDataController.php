@@ -13,7 +13,12 @@ class GeneralDataController extends Controller
      */
     public function index()
     {
-        return GeneralData::all();
+        $data = GeneralData::all();
+        return response()->json([
+            "status" => true,
+            "message" => "Data ready",
+            "data" => $data
+        ], 200);
     }
 
     /**

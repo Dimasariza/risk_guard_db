@@ -13,7 +13,12 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        //
+        $data = Equipment::all();
+        return response()->json([
+            "status" => true,
+            "message" => "Data ready",
+            "data" => $data
+        ], 200);
     }
 
     /**

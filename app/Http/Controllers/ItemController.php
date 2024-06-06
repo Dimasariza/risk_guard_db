@@ -13,7 +13,12 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $data = Item::all();
+        return response()->json([
+            "status" => true,
+            "message" => "Data ready",
+            "data" => $data
+        ], 200);
     }
 
     /**
