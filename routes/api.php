@@ -22,8 +22,8 @@ Route::group(['prefix' => 'v1'], function () {
     });
 
     Route::apiResource('general_data', GeneralDataController::class);
-    Route::apiResource('component', ComponentController::class);
-    Route::apiResource('equipment', EquipmentController::class);
-    Route::apiResource('item', ItemController::class);
+    Route::apiResource('components', ComponentController::class);
+    Route::apiResource('equipments', EquipmentController::class);
+    Route::apiResource('items', ItemController::class);
     Route::apiResource('asset_summary', AssetSummaryController::class);
 });
