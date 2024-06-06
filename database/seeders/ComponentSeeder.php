@@ -25,7 +25,7 @@ class ComponentSeeder extends Seeder
             ],
             [
                 "tagOfComponent" => "Right Main Engine",
-                "nameOfComponent" => "Main Engine 2",
+                "nameOfComponent" => "Mitsubishi Air Filter",
                 "componentType" => "Filter",
                 "equipmentId" => 2,
                 "created_at" => Carbon::now()

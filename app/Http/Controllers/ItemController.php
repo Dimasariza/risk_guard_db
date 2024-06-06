@@ -40,9 +40,16 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Item $assetSummary)
+    public function show(Item $assetSummary, int $id)
     {
-        //
+        $data = $assetSummary::findOrFail($id);
+        if ($data) {
+            return response()->json([
+                "status" => true,
+                "message" => "Data ready",
+                "data" => $data
+            ]);
+        }
     }
 
     /**

@@ -40,9 +40,16 @@ class GeneralDataController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(GeneralData $assetSummary)
+    public function show(GeneralData $assetSummary, int $id)
     {
-        //
+        $data = $assetSummary::findOrFail($id);
+        if ($data) {
+            return response()->json([
+                "status" => true,
+                "message" => "Data ready",
+                "data" => $data
+            ]);
+        }
     }
 
     /**
