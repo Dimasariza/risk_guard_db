@@ -9,4 +9,5 @@ class Component extends Model
 {
     use HasFactory;
     public $timestamps = true;
+    protected $table = 'component';
 }
