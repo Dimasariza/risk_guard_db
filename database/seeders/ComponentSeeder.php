@@ -15,7 +15,7 @@ class ComponentSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('equipment')->insert([
+        DB::table('component')->insert([
             [
                 "tagOfComponent" => "Oil Filter",
                 "nameOfComponent" => "Caterpillar Oil Filter Machine",
