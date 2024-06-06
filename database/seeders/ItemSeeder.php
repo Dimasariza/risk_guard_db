@@ -17,13 +17,13 @@ class ItemSeeder extends Seeder
     {
         DB::table('items')->insert([
             [
-                "tagOfItem" => "Tag of item no 1",
-                "nameOfItem" => "Name of item no 1",
+                "tagOfItem" => "MV Maratha Surabaya",
+                "nameOfItem" => "MV Maratha",
                 "created_at" => Carbon::now()
             ],
             [
-                "tagOfItem" => "Tag of item no 2",
-                "nameOfItem" => "Name of item no 2",
+                "tagOfItem" => "MV Bung Tomo Jakarta",
+                "nameOfItem" => "MV Bung Tomo",
                 "created_at" => Carbon::now()
             ]
         ]);
