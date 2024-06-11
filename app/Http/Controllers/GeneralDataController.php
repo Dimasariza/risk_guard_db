@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\GeneralData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class GeneralDataController extends Controller
 {
@@ -42,13 +43,23 @@ class GeneralDataController extends Controller
      */
     public function show(GeneralData $assetSummary, int $id)
     {
-        $data = $assetSummary::findOrFail($id);
+        $data = $assetSummary::find($id);
+
+        $uniqueID = Str::random(9);
+        // dd($uniqueID);
+
         if ($data) {
             return response()->json([
                 "status" => true,
                 "message" => "Data ready",
                 "data" => $data
-            ]);
+            ], 200);
+        } else {
+            return response()->json([
+                "status" => true,
+                "message" => "Data not found",
+                "data" => null
+            ], 200);
         }
     }
 
