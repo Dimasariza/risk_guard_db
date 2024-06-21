@@ -19,7 +19,7 @@ class InsertUserDTO
         public readonly string $user_status,
         public readonly string $user_email,
         public readonly string $user_emailVerifiedAt,
-        public readonly string $user_remember_token,
+        public readonly string $remember_token,
         public readonly string $password,
     ) {
     }
@@ -38,7 +38,7 @@ class InsertUserDTO
             user_status: $request->validated("user_status"),
             user_email: $request->validated("user_email"),
             user_emailVerifiedAt: $request->validated("user_emailVerifiedAt"),
-            user_remember_token: $request->validated("user_remember_token"),
+            remember_token: $request->validated("remember_token"),
             password: $request->validated("password"),
         );
     }
@@ -57,7 +57,7 @@ class InsertUserDTO
             "user_status" => $this->user_status,
             "user_email" => $this->user_email,
             "user_emailVerifiedAt" => $this->user_emailVerifiedAt,
-            "user_remember_token" => $this->user_remember_token,
+            "remember_token" => $this->remember_token,
             "password" => $this->password,
         ];
     }

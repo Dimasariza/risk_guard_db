@@ -25,7 +25,6 @@ class CreateUserRequest extends FormRequest
             "user_firstName" => ["required"],
             "user_lastName" => ["required"],
             "user_username" => ["required"],
-            "password" => ["required"],
             "user_company" => ["required"],
             "user_jobTitle" => ["required"],
             "user_phoneNumber" => ["required"],
@@ -33,7 +32,8 @@ class CreateUserRequest extends FormRequest
             "user_status" => ["required"],
             "user_email" => [],
             "user_emailVerifiedAt" => [],
-            "user_remember_token" => [],
+            "password" => ["required"],
+            "remember_token" => [],
         ];
     }
 }

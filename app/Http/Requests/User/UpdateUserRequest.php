@@ -25,7 +25,6 @@ class UpdateUserRequest extends FormRequest
             "user_firstName" => ["required"],
             "user_lastName" => ["required"],
             "user_username" => ["required"],
-            "password" => ["required"],
             "user_company" => ["required"],
             "user_jobTitle" => ["required"],
             "user_phoneNumber" => ["required"],
@@ -33,7 +32,8 @@ class UpdateUserRequest extends FormRequest
             "user_status" => ["required"],
             "user_email" => ["required"],
             "user_emailVerifiedAt" => ["required"],
-            "user_remember_token" => ["required"],
+            "password" => ["required"],
+            "remember_token" => ["required"],
         ];
     }
 }
