@@ -12,15 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pof_rbi_values', function (Blueprint $table) {
-            $table->double("rbi_gffTotal")->nullable();
-            $table->double("rbi_shellThinning")->nullable();
-            $table->double("rbi_headThinning")->nullable();
-            $table->double("rbi_shellExternal")->nullable();
-            $table->double("rbi_headExternal")->nullable();
-            $table->double("rbi_shellTotal")->nullable();
-            $table->double("rbi_headTotal")->nullable();
-            $table->double("rbi_shellSection")->nullable();
-            $table->double("rbi_headSection")->nullable();
+            $table->string("rbiValue_id", 30)->unique();
+            $table->double("rbiValue_gffTotal")->nullable();
+            $table->double("rbiValue_shellThinning")->nullable();
+            $table->double("rbiValue_headThinning")->nullable();
+            $table->double("rbiValue_shellExternal")->nullable();
+            $table->double("rbiValue_headExternal")->nullable();
+            $table->double("rbiValue_shellTotal")->nullable();
+            $table->double("rbiValue_headTotal")->nullable();
+            $table->double("rbiValue_shellSection")->nullable();
+            $table->double("rbiValue_headSection")->nullable();
             $table->id();
             $table->timestamps();
         });

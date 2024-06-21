@@ -2,17 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\DTO\Items\UpdateRBIThinningDTO;
+use App\DTO\RBIThinning\InsertRBIThinningDTO;
+use App\Http\Requests\RBIThinning\CreateRBIThinningRequest;
+use App\Http\Requests\RBIThinning\UpdateRBIThinningRequest;
 use App\Models\pof_rbi_thinning;
-use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class PofRbiThinningController extends Controller
 {
+    public function __construct(
+        protected pof_rbi_thinning $model,
+        protected $model_id = "rbiThinning_id"
+    ) {
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $data = $this->model::all();
+
+        return response()->json([
+            "status" => true,
+            "message" => "Item got successfully",
+            "data" => $data
+        ], Response::HTTP_OK);
     }
 
     /**
@@ -26,17 +41,35 @@ class PofRbiThinningController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateRBIThinningRequest $request)
     {
-        //
+        $dto = InsertRBIThinningDTO::fromRequest($request);
+
+        $result = $this->model->create($dto->build());
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "POF RBI Thinning created successfully",
+                "data" => $result
+            ], Response::HTTP_CREATED);
+        };
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(pof_rbi_thinning $pof_rbi_thinning)
+    public function show(string|int $id)
     {
-        //
+        $data = $this->model::where($this->model_id, $id)->first();
+
+        if ($data) {
+            return response()->json([
+                "status" => true,
+                "message" => "Item showed successfully",
+                "data" => $data
+            ], Response::HTTP_OK);
+        }
     }
 
     /**
@@ -50,16 +83,36 @@ class PofRbiThinningController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, pof_rbi_thinning $pof_rbi_thinning)
+    public function update(UpdateRBIThinningRequest $request, string|int $id)
     {
-        //
+        $dto = UpdateRBIThinningDTO::fromRequest($request);
+        $result = $this->model->where($this->model_id, $id)->first();
+        $result->update($dto->build());
+        $result->refresh();
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "RBI Thinning updated successfully",
+                "data" => $result
+            ], Response::HTTP_OK);
+        };
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(pof_rbi_thinning $pof_rbi_thinning)
+    public function destroy(string|int $id)
     {
-        //
+        $result = $this->model->where($this->model_id, $id)->first();
+        $result->delete();
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "Item deleted successfully",
+                "data" => $result
+            ], Response::HTTP_OK);
+        };
     }
 }

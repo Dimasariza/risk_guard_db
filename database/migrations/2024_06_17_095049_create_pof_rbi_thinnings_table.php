@@ -12,22 +12,23 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pof_rbi_thinnings', function (Blueprint $table) {
-            $table->date("startDate");
-            $table->double("thickness");
-            $table->double("corrosionAllowance");
-            $table->double("designTemperature");
-            $table->double("designPressure");
-            $table->double("operatingTemperature");
-            $table->double("operatingPressure");
-            $table->string("designCode");
-            $table->string("equipmentType");
-            $table->string("componentType");
-            $table->string("geometryData");
-            $table->string("materialSpecification");
-            $table->double("yieldStrength");
-            $table->double("tensileStrength");
-            $table->integer("weldJointEfficiency");
-            $table->boolean("heatTracing");
+            $table->string("rbiThinning_id", 30)->unique();
+            $table->date("rbiThinning_startDate");
+            $table->double("rbiThinning_thickness");
+            $table->double("rbiThinning_corrosionAllowance");
+            $table->double("rbiThinning_designTemperature");
+            $table->double("rbiThinning_designPressure");
+            $table->double("rbiThinning_operatingTemperature");
+            $table->double("rbiThinning_operatingPressure");
+            $table->string("rbiThinning_designCode");
+            $table->string("rbiThinning_equipmentType");
+            $table->string("rbiThinning_componentType");
+            $table->string("rbiThinning_geometryData");
+            $table->string("rbiThinning_materialSpecification");
+            $table->double("rbiThinning_yieldStrength");
+            $table->double("rbiThinning_tensileStrength");
+            $table->integer("rbiThinning_weldJointEfficiency");
+            $table->boolean("rbiThinning_heatTracing")->default(false);
             $table->id();
             $table->timestamps();
         });

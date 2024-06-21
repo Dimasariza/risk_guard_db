@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\DTO\Equipments\InsertEquipmentsDTO;
+use App\DTO\Equipments\UpdateEquipmentsDTO;
+use App\Http\Requests\Equipments\CreateEquipmentRequest;
+use App\Http\Requests\Equipments\UpdateEquipmentRequest;
 use App\Models\Equipment;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class EquipmentController extends Controller
 {
+    public function __construct(
+        protected Equipment $model
+    ) {
+    }
     //
     /**
      * Display a listing of the resource.
@@ -18,7 +27,7 @@ class EquipmentController extends Controller
             "status" => true,
             "message" => "Data ready",
             "data" => $data
-        ], 200);
+        ], Response::HTTP_OK);
     }
 
     /**
@@ -32,9 +41,19 @@ class EquipmentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateEquipmentRequest $request)
     {
-        //
+        $dto = InsertEquipmentsDTO::fromRequest($request);
+
+        $result = $this->model->create($dto->build());
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "Item created successfully",
+                "data" => $result
+            ], Response::HTTP_CREATED);
+        };
     }
 
     /**
@@ -63,16 +82,36 @@ class EquipmentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Equipment $assetSummary)
+    public function update(UpdateEquipmentRequest $request, string|int $id)
     {
-        //
+        $dto = UpdateEquipmentsDTO::fromRequest($request);
+        $result = $this->model->where("eq_idEquipment", $id)->first();
+        $result->update($dto->build());
+        $result->refresh();
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "Item updated successfully",
+                "data" => $result
+            ], Response::HTTP_OK);
+        };
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Equipment $assetSummary)
+    public function destroy(string|int $id)
     {
-        //
+        $result = $this->model->where("eq_idEquipment", $id)->first();
+        $result->delete();
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "Item deleted successfully",
+                "data" => $result
+            ], Response::HTTP_OK);
+        };
     }
 }

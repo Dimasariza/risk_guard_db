@@ -12,26 +12,27 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pof_rbi_ex_cors', function (Blueprint $table) {
-            $table->date("yearAssesment")->nullable();
-            $table->date("yearInstallation")->nullable();
-            $table->double("thicknessValue")->nullable();
-            $table->double("baseCorrosionRate")->nullable();
-            $table->double("finalCorrosionRate")->nullable();
-            $table->double("shellTimeInService")->nullable();
-            $table->double("headTimeInService")->nullable();
-            $table->double("ageCoat")->nullable();
-            $table->double("adjusmentCoat")->nullable();
-            $table->double("age")->nullable();
-            $table->double("minReqWallThickness")->nullable();
-            $table->double("shellDFParameter")->nullable();
-            $table->double("headDFParameter")->nullable();
-            $table->double("flowStress")->nullable();
-            $table->double("shellStrengthRatio")->nullable();
-            $table->double("headStrengthRatio")->nullable();
-            $table->double("numInspA")->nullable();
-            $table->double("numInspB")->nullable();
-            $table->double("numInspC")->nullable();
-            $table->double("numInspD")->nullable();
+            $table->string("rbiExCor_id", 30)->unique();
+            $table->date("rbiExCor_yearAssesment")->nullable();
+            $table->date("rbiExCor_yearInstallation")->nullable();
+            $table->double("rbiExCor_thicknessValue")->nullable();
+            $table->double("rbiExCor_baseCorrosionRate")->nullable();
+            $table->double("rbiExCor_finalCorrosionRate")->nullable();
+            $table->double("rbiExCor_shellTimeInService")->nullable();
+            $table->double("rbiExCor_headTimeInService")->nullable();
+            $table->double("rbiExCor_ageCoat")->nullable();
+            $table->double("rbiExCor_adjusmentCoat")->nullable();
+            $table->double("rbiExCor_age")->nullable();
+            $table->double("rbiExCor_minReqWallThickness")->nullable();
+            $table->double("rbiExCor_shellDFParameter")->nullable();
+            $table->double("rbiExCor_headDFParameter")->nullable();
+            $table->double("rbiExCor_flowStress")->nullable();
+            $table->double("rbiExCor_shellStrengthRatio")->nullable();
+            $table->double("rbiExCor_headStrengthRatio")->nullable();
+            $table->double("rbiExCor_numInspA")->nullable();
+            $table->double("rbiExCor_numInspB")->nullable();
+            $table->double("rbiExCor_numInspC")->nullable();
+            $table->double("rbiExCor_numInspD")->nullable();
             $table->id();
             $table->timestamps();
         });

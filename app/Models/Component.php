@@ -10,4 +10,11 @@ class Component extends Model
     use HasFactory;
     public $timestamps = true;
     protected $table = 'component';
+    protected $fillable = [
+        'comp_idComponent',
+        'comp_tagOfComponent',
+        'comp_nameOfComponent',
+        'comp_componentType',
+        'comp_equipmentId'
+    ];
 }

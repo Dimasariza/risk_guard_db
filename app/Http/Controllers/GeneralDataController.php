@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\DTO\GeneralData\InsertGeneralDataDTO;
+use App\DTO\GeneralData\UpdateGeneralDataDTO;
+use App\Http\Requests\GeneralData\CreateGeneralDataRequest;
+use App\Http\Requests\GeneralData\UpdateGeneralDataRequest;
 use App\Models\GeneralData;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 
 class GeneralDataController extends Controller
 {
+    public function __construct(
+        protected GeneralData $model,
+        protected $model_id = "gData_id"
+    ) {
+    }
     //
     /**
      * Display a listing of the resource.
@@ -17,7 +27,7 @@ class GeneralDataController extends Controller
         $data = GeneralData::all();
         return response()->json([
             "status" => true,
-            "message" => "Data ready",
+            "message" => "General data got successfully",
             "data" => $data
         ], 200);
     }
@@ -33,33 +43,40 @@ class GeneralDataController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateGeneralDataRequest $request)
     {
-        //
+        $dto = InsertGeneralDataDTO::fromRequest($request);
+
+        $result = $this->model->create($dto->build());
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "Item created successfully",
+                "data" => $result
+            ], Response::HTTP_CREATED);
+        };
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(GeneralData $assetSummary, int $id)
+    public function show(string|int $id)
     {
-        $data = $assetSummary::find($id);
-
-        $uniqueID = Str::random(9);
-        // dd($uniqueID);
+        $data = $this->model::where($this->model_id, $id)->first();
 
         if ($data) {
             return response()->json([
                 "status" => true,
-                "message" => "Data ready",
+                "message" => "General Data showed successfully",
                 "data" => $data
-            ], 200);
+            ], Response::HTTP_OK);
         } else {
             return response()->json([
                 "status" => true,
-                "message" => "Data not found",
+                "message" => "General Data not found",
                 "data" => null
-            ], 200);
+            ], Response::HTTP_OK);
         }
     }
 
@@ -74,16 +91,36 @@ class GeneralDataController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, GeneralData $assetSummary)
+    public function update(UpdateGeneralDataRequest $request, string|int $id)
     {
-        //
+        $dto = UpdateGeneralDataDTO::fromRequest($request);
+        $result = $this->model->where($this->model_id, $id)->first();
+        $result->update($dto->build());
+        $result->refresh();
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "Item updated successfully",
+                "data" => $result
+            ], Response::HTTP_OK);
+        };
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GeneralData $assetSummary)
+    public function destroy(string|int $id)
     {
-        //
+        $result = $this->model->where($this->model_id, $id)->first();
+        $result->delete();
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "General Data deleted successfully",
+                "data" => $result
+            ], Response::HTTP_OK);
+        };
     }
 }

@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pof_rbi_alkalines', function (Blueprint $table) {
-            $table->boolean("shellSusceptibility")->nullable()->default(false);
-            $table->boolean("headSusceptibility")->nullable()->default(false);
-            $table->integer("shellSeverityId")->nullable();
-            $table->integer("headSeverityId")->nullable();
-            $table->integer("sheelSection")->nullable();
-            $table->integer("headSection")->nullable();
-            $table->double("ageTimeInService")->nullable();
+            $table->string("rbiAlkaline_id", 30)->unique();
+            $table->boolean("rbiAlkaline_shellSusceptibility")->nullable()->default(false);
+            $table->boolean("rbiAlkaline_headSusceptibility")->nullable()->default(false);
+            $table->integer("rbiAlkaline_shellSeverityId")->nullable();
+            $table->integer("rbiAlkaline_headSeverityId")->nullable();
+            $table->integer("rbiAlkaline_sheelSection")->nullable();
+            $table->integer("rbiAlkaline_headSection")->nullable();
+            $table->double("rbiAlkaline_ageTimeInService")->nullable();
             $table->id();
             $table->timestamps();
         });

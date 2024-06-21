@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('general_data', function (Blueprint $table) {
             $table->string("gData_id")->unique();
+            $table->string("gData_componentId")->nullable();
             $table->string("gData_tagNumber");
             $table->string("gData_service");
             $table->string("gData_manufacturedBy");
@@ -55,7 +56,7 @@ return new class extends Migration
             $table->double("gData_headCorrosionAllowance");
             $table->double("gData_headMinimumThickness");
             $table->double("gData_headCorrosionRate");
-            // $table->id();
+            $table->id();
             $table->timestamps();
         });
     }
