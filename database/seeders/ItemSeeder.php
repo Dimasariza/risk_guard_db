@@ -20,13 +20,15 @@ class ItemSeeder extends Seeder
                 "item_id" => Str::random(9),
                 "item_tagOfItem" => "MV Maratha Surabaya",
                 "item_nameOfItem" => "MV Maratha",
-                "created_at" => Carbon::now()
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ],
             [
                 "item_id" => Str::random(9),
                 "item_tagOfItem" => "MV Bung Tomo Jakarta",
                 "item_nameOfItem" => "MV Bung Tomo",
-                "created_at" => Carbon::now()
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ]
         ]);
     }

@@ -25,6 +25,7 @@ class ComponentSeeder extends Seeder
                 "comp_componentType" => "Filter",
                 "comp_equipmentId" => "1",
                 "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ],
             [
                 "comp_id" => Str::random(9),
@@ -33,6 +34,7 @@ class ComponentSeeder extends Seeder
                 "comp_componentType" => "Filter",
                 "comp_equipmentId" => "1",
                 "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ]
         ]);
     }

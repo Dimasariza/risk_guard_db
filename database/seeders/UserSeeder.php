@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
 
 class UserSeeder extends Seeder
 {
@@ -16,6 +18,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
+                "user_id" => Str::random(9),
                 "user_firstName" => "Admin",
                 "user_lastName" => "Risk Guardian",
                 "user_username" => "admin",
@@ -29,8 +32,10 @@ class UserSeeder extends Seeder
                 "user_emailVerifiedAt" => "2024-01-01",
                 "user_remember_token" => false,
                 "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ],
             [
+                "user_id" => Str::random(9),
                 "user_firstName" => "Roganda Dimas",
                 "user_lastName" => "Ariza",
                 "user_username" => "dimas.ariza",
@@ -44,8 +49,10 @@ class UserSeeder extends Seeder
                 "user_emailVerifiedAt" => "2024-01-01",
                 "user_remember_token" => false,
                 "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ],
             [
+                "user_id" => Str::random(9),
                 "user_firstName" => "Ahmad Akbar",
                 "user_lastName" => "Rivai",
                 "user_username" => "akbar.rivai",
@@ -59,8 +66,10 @@ class UserSeeder extends Seeder
                 "user_emailVerifiedAt" => "2024-01-01",
                 "user_remember_token" => false,
                 "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ],
             [
+                "user_id" => Str::random(9),
                 "user_firstName" => "Amirta Mega",
                 "user_lastName" => "Prastiwi",
                 "user_username" => "amirta.mega",
@@ -74,8 +83,10 @@ class UserSeeder extends Seeder
                 "user_emailVerifiedAt" => "2024-01-01",
                 "user_remember_token" => false,
                 "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ],
             [
+                "user_id" => Str::random(9),
                 "user_firstName" => "Hesti",
                 "user_lastName" => "Rahmawati",
                 "user_username" => "hesti.rahmawati",
@@ -89,6 +100,7 @@ class UserSeeder extends Seeder
                 "user_emailVerifiedAt" => "2024-01-01",
                 "user_remember_token" => false,
                 "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ],
         ]);
     }

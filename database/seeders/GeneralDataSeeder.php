@@ -7,6 +7,8 @@ use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
 
 class GeneralDataSeeder extends Seeder
 {
@@ -17,6 +19,7 @@ class GeneralDataSeeder extends Seeder
     {
         DB::table('general_data')->insert(
             [
+                "gData_id" => Str::random(9),
                 "gData_tagNumber" => "JNE-MAM-106 (V-300)",
                 "gData_service" => "FWKO Separator",
                 "gData_manufacturedBy" => "PT. Gunanusa Utama Fabricators",
@@ -59,7 +62,8 @@ class GeneralDataSeeder extends Seeder
                 "gData_headCorrosionAllowance" => 1.58,
                 "gData_headMinimumThickness" => 18.40,
                 "gData_headCorrosionRate" => 0.006,
-                "created_at" => Carbon::now()
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ]
         );
     }
