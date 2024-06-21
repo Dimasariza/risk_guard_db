@@ -2,7 +2,7 @@
 
 namespace App\DTO\Items;
 
-use App\Http\Requests\Items\CreateitemRequest;
+use App\Http\Requests\Items\CreateItemRequest;
 use Illuminate\Support\Str;
 
 class InsertItemsDTO
@@ -14,7 +14,7 @@ class InsertItemsDTO
     ) {
     }
 
-    public static function fromRequest(CreateitemRequest $request): self
+    public static function fromRequest(CreateItemRequest $request): self
     {
         return new self(
             item_idItem: Str::random(9),

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AssetSummaryController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ComponentController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\GeneralDataController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\PofRbiAlkalineController;
 use App\Http\Controllers\PofRbiExCorController;
 use App\Http\Controllers\PofRbiThinningController;
 use App\Http\Controllers\PofRbiValueController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +24,11 @@ Route::get('/user', function (Request $request) {
 
 // 'middleware' => 'auth:api'
 Route::group(['prefix' => 'v1'], function () {
+    Route::controller(AuthController::class)->group(function () {
+        Route::post('register', 'register');
+        Route::post('login', 'login');
+    });
+
     Route::get('/test', function () {
         return response()->json([
             "message" => "test api success",
@@ -42,6 +49,7 @@ Route::group(['prefix' => 'v1'], function () {
         Route::apiResource('value', PofPlanValueController::class);
     });
 
+    Route::apiResource('users', UserController::class);
     Route::apiResource('general_data', GeneralDataController::class);
     Route::apiResource('components', ComponentController::class);
     Route::apiResource('equipments', EquipmentController::class);

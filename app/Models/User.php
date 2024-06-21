@@ -6,10 +6,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasApiTokens;
 
     public $timestamps = true;
 
@@ -19,8 +20,17 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        "user_id",
+        "user_firstName",
+        "user_lastName",
+        "user_username",
+        "user_company",
+        "user_jobTitle",
+        "user_phoneNumber",
+        "user_address",
+        "user_status",
+        "user_email",
+        "user_emailVerifiedAt",
         'password',
     ];
 
@@ -30,8 +40,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'user_password',
+        'user_remember_token',
+        'updated_at',
+        'created_at',
+        'id'
     ];
 
     /**
