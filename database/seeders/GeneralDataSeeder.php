@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\GeneralData;
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -57,7 +58,8 @@ class GeneralDataSeeder extends Seeder
                 "gData_headEfficiency" => 1,
                 "gData_headCorrosionAllowance" => 1.58,
                 "gData_headMinimumThickness" => 18.40,
-                "gData_headCorrosionRate" => 0.006
+                "gData_headCorrosionRate" => 0.006,
+                "created_at" => Carbon::now()
             ]
         );
     }

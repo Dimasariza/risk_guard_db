@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             ItemSeeder::class,
             EquipmentSeeder::class,
             ComponentSeeder::class,
-            GeneralDataSeeder::class
+            GeneralDataSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

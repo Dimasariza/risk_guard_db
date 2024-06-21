@@ -16,17 +16,17 @@ class EquipmentSeeder extends Seeder
     {
         DB::table('equipment')->insert([
             [
-                "tagOfEquipment" => "Left Main Engine",
-                "nameOfEquipment" => "Main Engine 1",
-                "equipmentType" => "FWKO Separator",
-                "itemId" => 1,
+                "eq_tagOfEquipment" => "Left Main Engine",
+                "eq_nameOfEquipment" => "Main Engine 1",
+                "eq_equipmentType" => "FWKO Separator",
+                "eq_itemId" => "1",
                 "created_at" => Carbon::now()
             ],
             [
-                "tagOfEquipment" => "Right Main Engine",
-                "nameOfEquipment" => "Main Engine 2",
-                "equipmentType" => "FWKO Separator",
-                "itemId" => 1,
+                "eq_tagOfEquipment" => "Right Main Engine",
+                "eq_nameOfEquipment" => "Main Engine 2",
+                "eq_equipmentType" => "FWKO Separator",
+                "eq_itemId" => "1",
                 "created_at" => Carbon::now()
             ]
         ]);

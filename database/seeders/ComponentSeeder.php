@@ -17,18 +17,18 @@ class ComponentSeeder extends Seeder
     {
         DB::table('component')->insert([
             [
-                "tagOfComponent" => "Oil Filter",
-                "nameOfComponent" => "Caterpillar Oil Filter Machine",
-                "componentType" => "Filter",
-                "equipmentId" => 1,
-                "created_at" => Carbon::now()
+                "comp_tagOfComponent" => "Oil Filter",
+                "comp_nameOfComponent" => "Caterpillar Oil Filter Machine",
+                "comp_componentType" => "Filter",
+                "comp_equipmentId" => "1",
+                "created_at" => Carbon::now(),
             ],
             [
-                "tagOfComponent" => "Right Main Engine",
-                "nameOfComponent" => "Mitsubishi Air Filter",
-                "componentType" => "Filter",
-                "equipmentId" => 2,
-                "created_at" => Carbon::now()
+                "comp_tagOfComponent" => "Main Air Filter",
+                "comp_nameOfComponent" => "Mitsubishi Air Filter",
+                "comp_componentType" => "Filter",
+                "comp_equipmentId" => "1",
+                "created_at" => Carbon::now(),
             ]
         ]);
     }
