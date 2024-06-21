@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 class InsertEquipmentsDTO
 {
     public function __construct(
-        public readonly string $eq_idEquipment,
+        public readonly string $eq_id,
         public readonly string $eq_tagOfEquipment,
         public readonly string $eq_nameOfEquipment,
         public readonly string $eq_equipmentType,
@@ -19,7 +19,7 @@ class InsertEquipmentsDTO
     public static function fromRequest(CreateEquipmentRequest $request): self
     {
         return new self(
-            eq_idEquipment: Str::random(9),
+            eq_id: Str::random(9),
             eq_tagOfEquipment: $request->validated('eq_tagOfEquipment'),
             eq_nameOfEquipment: $request->validated('eq_nameOfEquipment'),
             eq_equipmentType: $request->validated('eq_equipmentType'),
@@ -30,7 +30,7 @@ class InsertEquipmentsDTO
     public function build(): array
     {
         return [
-            'eq_idEquipment' => $this->eq_idEquipment,
+            'eq_id' => $this->eq_id,
             'eq_tagOfEquipment' => $this->eq_tagOfEquipment,
             'eq_nameOfEquipment' => $this->eq_nameOfEquipment,
             'eq_equipmentType' => $this->eq_equipmentType,

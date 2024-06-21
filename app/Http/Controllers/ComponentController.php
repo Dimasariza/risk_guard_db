@@ -7,14 +7,14 @@ use App\DTO\Components\UpdateComponentsDTO;
 use App\Http\Requests\Components\CreateComponentRequest;
 use App\Http\Requests\Components\UpdateComponentRequest;
 use App\Models\Component;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ComponentController extends Controller
 {
 
     public function __construct(
-        protected Component $model
+        protected Component $model,
+        protected $model_id = "comp_id"
     ) {
     }
     //
@@ -60,9 +60,9 @@ class ComponentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Component $assetSummary, int $id)
+    public function show(int|string $id)
     {
-        $data = $assetSummary::findOrFail($id);
+        $data = $this->model::where($this->model_id, $id);
         if ($data) {
             return response()->json([
                 "status" => true,
@@ -86,7 +86,7 @@ class ComponentController extends Controller
     public function update(UpdateComponentRequest $request, string|int $id)
     {
         $dto = UpdateComponentsDTO::fromRequest($request);
-        $result = $this->model->where("comp_idComponent", $id)->first();
+        $result = $this->model->where($this->model_id, $id)->first();
         $result->update($dto->build());
         $result->refresh();
 
@@ -104,7 +104,7 @@ class ComponentController extends Controller
      */
     public function destroy(string|int $id)
     {
-        $result = $this->model->where("comp_idComponent", $id)->first();
+        $result = $this->model->where($this->model_id, $id)->first();
         $result->delete();
 
         if ($result) {

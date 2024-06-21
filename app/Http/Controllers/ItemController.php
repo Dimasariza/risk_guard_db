@@ -13,7 +13,7 @@ class ItemController extends Controller
 {
     public function __construct(
         protected Item $model,
-        protected $model_id = "item_idItem"
+        protected $model_id = "item_id"
     ) {
     }
     //

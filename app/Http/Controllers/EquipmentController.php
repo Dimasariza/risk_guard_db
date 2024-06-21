@@ -7,13 +7,13 @@ use App\DTO\Equipments\UpdateEquipmentsDTO;
 use App\Http\Requests\Equipments\CreateEquipmentRequest;
 use App\Http\Requests\Equipments\UpdateEquipmentRequest;
 use App\Models\Equipment;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class EquipmentController extends Controller
 {
     public function __construct(
-        protected Equipment $model
+        protected Equipment $model,
+        protected $model_id = "eq_idEquipment"
     ) {
     }
     //
@@ -59,9 +59,9 @@ class EquipmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Equipment $assetSummary, int $id)
+    public function show(string|int $id)
     {
-        $data = $assetSummary::findOrFail($id);
+        $data = $this->model::where($this->model_id, $id);
         if ($data) {
             return response()->json([
                 "status" => true,
@@ -85,7 +85,7 @@ class EquipmentController extends Controller
     public function update(UpdateEquipmentRequest $request, string|int $id)
     {
         $dto = UpdateEquipmentsDTO::fromRequest($request);
-        $result = $this->model->where("eq_idEquipment", $id)->first();
+        $result = $this->model->where($this->model_id, $id)->first();
         $result->update($dto->build());
         $result->refresh();
 
@@ -103,7 +103,7 @@ class EquipmentController extends Controller
      */
     public function destroy(string|int $id)
     {
-        $result = $this->model->where("eq_idEquipment", $id)->first();
+        $result = $this->model->where($this->model_id, $id)->first();
         $result->delete();
 
         if ($result) {

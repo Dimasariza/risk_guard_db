@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('component', function (Blueprint $table) {
-            $table->string("comp_idComponent")->unique();
+            $table->string("comp_id")->unique();
             $table->string("comp_tagOfComponent");
             $table->string("comp_nameOfComponent");
             $table->string("comp_componentType");
-            $table->string("comp_equipmentId");
+            $table->string("comp_equipmentId")->nullable();
             $table->id();
             $table->timestamps();
         });

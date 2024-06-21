@@ -11,7 +11,7 @@ class Component extends Model
     public $timestamps = true;
     protected $table = 'component';
     protected $fillable = [
-        'comp_idComponent',
+        'comp_id',
         'comp_tagOfComponent',
         'comp_nameOfComponent',
         'comp_componentType',

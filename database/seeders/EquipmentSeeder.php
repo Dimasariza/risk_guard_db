@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class EquipmentSeeder extends Seeder
 {
@@ -16,6 +17,7 @@ class EquipmentSeeder extends Seeder
     {
         DB::table('equipment')->insert([
             [
+                "eq_id" => Str::random(9),
                 "eq_tagOfEquipment" => "Left Main Engine",
                 "eq_nameOfEquipment" => "Main Engine 1",
                 "eq_equipmentType" => "FWKO Separator",
@@ -23,6 +25,7 @@ class EquipmentSeeder extends Seeder
                 "created_at" => Carbon::now()
             ],
             [
+                "eq_id" => Str::random(9),
                 "eq_tagOfEquipment" => "Right Main Engine",
                 "eq_nameOfEquipment" => "Main Engine 2",
                 "eq_equipmentType" => "FWKO Separator",
