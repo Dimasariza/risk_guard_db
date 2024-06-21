@@ -11,7 +11,7 @@ class CreateRBIAlkalineRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class CreateRBIAlkalineRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "rbiAlkaline_shellSusceptibility" => ["required"],
+            "rbiAlkaline_headSusceptibility" => ["required"],
+            "rbiAlkaline_shellSeverityId" => ["required"],
+            "rbiAlkaline_headSeverityId" => ["required"],
+            "rbiAlkaline_ageTimeInService" => ["required"],
+            "rbiAlkaline_sheelSection" => ["required"],
+            "rbiAlkaline_headSection" => ["required"],
         ];
     }
 }

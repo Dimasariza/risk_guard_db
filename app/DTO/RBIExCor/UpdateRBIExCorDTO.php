@@ -1,8 +1,8 @@
 <?php
 
-namespace App\DTO\Items;
+namespace App\DTO\RBIExCor;
 
-use App\Http\Requests\PlanThinning\UpdatePlanThinningRequest;
+use App\Http\Requests\RBIExCor\UpdateRBIExCorRequest;
 
 class UpdateRBIExCorDTO
 {
@@ -12,7 +12,7 @@ class UpdateRBIExCorDTO
     ) {
     }
 
-    public static function fromRequest(UpdatePlanThinningRequest $request): self
+    public static function fromRequest(UpdateRBIExCorRequest $request): self
     {
         return new self(
             item_tagOfItem: $request->validated('item_tagOfItem'),

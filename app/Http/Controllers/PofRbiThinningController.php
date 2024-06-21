@@ -25,7 +25,7 @@ class PofRbiThinningController extends Controller
 
         return response()->json([
             "status" => true,
-            "message" => "Item got successfully",
+            "message" => "POF RBI thinning got successfully",
             "data" => $data
         ], Response::HTTP_OK);
     }
@@ -50,7 +50,7 @@ class PofRbiThinningController extends Controller
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "POF RBI Thinning created successfully",
+                "message" => "POF RBI thinning created successfully",
                 "data" => $result
             ], Response::HTTP_CREATED);
         };
@@ -66,7 +66,7 @@ class PofRbiThinningController extends Controller
         if ($data) {
             return response()->json([
                 "status" => true,
-                "message" => "Item showed successfully",
+                "message" => "POF RBI thinning showed successfully",
                 "data" => $data
             ], Response::HTTP_OK);
         }
@@ -93,7 +93,7 @@ class PofRbiThinningController extends Controller
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "RBI Thinning updated successfully",
+                "message" => "POF RBI thinning updated successfully",
                 "data" => $result
             ], Response::HTTP_OK);
         };
@@ -110,7 +110,7 @@ class PofRbiThinningController extends Controller
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "Item deleted successfully",
+                "message" => "POF RBI thinning deleted successfully",
                 "data" => $result
             ], Response::HTTP_OK);
         };

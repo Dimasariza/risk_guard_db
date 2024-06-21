@@ -1,8 +1,8 @@
 <?php
 
-namespace App\DTO\Items;
+namespace App\DTO\RBIExCor;
 
-use App\Http\Requests\PlanThinning\CreatePlanThinningRequest;
+use App\Http\Requests\RBIExCor\CreateRBIExCorRequest;
 use Illuminate\Support\Str;
 
 class InsertRBIExCorDTO
@@ -14,7 +14,7 @@ class InsertRBIExCorDTO
     ) {
     }
 
-    public static function fromRequest(CreatePlanThinningRequest $request): self
+    public static function fromRequest(CreateRBIExCorRequest $request): self
     {
         return new self(
             item_idItem: Str::random(9),

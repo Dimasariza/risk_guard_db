@@ -11,7 +11,7 @@ class CreatePlanValueRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class CreatePlanValueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "planValue_gffTotal" => ["required"],
+            "planValue_shellThinning" => ["required"],
+            "planValue_headThinning" => ["required"],
+            "planValue_shellExternal" => ["required"],
+            "planValue_headExternal" => ["required"],
+            "planValue_shellTotal" => ["required"],
+            "planValue_headTotal" => ["required"],
+            "planValue_shellSection" => ["required"],
+            "planValue_headSection" => ["required"],
         ];
     }
 }

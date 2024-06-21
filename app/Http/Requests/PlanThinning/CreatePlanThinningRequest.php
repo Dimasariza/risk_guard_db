@@ -22,22 +22,22 @@ class CreatePlanThinningRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "rbiThinnings_startDate" => ["required", "string", "max:255"],
-            "rbiThinnings_thickness" => ["required", "string", "max:255"],
-            "rbiThinnings_corrosionAllowance" => ["required", "string", "max:255"],
-            "rbiThinnings_designTemperature" => ["required", "string", "max:255"],
-            "rbiThinnings_designPressure" => ["required", "string", "max:255"],
-            "rbiThinnings_operatingTemperature" => ["required", "string", "max:255"],
-            "rbiThinnings_operatingPressure" => ["required", "string", "max:255"],
-            "rbiThinnings_designCode" => ["required", "string", "max:255"],
-            "rbiThinnings_equipmentType" => ["required", "string", "max:255"],
-            "rbiThinnings_componentType" => ["required", "string", "max:255"],
-            "rbiThinnings_geometryData" => ["required", "string", "max:255"],
-            "rbiThinnings_materialSpecification" => ["required", "string", "max:255"],
-            "rbiThinnings_yieldStrength" => ["required", "string", "max:255"],
-            "rbiThinnings_tensileStrength" => ["required", "string", "max:255"],
-            "rbiThinnings_weldJointEfficiency" => ["required", "string", "max:255"],
-            "rbiThinnings_heatTracing" => ["required", "string", "max:255"],
+            "planThinning_startDate" => ["required", "date"],
+            "planThinning_thickness" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_corrosionAllowance" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_designTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_designPressure" => ["required", "integer"],
+            "planThinning_operatingTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_operatingPressure" => ["required", "integer"],
+            "planThinning_designCode" => ["required", "string"],
+            "planThinning_equipmentType" => ["required", "string"],
+            "planThinning_componentType" => ["required", "string"],
+            "planThinning_geometryData" => ["required", "string"],
+            "planThinning_materialSpecification" => ["required", "string"],
+            "planThinning_yieldStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_tensileStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_weldJointEfficiency" => ["required", "integer"],
+            "planThinning_heatTracing" => ["required", "boolean"],
         ];
     }
 

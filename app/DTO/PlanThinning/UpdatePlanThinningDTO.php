@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DTO\Items;
+namespace App\DTO\PlanThinning;
 
 use App\Http\Requests\PlanThinning\UpdatePlanThinningRequest;
 
