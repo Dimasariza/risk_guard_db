@@ -63,7 +63,7 @@ class GeneralDataController extends Controller
      */
     public function show(string|int $id)
     {
-        $data = $this->model::where($this->model_id, $id)->first();
+        $data = $this->model::where("gData_componentId", $id)->first();
 
         if ($data) {
             return response()->json([
