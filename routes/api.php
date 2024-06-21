@@ -23,13 +23,14 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 // 'middleware' => 'auth:api'
-Route::group(['prefix' => 'v1'], function () {
-    Route::controller(AuthController::class)->group(function () {
-        Route::post('register', 'register');
-        Route::post('login', 'login');
-    });
+Route::controller(AuthController::class)->group(function () {
+    Route::post('/register', 'register');
+    Route::post('/login', 'login');
+});
 
-    Route::get('/test', function () {
+Route::group(['prefix' => 'v1'], function () {
+    Route::apiResource('users', UserController::class);
+    Route::get('test', function () {
         return response()->json([
             "message" => "test api success",
         ], 200);
@@ -49,7 +50,6 @@ Route::group(['prefix' => 'v1'], function () {
         Route::apiResource('value', PofPlanValueController::class);
     });
 
-    Route::apiResource('users', UserController::class);
     Route::apiResource('general_data', GeneralDataController::class);
     Route::apiResource('components', ComponentController::class);
     Route::apiResource('equipments', EquipmentController::class);
