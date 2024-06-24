@@ -13,21 +13,21 @@ return new class extends Migration
     {
         Schema::create('pof_rbi_thinnings', function (Blueprint $table) {
             $table->string("rbiThinning_id", 30)->unique();
-            $table->date("rbiThinning_startDate");
-            $table->double("rbiThinning_thickness");
-            $table->double("rbiThinning_corrosionAllowance");
-            $table->double("rbiThinning_designTemperature");
-            $table->double("rbiThinning_designPressure");
-            $table->double("rbiThinning_operatingTemperature");
-            $table->double("rbiThinning_operatingPressure");
-            $table->string("rbiThinning_designCode");
-            $table->string("rbiThinning_equipmentType");
-            $table->string("rbiThinning_componentType");
-            $table->string("rbiThinning_geometryData");
-            $table->string("rbiThinning_materialSpecification");
-            $table->double("rbiThinning_yieldStrength");
-            $table->double("rbiThinning_tensileStrength");
-            $table->integer("rbiThinning_weldJointEfficiency");
+            $table->date("rbiThinning_startDate")->nullable();
+            $table->double("rbiThinning_thickness")->nullable();
+            $table->double("rbiThinning_corrosionAllowance")->nullable();
+            $table->double("rbiThinning_designTemperature")->nullable();
+            $table->double("rbiThinning_designPressure")->nullable();
+            $table->double("rbiThinning_operatingTemperature")->nullable();
+            $table->double("rbiThinning_operatingPressure")->nullable();
+            $table->string("rbiThinning_designCode")->nullable();
+            $table->string("rbiThinning_equipmentType")->nullable();
+            $table->string("rbiThinning_componentType")->nullable();
+            $table->string("rbiThinning_geometryData")->nullable();
+            $table->string("rbiThinning_materialSpecification")->nullable();
+            $table->double("rbiThinning_yieldStrength")->nullable();
+            $table->double("rbiThinning_tensileStrength")->nullable();
+            $table->integer("rbiThinning_weldJointEfficiency")->nullable();
             $table->boolean("rbiThinning_heatTracing")->default(false);
             $table->id();
             $table->timestamps();

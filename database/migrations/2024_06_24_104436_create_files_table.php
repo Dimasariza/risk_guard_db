@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('equipment', function (Blueprint $table) {
-            $table->string("eq_id")->unique();
-            $table->string("eq_tagOfEquipment");
-            $table->string("eq_nameOfEquipment");
-            $table->string("eq_equipmentType");
-            $table->string("eq_itemId")->nullable();
-            $table->string("user_id");
+        Schema::create('files', function (Blueprint $table) {
             $table->id();
+            $table->string("file_id")->unique();
+            $table->string('file_name')->nullable();
+            $table->string('file_path');
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('equipment');
+        Schema::dropIfExists('files');
     }
 };
