@@ -78,7 +78,7 @@ class FileController extends Controller
         }
 
         $base_path = base_path() . '\storage\app/public';
-        dd($base_path);
+        // dd($base_path);
         $file_path = $base_path . $file->first()->file_path;
         $file_info = new \finfo(FILEINFO_MIME_TYPE);
 
