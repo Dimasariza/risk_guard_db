@@ -18,6 +18,7 @@ use App\Http\Controllers\PofRbiThinningController;
 use App\Http\Controllers\PofRbiValueController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/user', function (Request $request) {
@@ -31,11 +32,14 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::group(['prefix' => 'v1'], function () {
-    Route::apiResource('users', UserController::class);
     Route::get('test', function () {
         return response()->json([
             "message" => "test api success",
         ], 200);
+    });
+
+    Route::get('/linkstorage', function () {
+        Artisan::call('storage:link');
     });
 
     Route::group(['prefix' => 'pof_rbi'], function () {
@@ -59,4 +63,5 @@ Route::group(['prefix' => 'v1'], function () {
     Route::apiResource('asset_summary', AssetSummaryController::class);
     Route::apiResource('damage_mechanism', DamageMechanismController::class);
     Route::apiResource('file', FileController::class);
+    Route::apiResource('users', UserController::class);
 });
