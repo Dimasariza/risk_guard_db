@@ -20,6 +20,7 @@ class GeneralDataSeeder extends Seeder
         DB::table('general_data')->insert(
             [
                 "gData_id" => Str::random(9),
+                "gData_componentId" => "rndComp01",
                 "gData_tagNumber" => "JNE-MAM-106 (V-300)",
                 "gData_service" => "FWKO Separator",
                 "gData_manufacturedBy" => "PT. Gunanusa Utama Fabricators",

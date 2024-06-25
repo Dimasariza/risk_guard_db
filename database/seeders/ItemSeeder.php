@@ -17,14 +17,14 @@ class ItemSeeder extends Seeder
     {
         DB::table('items')->insert([
             [
-                "item_id" => Str::random(9),
+                "item_id" => "rndItem01",
                 "item_tagOfItem" => "MV Maratha Surabaya",
                 "item_nameOfItem" => "MV Maratha",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ],
             [
-                "item_id" => Str::random(9),
+                "item_id" => "rndItem02",
                 "item_tagOfItem" => "MV Bung Tomo Jakarta",
                 "item_nameOfItem" => "MV Bung Tomo",
                 "created_at" => Carbon::now(),
