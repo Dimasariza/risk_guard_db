@@ -31,15 +31,15 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'login');
 });
 
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
+
 Route::group(['prefix' => 'v1'], function () {
     Route::get('test', function () {
         return response()->json([
             "message" => "test api success",
         ], 200);
-    });
-
-    Route::get('/linkstorage', function () {
-        Artisan::call('storage:link');
     });
 
     Route::group(['prefix' => 'pof_rbi'], function () {
