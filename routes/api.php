@@ -18,7 +18,6 @@ use App\Http\Controllers\PofRbiThinningController;
 use App\Http\Controllers\PofRbiValueController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/user', function (Request $request) {
@@ -32,7 +31,9 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::get('/linkstorage', function () {
-    Artisan::call('storage:link');
+    $target = '/home/risk_guard_db/storage/app/public';
+    $shortcut = '/home/risk_guard_db/public/storage';
+    symlink($target, $shortcut);
 });
 
 Route::group(['prefix' => 'v1'], function () {
