@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('pof_rbi_thinnings', function (Blueprint $table) {
             $table->string("rbiThinning_id", 30)->unique();
+            $table->string("rbiThinning_componentId");
             $table->date("rbiThinning_startDate")->nullable();
             $table->double("rbiThinning_thickness")->nullable();
             $table->double("rbiThinning_corrosionAllowance")->nullable();

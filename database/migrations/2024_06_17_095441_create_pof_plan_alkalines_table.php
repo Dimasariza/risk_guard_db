@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('pof_plan_alkalines', function (Blueprint $table) {
             $table->string("planAlkaline_id", 30)->unique();
+            $table->string("planAlkaline_componentId");
             $table->boolean("planAlkaline_shellSusceptibility")->nullable()->default(false);
             $table->boolean("planAlkaline_headSusceptibility")->nullable()->default(false);
             $table->integer("planAlkaline_shellSeverityId")->nullable();

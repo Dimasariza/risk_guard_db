@@ -23,6 +23,7 @@ class CreateRBIExCorRequest extends FormRequest
     {
         return [
             //
+            "rbiExCor_componentId" => ["required", "string", "max:255"],
         ];
     }
 }

@@ -22,15 +22,17 @@ class CreateRBIValueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "rbiValue_gffTotal" => ["required"],
-            "rbiValue_shellThinning" => ["required"],
-            "rbiValue_headThinning" => ["required"],
-            "rbiValue_shellExternal" => ["required"],
-            "rbiValue_headExternal" => ["required"],
-            "rbiValue_shellTotal" => ["required"],
-            "rbiValue_headTotal" => ["required"],
-            "rbiValue_shellSection" => ["required"],
-            "rbiValue_headSection" => ["required"],
+            "rbiValue_componentId" => ["required", "string", "max:255"],
+
+            // "rbiValue_gffTotal" => ["required"],
+            // "rbiValue_shellThinning" => ["required"],
+            // "rbiValue_headThinning" => ["required"],
+            // "rbiValue_shellExternal" => ["required"],
+            // "rbiValue_headExternal" => ["required"],
+            // "rbiValue_shellTotal" => ["required"],
+            // "rbiValue_headTotal" => ["required"],
+            // "rbiValue_shellSection" => ["required"],
+            // "rbiValue_headSection" => ["required"],
         ];
     }
 }

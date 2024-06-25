@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\File as FacadesFile;
 use Illuminate\Support\Str;
 
@@ -19,6 +20,12 @@ class FileController extends Controller
     public function index()
     {
         //
+        $data = $this->model::all();
+        return response()->json([
+            "status" => true,
+            "message" => "Data ready",
+            "data" => $data
+        ], Response::HTTP_OK);
     }
 
     /**
@@ -27,6 +34,7 @@ class FileController extends Controller
     public function create()
     {
         //
+
     }
 
     /**

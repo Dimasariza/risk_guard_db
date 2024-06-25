@@ -59,6 +59,6 @@ class damage_mechanism extends Model
         "dm_piping_mechanical",
         "dm_piping_mechanical_A",
         "dm_piping_mechanical_B",
-        "dm_compId",
+        "dm_componentId",
     ];
 }

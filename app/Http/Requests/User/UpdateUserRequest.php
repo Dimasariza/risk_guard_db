@@ -31,6 +31,7 @@ class UpdateUserRequest extends FormRequest
             "user_address" => ["required"],
             "user_status" => ["required"],
             "user_email" => ["required"],
+            "user_picture" => [],
             "user_emailVerifiedAt" => ["required"],
             "password" => ["required"],
             "remember_token" => ["required"],

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('pof_rbi_ex_cors', function (Blueprint $table) {
             $table->string("rbiExCor_id", 30)->unique();
+            $table->string("rbiExCor_componentId");
             $table->date("rbiExCor_yearAssesment")->nullable();
             $table->date("rbiExCor_yearInstallation")->nullable();
             $table->double("rbiExCor_thicknessValue")->nullable();

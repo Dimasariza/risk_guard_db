@@ -8,35 +8,35 @@ use Illuminate\Support\Str;
 class InsertRBIAlkalineDTO
 {
     public function __construct(
-        public readonly string $rbiAlkaline_id,
-        public readonly string $rbiAlkaline_shellSusceptibility,
-        public readonly string $rbiAlkaline_headSusceptibility,
-        public readonly string $rbiAlkaline_shellSeverityId,
-        public readonly string $rbiAlkaline_headSeverityId,
-        public readonly string $rbiAlkaline_ageTimeInService,
-        public readonly string $rbiAlkaline_sheelSection,
-        public readonly string $rbiAlkaline_headSection,
+        public readonly string $rbiAlkaline_componentId,
+        public readonly ?string $rbiAlkaline_shellSusceptibility = null,
+        public readonly ?string $rbiAlkaline_headSusceptibility = null,
+        public readonly ?string $rbiAlkaline_shellSeverityId = null,
+        public readonly ?string $rbiAlkaline_headSeverityId = null,
+        public readonly ?string $rbiAlkaline_ageTimeInService = null,
+        public readonly ?string $rbiAlkaline_sheelSection = null,
+        public readonly ?string $rbiAlkaline_headSection = null,
     ) {
     }
 
     public static function fromRequest(CreateRBIAlkalineRequest $request): self
     {
         return new self(
-            rbiAlkaline_id: Str::random(9),
-            rbiAlkaline_shellSusceptibility: $request->validated("rbiAlkaline_shellSusceptibility"),
-            rbiAlkaline_headSusceptibility: $request->validated("rbiAlkaline_headSusceptibility"),
-            rbiAlkaline_shellSeverityId: $request->validated("rbiAlkaline_shellSeverityId"),
-            rbiAlkaline_headSeverityId: $request->validated("rbiAlkaline_headSeverityId"),
-            rbiAlkaline_ageTimeInService: $request->validated("rbiAlkaline_ageTimeInService"),
-            rbiAlkaline_sheelSection: $request->validated("rbiAlkaline_sheelSection"),
-            rbiAlkaline_headSection: $request->validated("rbiAlkaline_headSection"),
+            rbiAlkaline_componentId: $request->validated("rbiAlkaline_componentId"),
+            // rbiAlkaline_shellSusceptibility: $request->validated("rbiAlkaline_shellSusceptibility"),
+            // rbiAlkaline_headSusceptibility: $request->validated("rbiAlkaline_headSusceptibility"),
+            // rbiAlkaline_shellSeverityId: $request->validated("rbiAlkaline_shellSeverityId"),
+            // rbiAlkaline_headSeverityId: $request->validated("rbiAlkaline_headSeverityId"),
+            // rbiAlkaline_ageTimeInService: $request->validated("rbiAlkaline_ageTimeInService"),
+            // rbiAlkaline_sheelSection: $request->validated("rbiAlkaline_sheelSection"),
+            // rbiAlkaline_headSection: $request->validated("rbiAlkaline_headSection"),
         );
     }
 
     public function build(): array
     {
         return [
-            'rbiAlkaline_id' => $this->rbiAlkaline_id,
+            'rbiAlkaline_id' => Str::random(9),
             "rbiAlkaline_shellSusceptibility" => $this->rbiAlkaline_shellSusceptibility,
             "rbiAlkaline_headSusceptibility" => $this->rbiAlkaline_headSusceptibility,
             "rbiAlkaline_shellSeverityId" => $this->rbiAlkaline_shellSeverityId,

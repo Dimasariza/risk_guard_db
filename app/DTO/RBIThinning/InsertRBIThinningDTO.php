@@ -8,53 +8,38 @@ use Illuminate\Support\Str;
 class InsertRBIThinningDTO
 {
     public function __construct(
-        public readonly string $rbiThinning_id,
-        public readonly string $rbiThinning_startDate,
-        public readonly string $rbiThinning_thickness,
-        public readonly string $rbiThinning_corrosionAllowance,
-        public readonly string $rbiThinning_designTemperature,
-        public readonly string $rbiThinning_designPressure,
-        public readonly string $rbiThinning_operatingTemperature,
-        public readonly string $rbiThinning_operatingPressure,
-        public readonly string $rbiThinning_designCode,
-        public readonly string $rbiThinning_equipmentType,
-        public readonly string $rbiThinning_componentType,
-        public readonly string $rbiThinning_geometryData,
-        public readonly string $rbiThinning_materialSpecification,
-        public readonly string $rbiThinning_yieldStrength,
-        public readonly string $rbiThinning_tensileStrength,
-        public readonly string $rbiThinning_weldJointEfficiency,
-        public readonly string $rbiThinning_heatTracing,
+        public readonly string $rbiThinning_componentId,
+        public readonly ?string $rbiThinning_startDate = null,
+        public readonly ?string $rbiThinning_thickness = null,
+        public readonly ?string $rbiThinning_corrosionAllowance = null,
+        public readonly ?string $rbiThinning_designTemperature = null,
+        public readonly ?string $rbiThinning_designPressure = null,
+        public readonly ?string $rbiThinning_operatingTemperature = null,
+        public readonly ?string $rbiThinning_operatingPressure = null,
+        public readonly ?string $rbiThinning_designCode = null,
+        public readonly ?string $rbiThinning_equipmentType = null,
+        public readonly ?string $rbiThinning_componentType = null,
+        public readonly ?string $rbiThinning_geometryData = null,
+        public readonly ?string $rbiThinning_materialSpecification = null,
+        public readonly ?string $rbiThinning_yieldStrength = null,
+        public readonly ?string $rbiThinning_tensileStrength = null,
+        public readonly ?string $rbiThinning_weldJointEfficiency = null,
+        public readonly ?string $rbiThinning_heatTracing = null,
     ) {
     }
 
     public static function fromRequest(CreateRBIThinningRequest $request): self
     {
         return new self(
-            rbiThinning_id: Str::random(9),
-            rbiThinning_startDate: $request->validated("rbiThinning_startDate"),
-            rbiThinning_thickness: $request->validated("rbiThinning_thickness"),
-            rbiThinning_corrosionAllowance: $request->validated("rbiThinning_corrosionAllowance"),
-            rbiThinning_designTemperature: $request->validated("rbiThinning_designTemperature"),
-            rbiThinning_designPressure: $request->validated("rbiThinning_designPressure"),
-            rbiThinning_operatingTemperature: $request->validated("rbiThinning_operatingTemperature"),
-            rbiThinning_operatingPressure: $request->validated("rbiThinning_operatingPressure"),
-            rbiThinning_designCode: $request->validated("rbiThinning_designCode"),
-            rbiThinning_equipmentType: $request->validated("rbiThinning_equipmentType"),
-            rbiThinning_componentType: $request->validated("rbiThinning_componentType"),
-            rbiThinning_geometryData: $request->validated("rbiThinning_geometryData"),
-            rbiThinning_materialSpecification: $request->validated("rbiThinning_materialSpecification"),
-            rbiThinning_yieldStrength: $request->validated("rbiThinning_yieldStrength"),
-            rbiThinning_tensileStrength: $request->validated("rbiThinning_tensileStrength"),
-            rbiThinning_weldJointEfficiency: $request->validated("rbiThinning_weldJointEfficiency"),
-            rbiThinning_heatTracing: $request->validated("rbiThinning_heatTracing"),
+            rbiThinning_componentId: $request->validated("rbiThinning_componentId"),
         );
     }
 
     public function build(): array
     {
         return [
-            "rbiThinning_id" => $this->rbiThinning_id,
+            "rbiThinning_id" => Str::random(9),
+            "rbiThinning_componentId" => $this->rbiThinning_componentId,
             "rbiThinning_startDate" => $this->rbiThinning_startDate,
             "rbiThinning_thickness" => $this->rbiThinning_thickness,
             "rbiThinning_corrosionAllowance" => $this->rbiThinning_corrosionAllowance,

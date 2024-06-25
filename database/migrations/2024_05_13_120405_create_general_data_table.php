@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('general_data', function (Blueprint $table) {
             $table->string("gData_id")->unique();
-            $table->string("gData_componentId")->nullable()->default(null);
+            $table->string("gData_componentId");
             $table->string("gData_tagNumber")->nullable()->default(null);
             $table->string("gData_service")->nullable()->default(null);
             $table->string("gData_manufacturedBy")->nullable()->default(null);

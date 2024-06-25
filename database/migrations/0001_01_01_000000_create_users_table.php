@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('user_address')->required();
             $table->boolean('user_status')->default(true);
             $table->string('user_email')->unique();
+            $table->string('user_picture')->nullable();
             $table->timestamp('user_emailVerifiedAt')->nullable();
             $table->rememberToken();
             $table->timestamps();

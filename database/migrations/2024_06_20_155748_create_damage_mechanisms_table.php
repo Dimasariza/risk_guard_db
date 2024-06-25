@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('damage_mechanisms', function (Blueprint $table) {
             $table->string("dm_id")->unique();
+            $table->string("dm_componentId");
             $table->boolean("dm_thinning")->default(false);
             $table->boolean("dm_comp_linning")->default(false);
             $table->boolean("dm_scc_caustic")->default(false);
@@ -62,7 +63,6 @@ return new class extends Migration
             $table->boolean("dm_piping_mechanical")->default(false);
             $table->boolean("dm_piping_mechanical_A")->default(false);
             $table->boolean("dm_piping_mechanical_B")->default(false);
-            $table->string("dm_compId");
             $table->id();
             $table->timestamps();
         });
