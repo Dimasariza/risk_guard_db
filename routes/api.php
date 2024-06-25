@@ -31,8 +31,8 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::get('/linkstorage', function () {
-    $target = '/home/risk_guard_db/storage/app/public';
-    $shortcut = '/home/risk_guard_db/public/storage';
+    $target = '/home/itsriskg/risk_guard_db/storage/app/public';
+    $shortcut = '/home/itsriskg/risk_guard_db/public/storage';
     symlink($target, $shortcut);
 });
 
