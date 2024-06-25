@@ -10,7 +10,8 @@ class UpdateComponentsDTO
         public readonly string $comp_tagOfComponent,
         public readonly string $comp_nameOfComponent,
         public readonly string $comp_componentType,
-        public readonly string $comp_equipmentId
+        public readonly string $comp_equipmentId,
+        public readonly string $comp_userId,
     ) {
     }
 
@@ -20,7 +21,8 @@ class UpdateComponentsDTO
             comp_tagOfComponent: $request->validated('comp_tagOfComponent'),
             comp_nameOfComponent: $request->validated('comp_nameOfComponent'),
             comp_componentType: $request->validated('comp_componentType'),
-            comp_equipmentId: $request->validated('comp_equipmentId')
+            comp_equipmentId: $request->validated('comp_equipmentId'),
+            comp_userId: $request->validated('comp_userId'),
         );
     }
 
@@ -31,6 +33,7 @@ class UpdateComponentsDTO
             'comp_nameOfComponent' => $this->comp_nameOfComponent,
             'comp_componentType' => $this->comp_componentType,
             'comp_equipmentId' => $this->comp_equipmentId,
+            'comp_userId' => $this->comp_userId,
         ];
 
         // if (!is_null($this->year)) {

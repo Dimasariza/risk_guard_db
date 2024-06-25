@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string("item_id", 30)->unique();
             $table->string("item_tagOfItem");
             $table->string("item_nameOfItem");
-            $table->string("user_id");
+            $table->string("item_userId")->default("1");
             $table->id();
             $table->timestamps();
         });

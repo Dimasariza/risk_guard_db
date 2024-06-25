@@ -24,6 +24,7 @@ class CreateItemRequest extends FormRequest
         return [
             'item_tagOfItem' => ['required', 'string', 'max:255'],
             'item_nameOfItem' => ['required', 'string', 'max:255'],
+            'item_userId' => ['required', 'string', 'max:255'],
         ];
     }
 }

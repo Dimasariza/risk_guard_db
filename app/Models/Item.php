@@ -10,5 +10,10 @@ class Item extends Model
     use HasFactory;
     public $timestamps = true;
     public $primarykey = 'item_idItem';
-    protected $fillable = ['item_id', 'item_tagOfItem', 'item_nameOfItem'];
+    protected $fillable = [
+        'item_id',
+        'item_tagOfItem',
+        'item_nameOfItem',
+        'item_userId'
+    ];
 }

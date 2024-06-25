@@ -26,6 +26,7 @@ class CreateComponentRequest extends FormRequest
             'comp_nameOfComponent' => ['required', 'string', 'max:255'],
             'comp_componentType' => ['required', 'string', 'max:255'],
             'comp_equipmentId' => ['required', 'string', 'max:255'],
+            'comp_userId' => ['required', 'string', 'max:255'],
         ];
     }
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("eq_nameOfEquipment");
             $table->string("eq_equipmentType");
             $table->string("eq_itemId")->nullable();
-            $table->string("user_id");
+            $table->string("eq_userId")->default("1");
             $table->id();
             $table->timestamps();
         });

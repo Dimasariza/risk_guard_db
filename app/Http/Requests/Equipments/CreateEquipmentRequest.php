@@ -26,6 +26,7 @@ class CreateEquipmentRequest extends FormRequest
             'eq_nameOfEquipment' => ['required', 'string', 'max:255'],
             'eq_equipmentType' => ['required', 'string', 'max:255'],
             'eq_itemId' => ['required', 'string', 'max:255'],
+            'eq_userId' => ['required', 'string', 'max:255'],
         ];
     }
 }

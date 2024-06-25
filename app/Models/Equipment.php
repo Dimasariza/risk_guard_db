@@ -14,6 +14,7 @@ class Equipment extends Model
         'eq_tagOfEquipment',
         'eq_nameOfEquipment',
         'eq_equipmentType',
-        'eq_itemId'
+        'eq_itemId',
+        'eq_userId'
     ];
 }

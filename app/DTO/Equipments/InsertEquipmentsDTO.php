@@ -13,6 +13,7 @@ class InsertEquipmentsDTO
         public readonly string $eq_nameOfEquipment,
         public readonly string $eq_equipmentType,
         public readonly string $eq_itemId,
+        public readonly string $eq_userId,
     ) {
     }
 
@@ -24,6 +25,7 @@ class InsertEquipmentsDTO
             eq_nameOfEquipment: $request->validated('eq_nameOfEquipment'),
             eq_equipmentType: $request->validated('eq_equipmentType'),
             eq_itemId: $request->validated('eq_itemId'),
+            eq_userId: $request->validated('eq_userId'),
         );
     }
 
@@ -35,6 +37,7 @@ class InsertEquipmentsDTO
             'eq_nameOfEquipment' => $this->eq_nameOfEquipment,
             'eq_equipmentType' => $this->eq_equipmentType,
             'eq_itemId' => $this->eq_itemId,
+            'eq_userId' => $this->eq_userId,
         ];
     }
 }

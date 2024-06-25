@@ -15,6 +15,7 @@ class Component extends Model
         'comp_tagOfComponent',
         'comp_nameOfComponent',
         'comp_componentType',
-        'comp_equipmentId'
+        'comp_equipmentId',
+        'comp_userId'
     ];
 }
