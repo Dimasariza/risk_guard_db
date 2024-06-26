@@ -9,9 +9,13 @@ use App\Http\Requests\Components\CreateComponentRequest;
 use App\Http\Requests\Components\UpdateComponentRequest;
 use App\Http\Requests\GeneralData\CreateGeneralDataRequest;
 use App\Models\Component;
+use App\Models\damage_mechanism;
 use App\Models\GeneralData;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
 
 class ComponentController extends Controller
 {
@@ -48,23 +52,29 @@ class ComponentController extends Controller
      */
     public function store(CreateComponentRequest $request)
     {
-        $dto = InsertComponentsDTO::fromRequest($request);
 
-        $component = $this->model->create($dto->build());
+        try {
+            DB::beginTransaction();
+            $dto = InsertComponentsDTO::fromRequest($request);
+            $component = $this->model->create($dto->build());
 
-        $general_data = new GeneralData();
-        $general_data_request = new CreateGeneralDataRequest();
-        $general_data_dto = InsertGeneralDataDTO::fromRequest(
-            $general_data_request["comp_id"] = $component->comp_id
-        );
-        dd($general_data_dto);
-        $general_data->create($dto->build());
+            $damage_mechanism = new damage_mechanism();
+            $damage_mechanism->dm_componentId = $component->comp_id;
+            $damage_mechanism->dm_id = Str::random(9);
+            $status = $damage_mechanism->save();
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
 
         if ($component) {
             return response()->json([
                 "status" => true,
                 "message" => "Item created successfully",
-                "data" => $component
+                "data" => [
+                    "component" => $component,
+                    "general_data" => $status
+                ]
             ], Response::HTTP_CREATED);
         };
     }

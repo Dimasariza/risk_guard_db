@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                "user_id" => Str::random(9),
+                "user_id" => "rndmUser01",
                 "user_firstName" => "Admin",
                 "user_lastName" => "Risk Guardian",
                 "user_username" => "admin",
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
                 "updated_at" => Carbon::now(),
             ],
             [
-                "user_id" => Str::random(9),
+                "user_id" => "rndmUser02",
                 "user_firstName" => "Roganda Dimas",
                 "user_lastName" => "Ariza",
                 "user_username" => "dimas.ariza",
@@ -55,7 +55,7 @@ class UserSeeder extends Seeder
                 "updated_at" => Carbon::now(),
             ],
             [
-                "user_id" => Str::random(9),
+                "user_id" => "rndmUser03",
                 "user_firstName" => "Ahmad Akbar",
                 "user_lastName" => "Rivai",
                 "user_username" => "akbar.rivai",
@@ -73,7 +73,7 @@ class UserSeeder extends Seeder
                 "updated_at" => Carbon::now(),
             ],
             [
-                "user_id" => Str::random(9),
+                "user_id" => "rndmUser04",
                 "user_firstName" => "Amirta Mega",
                 "user_lastName" => "Prastiwi",
                 "user_username" => "amirta.mega",
@@ -91,7 +91,7 @@ class UserSeeder extends Seeder
                 "updated_at" => Carbon::now(),
             ],
             [
-                "user_id" => Str::random(9),
+                "user_id" => "rndmUser05",
                 "user_firstName" => "Hesti",
                 "user_lastName" => "Rahmawati",
                 "user_username" => "hesti.rahmawati",

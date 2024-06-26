@@ -69,7 +69,6 @@ class FileController extends Controller
     public function show(Request $request, string|int $id)
     {
         $file = $this->model->where("file_id", $id);
-        // dd($file);
         if (!$file->exists()) {
             return response()->json([
                 'status' => false,
