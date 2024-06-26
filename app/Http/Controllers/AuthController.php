@@ -62,4 +62,13 @@ class AuthController extends Controller
             ], Response::HTTP_UNAUTHORIZED);
         }
     }
+
+    public function logout(Request $request)
+    { 
+        $user = Auth::user()->token();
+        $user->revoke();
+        return response()->json([
+            'message' => 'Successfully logged out'
+        ]);
+    }
 }

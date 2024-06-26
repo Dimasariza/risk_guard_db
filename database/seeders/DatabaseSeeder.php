@@ -28,14 +28,14 @@ class DatabaseSeeder extends Seeder
             GeneralDataSeeder::class,
             UserSeeder::class,
             DamageMechanismSeeder::class,
-            POFRBIThinningsSeeder::class,
-            POFRBIExCorsSeeder::class,
-            POFRBIAlkalinesSeeder::class,
-            POFRBIValuesSeeder::class,
-            POFPlanThinningsSeeder::class,
-            POFPlanExCorsSeeder::class,
-            POFPlanAlkalinesSeeder::class,
-            POFPlanValuesSeeder::class
+            // POFRBIThinningsSeeder::class,
+            // POFRBIExCorsSeeder::class,
+            // POFRBIAlkalinesSeeder::class,
+            // POFRBIValuesSeeder::class,
+            // POFPlanThinningsSeeder::class,
+            // POFPlanExCorsSeeder::class,
+            // POFPlanAlkalinesSeeder::class,
+            // POFPlanValuesSeeder::class
         ]);
     }
 }
