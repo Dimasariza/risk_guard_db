@@ -71,7 +71,6 @@ class UpdateDamageMechanismRequest extends FormRequest
             "dm_piping_mechanical" => ["required", "boolean"],
             "dm_piping_mechanical_A" => ["required", "boolean"],
             "dm_piping_mechanical_B" => ["required", "boolean"],
-            "dm_compId" => ["required", "string"],
         ];
     }
 }

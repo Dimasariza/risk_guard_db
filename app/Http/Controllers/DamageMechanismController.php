@@ -13,7 +13,7 @@ class DamageMechanismController extends Controller
 {
     public function __construct(
         protected damage_mechanism $model,
-        protected $model_id = "dm_id"
+        protected $model_id = "dm_componentId"
     ) {
     }
     //
@@ -62,12 +62,17 @@ class DamageMechanismController extends Controller
      */
     public function show(string|int $id)
     {
-        $data = $this->model::where($this->model_id, $id)->first();
-        if ($data) {
+        $data = $this->model::where($this->model_id, $id);
+        if (!$data->exists()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Damage Mechanism data not found.'
+            ], 404);
+        } else if ($data) {
             return response()->json([
                 "status" => true,
                 "message" => "Damage Mechanism showed successfully",
-                "data" => $data
+                "data" => $data->first()
             ]);
         }
     }

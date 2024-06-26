@@ -11,6 +11,14 @@ use App\Http\Requests\GeneralData\CreateGeneralDataRequest;
 use App\Models\Component;
 use App\Models\damage_mechanism;
 use App\Models\GeneralData;
+use App\Models\pof_plan_alkaline;
+use App\Models\pof_plan_ex_cor;
+use App\Models\pof_plan_thinning;
+use App\Models\pof_plan_value;
+use App\Models\pof_rbi_alkaline;
+use App\Models\pof_rbi_ex_cor;
+use App\Models\pof_rbi_thinning;
+use App\Models\pof_rbi_value;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
@@ -53,30 +61,85 @@ class ComponentController extends Controller
     public function store(CreateComponentRequest $request)
     {
 
+        DB::beginTransaction();
         try {
-            DB::beginTransaction();
             $dto = InsertComponentsDTO::fromRequest($request);
             $component = $this->model->create($dto->build());
+
+            $general_data = new GeneralData();
+            $general_data->gData_componentId = $component->comp_id;
+            $general_data->gData_id = Str::random(9);
+            $general_data->save();
 
             $damage_mechanism = new damage_mechanism();
             $damage_mechanism->dm_componentId = $component->comp_id;
             $damage_mechanism->dm_id = Str::random(9);
-            $status = $damage_mechanism->save();
-            DB::commit();
-        } catch (\Exception $e) {
-            DB::rollback();
-        }
+            $damage_mechanism->save();
 
-        if ($component) {
+            $plan_thinning = new pof_plan_thinning();
+            $plan_thinning->planThinning_componentId = $component->comp_id;
+            $plan_thinning->planThinning_id = Str::random(9);
+            $plan_thinning->save();
+
+            $plan_ex_cor = new pof_plan_ex_cor();
+            $plan_ex_cor->planExCor_componentId = $component->comp_id;
+            $plan_ex_cor->planExCor_id = Str::random(9);
+            $plan_ex_cor->save();
+
+            $plan_alkaline = new pof_plan_alkaline();
+            $plan_alkaline->planAlkaline_componentId = $component->comp_id;
+            $plan_alkaline->planAlkaline_id = Str::random(9);
+            $plan_alkaline->save();
+
+            $plan_value = new pof_plan_value();
+            $plan_value->planValue_componentId = $component->comp_id;
+            $plan_value->planValue_id = Str::random(9);
+            $plan_value->save();
+
+            $rbi_thinning = new pof_rbi_thinning();
+            $rbi_thinning->rbiThinning_componentId = $component->comp_id;
+            $rbi_thinning->rbiThinning_id = Str::random(9);
+            $rbi_thinning->save();
+
+            $rbi_ex_cor = new pof_rbi_ex_cor();
+            $rbi_ex_cor->rbiExCor_componentId = $component->comp_id;
+            $rbi_ex_cor->rbiExCor_id = Str::random(9);
+            $rbi_ex_cor->save();
+
+            $rbi_alkaline = new pof_rbi_alkaline();
+            $rbi_alkaline->rbiAlkaline_componentId = $component->comp_id;
+            $rbi_alkaline->rbiAlkaline_id = Str::random(9);
+            $rbi_alkaline->save();
+
+            $rbi_value = new pof_rbi_value();
+            $rbi_value->rbiValue_componentId = $component->comp_id;
+            $rbi_value->rbiValue_id = Str::random(9);
+            $rbi_value->save();
+
+            DB::commit();
             return response()->json([
                 "status" => true,
                 "message" => "Item created successfully",
                 "data" => [
                     "component" => $component,
-                    "general_data" => $status
+                    "general_data" => $general_data,
+                    "damage_mechanism" => $damage_mechanism,
+                    "plan_thinning" => $plan_thinning,
+                    "plan_ex_cor" => $plan_ex_cor,
+                    "plan_alkaline" => $plan_alkaline,
+                    "plan_value" => $plan_value,
+                    "rbi_thinning" => $rbi_thinning,
+                    "rbi_ex_cor" => $rbi_ex_cor,
+                    "rbi_alkaline" => $rbi_alkaline,
+                    "rbi_value" => $rbi_value
                 ]
             ], Response::HTTP_CREATED);
-        };
+        } catch (\Exception $e) {
+            DB::rollback();
+            return response()->json([
+                "message" => $e
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**
