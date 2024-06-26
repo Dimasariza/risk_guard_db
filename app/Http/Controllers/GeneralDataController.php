@@ -7,15 +7,13 @@ use App\DTO\GeneralData\UpdateGeneralDataDTO;
 use App\Http\Requests\GeneralData\CreateGeneralDataRequest;
 use App\Http\Requests\GeneralData\UpdateGeneralDataRequest;
 use App\Models\GeneralData;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Str;
 
 class GeneralDataController extends Controller
 {
     public function __construct(
         protected GeneralData $model,
-        protected $model_id = "gData_id"
+        protected $model_id = "gData_componentId"
     ) {
     }
     //
@@ -52,7 +50,7 @@ class GeneralDataController extends Controller
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "Item created successfully",
+                "message" => "General Data created successfully",
                 "data" => $result
             ], Response::HTTP_CREATED);
         };
@@ -63,20 +61,20 @@ class GeneralDataController extends Controller
      */
     public function show(string|int $id)
     {
-        $data = $this->model::where("gData_componentId", $id)->first();
+        $data = $this->model::where("gData_componentId", $id);
 
-        if ($data) {
+        if ($data->exists()) {
             return response()->json([
                 "status" => true,
                 "message" => "General Data showed successfully",
-                "data" => $data
+                "data" => $data->first()
             ], Response::HTTP_OK);
         } else {
             return response()->json([
                 "status" => true,
                 "message" => "General Data not found",
                 "data" => null
-            ], Response::HTTP_OK);
+            ], Response::HTTP_NO_CONTENT);
         }
     }
 
@@ -94,14 +92,22 @@ class GeneralDataController extends Controller
     public function update(UpdateGeneralDataRequest $request, string|int $id)
     {
         $dto = UpdateGeneralDataDTO::fromRequest($request);
-        $result = $this->model->where($this->model_id, $id)->first();
+        $result = $this->model->where($this->model_id, $id);
+        if(!$result->exists()) {
+            return response()->json([
+                "status" => false,
+                "message" => "General data not found",
+            ], Response::HTTP_NOT_FOUND);
+        }
+
+        $result = $result->first();
         $result->update($dto->build());
         $result->refresh();
 
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "Item updated successfully",
+                "message" => "General data updated successfully",
                 "data" => $result
             ], Response::HTTP_OK);
         };

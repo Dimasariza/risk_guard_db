@@ -66,14 +66,15 @@ class DamageMechanismController extends Controller
         if (!$data->exists()) {
             return response()->json([
                 'status' => false,
-                'message' => 'Damage Mechanism data not found.'
-            ], 404);
+                'message' => 'Damage Mechanism data not found.',
+                "data" => null
+            ], Response::HTTP_NO_CONTENT);
         } else if ($data) {
             return response()->json([
                 "status" => true,
                 "message" => "Damage Mechanism showed successfully",
                 "data" => $data->first()
-            ]);
+            ], Response::HTTP_OK);
         }
     }
 
