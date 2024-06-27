@@ -18,6 +18,7 @@ use App\Http\Controllers\PofRbiThinningController;
 use App\Http\Controllers\PofRbiValueController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/user', function (Request $request) {
@@ -38,6 +39,11 @@ Route::get('/linkstorage', function () {
 });
 
 Route::group(['prefix' => 'v1'], function () {
+    Route::post('/logout', function(){
+        $logout = Auth::logout();
+        dd($logout);
+    });
+
     Route::get('test', function () {
         return response()->json([
             "message" => "test api success",

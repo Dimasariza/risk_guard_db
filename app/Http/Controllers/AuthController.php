@@ -6,6 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -47,7 +48,7 @@ class AuthController extends Controller
         if (Auth::attempt(['user_username' => $request->user_username, 'password' => $request->password])) {
             $user = Auth::user();
 
-            $success['token'] =  $user->createToken('MyApp')->plainTextToken;
+            $success['token'] =  $user->createToken('MyApp', ['*'])->plainTextToken;
             $success['user'] =  $user;
 
             return response()->json([
@@ -65,8 +66,17 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     { 
-        $user = Auth::user()->token();
-        $user->revoke();
+        // auth()->user()->token()->delete();
+        // Auth::user()->AauthAcessToken()->delete();
+        // Session::flush();
+        
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
+
+    return response()->json('Successfully logged out');
+    
+        // $logout = $request->user()->currentAccessToken()->delete();
         return response()->json([
             'message' => 'Successfully logged out'
         ]);

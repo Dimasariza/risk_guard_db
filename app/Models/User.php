@@ -14,6 +14,10 @@ class User extends Authenticatable
 
     public $timestamps = true;
 
+    public function AauthAcessToken(){
+        return $this->hasMany('\App\OauthAccessToken');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

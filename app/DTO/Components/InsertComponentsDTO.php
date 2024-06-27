@@ -12,7 +12,7 @@ class InsertComponentsDTO
         public readonly string $comp_tagOfComponent,
         public readonly string $comp_nameOfComponent,
         public readonly string $comp_componentType,
-        public readonly string $comp_equipmentId,
+        public readonly ?string $comp_equipmentId = null,
         public readonly string $comp_userId,
     ) {
     }
