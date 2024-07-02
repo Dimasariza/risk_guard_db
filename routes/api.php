@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AssetsByUserController;
 use App\Http\Controllers\AssetSummaryController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ComponentController;
@@ -64,10 +65,15 @@ Route::group(['prefix' => 'v1'], function () {
         Route::apiResource('value', PofPlanValueController::class);
     });
 
-    Route::apiResource('general_data', GeneralDataController::class);
     Route::apiResource('components', ComponentController::class);
     Route::apiResource('equipments', EquipmentController::class);
     Route::apiResource('items', ItemController::class);
+
+    Route::post('componentByUser', [AssetsByUserController::class, 'component']);
+    Route::post('equipmentByUser', [AssetsByUserController::class, 'equipment']);
+    Route::post('itemByUser', [AssetsByUserController::class, 'item']);
+
+    Route::apiResource('general_data', GeneralDataController::class);
     Route::apiResource('asset_summary', AssetSummaryController::class);
     Route::apiResource('damage_mechanism', DamageMechanismController::class);
     Route::apiResource('file', FileController::class);

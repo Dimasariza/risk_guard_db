@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("comp_nameOfComponent");
             $table->string("comp_componentType");
             $table->string("comp_equipmentId")->nullable();
-            $table->string("comp_userId")->default("1");
+            $table->string("comp_userId");
             $table->id();
             $table->timestamps();
         });

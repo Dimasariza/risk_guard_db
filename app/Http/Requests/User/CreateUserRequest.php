@@ -32,6 +32,7 @@ class CreateUserRequest extends FormRequest
             "user_status" => ["required"],
             "user_email" => [],
             "user_picture" => [],
+            "user_role" => [],
             "user_emailVerifiedAt" => [],
             "password" => ["required"],
             "remember_token" => [],

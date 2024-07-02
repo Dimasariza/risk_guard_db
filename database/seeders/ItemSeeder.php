@@ -20,6 +20,7 @@ class ItemSeeder extends Seeder
                 "item_id" => "rndItem01",
                 "item_tagOfItem" => "MV Maratha Surabaya",
                 "item_nameOfItem" => "MV Maratha",
+                "item_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ],
@@ -27,6 +28,7 @@ class ItemSeeder extends Seeder
                 "item_id" => "rndItem02",
                 "item_tagOfItem" => "MV Bung Tomo Jakarta",
                 "item_nameOfItem" => "MV Bung Tomo",
+                "item_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ]

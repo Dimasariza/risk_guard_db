@@ -19,6 +19,7 @@ use App\Models\pof_rbi_alkaline;
 use App\Models\pof_rbi_ex_cor;
 use App\Models\pof_rbi_thinning;
 use App\Models\pof_rbi_value;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
@@ -30,7 +31,7 @@ class ComponentController extends Controller
 
     public function __construct(
         protected Component $model,
-        protected $model_id = "comp_id"
+        protected $model_id = "comp_id",
     ) {
     }
     //
@@ -39,7 +40,8 @@ class ComponentController extends Controller
      */
     public function index()
     {
-        $data = Component::all();
+        // dd($request);
+        $data = $this->model::all();
         return response()->json([
             "status" => true,
             "message" => "Data ready",
@@ -145,14 +147,15 @@ class ComponentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(int|string $id)
+    public function show(string | int $id)
     {
+        // dd($request);
         $data = $this->model::where($this->model_id, $id);
         if ($data) {
             return response()->json([
                 "status" => true,
                 "message" => "Data ready",
-                "data" => $data
+                "data" => $data->first()
             ], Response::HTTP_OK);
         }
     }
@@ -200,4 +203,5 @@ class ComponentController extends Controller
             ], Response::HTTP_OK);
         };
     }
+
 }

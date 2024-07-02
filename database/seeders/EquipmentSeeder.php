@@ -22,6 +22,7 @@ class EquipmentSeeder extends Seeder
                 "eq_nameOfEquipment" => "Main Engine 1",
                 "eq_equipmentType" => "FWKO Separator",
                 "eq_itemId" => "rndItem01",
+                "eq_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ],
@@ -31,6 +32,7 @@ class EquipmentSeeder extends Seeder
                 "eq_nameOfEquipment" => "Main Engine 2",
                 "eq_equipmentType" => "FWKO Separator",
                 "eq_itemId" => "rndItem02",
+                "eq_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ]

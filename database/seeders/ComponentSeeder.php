@@ -24,6 +24,7 @@ class ComponentSeeder extends Seeder
                 "comp_nameOfComponent" => "Caterpillar Oil Filter Machine",
                 "comp_componentType" => "Filter",
                 "comp_equipmentId" => "rndEq01",
+                "comp_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ],
@@ -33,6 +34,7 @@ class ComponentSeeder extends Seeder
                 "comp_nameOfComponent" => "Mitsubishi Air Filter",
                 "comp_componentType" => "Filter",
                 "comp_equipmentId" => "rndEq01",
+                "comp_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ]
