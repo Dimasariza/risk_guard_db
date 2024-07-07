@@ -61,14 +61,20 @@ class PofRbiThinningController extends Controller
      */
     public function show(string|int $id)
     {
-        $data = $this->model::where($this->model_id, $id)->first();
+        $data = $this->model::where($this->model_id, $id);
 
-        if ($data) {
+        if ($data->exists()) {
             return response()->json([
                 "status" => true,
                 "message" => "POF RBI thinning showed successfully",
-                "data" => $data
+                "data" => $data->first()
             ], Response::HTTP_OK);
+        } else {
+            return response()->json([
+                "status" => false,
+                "message" => "No Content",
+                "data" => null
+            ], Response::HTTP_NO_CONTENT);
         }
     }
 

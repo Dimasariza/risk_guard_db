@@ -31,6 +31,8 @@ return new class extends Migration
             $table->integer("gData_vesselVolumeKG")->nullable()->default(null);
             $table->string("gData_support")->nullable()->default(null);
             $table->double("gData_jointEfficiency")->nullable()->default(null);
+            $table->double("gData_yieldStrength")->nullable()->default(null);
+            $table->double("gData_tensileStrength")->nullable()->default(null);
             $table->double("gData_corrosionAllowanceMM")->nullable()->default(null);
             $table->double("gData_corrosionAllowanceInch")->nullable()->default(null);
             $table->integer("gData_yearBuilt")->nullable()->default(null);
@@ -48,12 +50,19 @@ return new class extends Migration
             $table->double("gData_shellMinimumThicknessInch")->nullable()->default(null);
             $table->double("gData_shellCorrosionRateMM")->nullable()->default(null);
             $table->double("gData_shellCorrosionRateInch")->nullable()->default(null);
+            $table->double("gData_shellTreqInch")->nullable()->default(null);
+            $table->double("gData_shellTreqMM")->nullable()->default(null);
+            $table->double("gData_shellMAWP")->nullable()->default(null);
 
             $table->string("gData_headCode")->nullable()->default(null);
             $table->double("gData_headMinimumThicknessMM")->nullable()->default(null);
             $table->double("gData_headMinimumThicknessInch")->nullable()->default(null);
             $table->double("gData_headCorrosionRateMM")->nullable()->default(null);
             $table->double("gData_headCorrosionRateInch")->nullable()->default(null);
+            $table->double("gData_headTreqInch")->nullable()->default(null);
+            $table->double("gData_headTreqMM")->nullable()->default(null);
+            $table->double("gData_headMAWP")->nullable()->default(null);
+
             $table->id();
             $table->timestamps();
         });

@@ -40,6 +40,8 @@ class UpdateGeneralDataRequest extends FormRequest
             "gData_vesselVolumeKG" => ['nullable', 'integer'],
             "gData_support" => ['nullable', 'string'],
             /*regex*/"gData_jointEfficiency" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
+            /*regex*/"gData_yieldStrength" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
+            /*regex*/"gData_tensileStrength" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
             /*regex*/"gData_corrosionAllowanceMM" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
             /*regex*/"gData_corrosionAllowanceInch" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
             "gData_yearBuilt" => ['nullable', 'integer'],
@@ -57,12 +59,18 @@ class UpdateGeneralDataRequest extends FormRequest
             /*regex*/"gData_shellMinimumThicknessInch" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
             /*regex*/"gData_shellCorrosionRateMM" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
             /*regex*/"gData_shellCorrosionRateInch" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
+            /*regex*/"gData_shellTreqInch" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
+            /*regex*/"gData_shellTreqMM" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
+            /*regex*/"gData_shellMAWP" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
 
             "gData_headCode" => ['nullable', 'string', 'max:255'],
             /*regex*/"gData_headMinimumThicknessMM" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
             /*regex*/"gData_headMinimumThicknessInch" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
             /*regex*/"gData_headCorrosionRateMM" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
             /*regex*/"gData_headCorrosionRateInch" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
+            /*regex*/"gData_headTreqInch" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
+            /*regex*/"gData_headTreqMM" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
+            /*regex*/"gData_headMAWP" => ['nullable', 'regex:/^\d+(\.\d{1,5})?$/'],
         ];
     }
 
@@ -90,6 +98,8 @@ class UpdateGeneralDataRequest extends FormRequest
             'gData_support.integer' => 'Support must be a integer type',
 
             'gData_jointEfficiency.regex' => 'Joint efficiency must be a float type',
+            'gData_yieldStrength.regex' => 'Joint efficiency must be a float type',
+            'gData_tensileStrength.regex' => 'Joint efficiency must be a float type',
             'gData_corrosionAllowanceMM.regex' => 'Corrosion allowance mm must be a float type',
             'gData_corrosionAllowanceInch.regex' => 'Corrosion allowance inch must be a float type',
 
@@ -97,24 +107,30 @@ class UpdateGeneralDataRequest extends FormRequest
             'gData_material.string' => 'Material must be a string type',
             'gData_lastInspection.date' => 'Last inspection must be a date type',
 
-            'gData_outerDiameterMM' => 'Outer diameter mm must be a float type',
-            'gData_outerDiameterInch' => 'Outer diameter inch must be a float type',
-            'gData_allowableStressPsig' => 'Allowable sterss psig must be a float type',
-            'gData_allowableStressBar' => 'Allowable stress Bar must be a float type',
-            'gData_allowableStressKpa' => 'Allowable stress Kpa must be a float type',
-            'gData_efficiency' => 'Efficiency must be a float type',
+            'gData_outerDiameterMM.regex' => 'Outer diameter mm must be a float type',
+            'gData_outerDiameterInch.regex' => 'Outer diameter inch must be a float type',
+            'gData_allowableStressPsig.regex' => 'Allowable sterss psig must be a float type',
+            'gData_allowableStressBar.regex' => 'Allowable stress Bar must be a float type',
+            'gData_allowableStressKpa.regex' => 'Allowable stress Kpa must be a float type',
+            'gData_efficiency.regex' => 'Efficiency must be a float type',
 
-            'gData_shellCode' => 'Shell Code must be a string type',
-            'gData_shellMinimumThicknessMM' => 'Shell minimum thickness mm must be a float type',
-            'gData_shellMinimumThicknessInch' => 'Shell minimum thickness inch must be a float type',
-            'gData_shellCorrosionRateMM' => 'Shell corrosion rate mm must be a float type',
-            'gData_shellCorrosionRateInch' => 'Shell corrosion rate Inch must be a float type',
+            'gData_shellCode.string' => 'Shell Code must be a string type',
+            'gData_shellMinimumThicknessMM.regex' => 'Shell minimum thickness mm must be a float type',
+            'gData_shellMinimumThicknessInch.regex' => 'Shell minimum thickness inch must be a float type',
+            'gData_shellCorrosionRateMM.regex' => 'Shell corrosion rate mm must be a float type',
+            'gData_shellCorrosionRateInch.regex' => 'Shell corrosion rate Inch must be a float type',
+            'gData_shellTreqInch.regex' => 'Shell corrosion rate Inch must be a float type',
+            'gData_shellTreqMM.regex' => 'Shell corrosion rate Inch must be a float type',
+            'gData_shellMAWP.regex' => 'Shell corrosion rate Inch must be a float type',
 
-            'gData_headCode' => 'Head Code must be a string type',
-            'gData_headMinimumThicknessMM' => 'Head minimum thickness mm must be a float type',
-            'gData_headMinimumThicknessInch' => 'Head minimum thickness inch must be a float type',
-            'gData_headCorrosionRateMM' => 'Head corrosion rate mm must be a float type',
-            'gData_headCorrosionRateInch' => 'Head corrosion rate Inch must be a float type',
+            'gData_headCode.string' => 'Head Code must be a string type',
+            'gData_headMinimumThicknessMM.regex' => 'Head minimum thickness mm must be a float type',
+            'gData_headMinimumThicknessInch.regex' => 'Head minimum thickness inch must be a float type',
+            'gData_headCorrosionRateMM.regex' => 'Head corrosion rate mm must be a float type',
+            'gData_headCorrosionRateInch.regex' => 'Head corrosion rate Inch must be a float type',
+            'gData_headTreqInch.regex' => 'Head corrosion rate Inch must be a float type',
+            'gData_headTreqMM.regex' => 'Head corrosion rate Inch must be a float type',
+            'gData_headMAWP.regex' => 'Head corrosion rate Inch must be a float type',
         ];
     }
 }

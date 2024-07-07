@@ -25,6 +25,8 @@ class InsertGeneralDataDTO
         public readonly ?string $gData_vesselVolumeKG = null,
         public readonly ?string $gData_support = null,
         public readonly ?string $gData_jointEfficiency = null,
+        public readonly ?string $gData_yieldStrength = null,
+        public readonly ?string $gData_tensileStrength = null,
         public readonly ?string $gData_corrosionAllowanceMM = null,
         public readonly ?string $gData_corrosionAllowanceInch = null,
         public readonly ?string $gData_yearBuilt = null,
@@ -41,11 +43,17 @@ class InsertGeneralDataDTO
         public readonly ?string $gData_shellMinimumThicknessInch = null,
         public readonly ?string $gData_shellCorrosionRateMM = null,
         public readonly ?string $gData_shellCorrosionRateInch = null,
+        public readonly ?string $gData_shellTreqInch = null,
+        public readonly ?string $gData_shellTreqMM = null,
+        public readonly ?string $gData_shellMAWP = null,
         public readonly ?string $gData_headCode = null,
         public readonly ?string $gData_headMinimumThicknessMM = null,
         public readonly ?string $gData_headMinimumThicknessInch = null,
         public readonly ?string $gData_headCorrosionRateMM = null,
         public readonly ?string $gData_headCorrosionRateInch = null,
+        public readonly ?string $gData_headTreqInch = null,
+        public readonly ?string $gData_headTreqMM = null,
+        public readonly ?string $gData_headMAWP = null,
     ) {
     }
 
@@ -120,6 +128,8 @@ class InsertGeneralDataDTO
             "gData_vesselVolumeKG" => $this->gData_vesselVolumeKG,
             "gData_support" => $this->gData_support,
             "gData_jointEfficiency" => $this->gData_jointEfficiency,
+            "gData_yieldStrength" => $this->gData_yieldStrength,
+            "gData_tensileStrength" => $this->gData_tensileStrength,
             "gData_corrosionAllowanceMM" => $this->gData_corrosionAllowanceMM,
             "gData_corrosionAllowanceInch" => $this->gData_corrosionAllowanceInch,
             "gData_yearBuilt" => $this->gData_yearBuilt,
@@ -136,11 +146,17 @@ class InsertGeneralDataDTO
             "gData_shellMinimumThicknessInch" => $this->gData_shellMinimumThicknessInch,
             "gData_shellCorrosionRateMM" => $this->gData_shellCorrosionRateMM,
             "gData_shellCorrosionRateInch" => $this->gData_shellCorrosionRateInch,
+            "gData_shellTreqInch" => $this->gData_shellTreqInch,
+            "gData_shellTreqMM" => $this->gData_shellTreqMM,
+            "gData_shellMAWP" => $this->gData_shellMAWP,
             "gData_headCode" => $this->gData_headCode,
             "gData_headMinimumThicknessMM" => $this->gData_headMinimumThicknessMM,
             "gData_headMinimumThicknessInch" => $this->gData_headMinimumThicknessInch,
             "gData_headCorrosionRateMM" => $this->gData_headCorrosionRateMM,
             "gData_headCorrosionRateInch" => $this->gData_headCorrosionRateInch,
+            "gData_headTreqInch" => $this->gData_headTreqInch,
+            "gData_headTreqMM" => $this->gData_headTreqMM,
+            "gData_headMAWP" => $this->gData_headMAWP,
         ];
     }
 }
