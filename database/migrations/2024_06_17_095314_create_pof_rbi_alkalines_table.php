@@ -14,13 +14,11 @@ return new class extends Migration
         Schema::create('pof_rbi_alkalines', function (Blueprint $table) {
             $table->string("rbiAlkaline_id", 30)->unique();
             $table->string("rbiAlkaline_componentId");
-            $table->boolean("rbiAlkaline_shellSusceptibility")->nullable()->default(false);
-            $table->boolean("rbiAlkaline_headSusceptibility")->nullable()->default(false);
-            $table->integer("rbiAlkaline_shellSeverityId")->nullable();
-            $table->integer("rbiAlkaline_headSeverityId")->nullable();
-            $table->integer("rbiAlkaline_sheelSection")->nullable();
-            $table->integer("rbiAlkaline_headSection")->nullable();
-            $table->double("rbiAlkaline_ageTimeInService")->nullable();
+            $table->double("rbiAlkaline_ph")->nullable();
+            $table->double("rbiAlkaline_co3Consentration")->nullable();
+            $table->double("rbiAlkaline_dfacscc")->nullable();
+            $table->boolean("rbiAlkaline_shellPwht")->nullable();
+            $table->boolean("rbiAlkaline_headPwht")->nullable();
             $table->id();
             $table->timestamps();
         });

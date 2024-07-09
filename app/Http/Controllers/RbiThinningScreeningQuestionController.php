@@ -2,32 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\DTO\RBIExCor\InsertRBIExCorDTO;
-use App\DTO\RBIExCor\UpdateRBIExCorDTO;
-use App\Http\Requests\RBIExCor\CreateRBIExCorRequest;
-use App\Http\Requests\RBIExCor\UpdateRBIExCorRequest;
-use App\Models\pof_plan_thinning;
-use App\Models\pof_rbi_ex_cor;
+use App\DTO\RBIThinningScreeningQuestion\InsertRBISQDTO;
+use App\DTO\RBIThinningScreeningQuestion\UpdateRBISQDTO;
+use App\Models\rbi_thinning_screening_question;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\RBIThinningScreeningQuestion\CreateRBISQRequest;
+use App\Http\Requests\RBIThinningScreeningQuestion\UpdateRBISQRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class PofRbiExCorController extends Controller
+class RbiThinningScreeningQuestionController extends Controller
 {
     public function __construct(
-        protected pof_rbi_ex_cor $model,
-        protected $model_id = "rbiExCor_componentId"
+        protected rbi_thinning_screening_question $model,
+        protected $model_id = "rbiSQ_componentId"
     ) {
     }
+    //
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $data = $this->model::all();
-
         return response()->json([
             "status" => true,
-            "message" => "POF RBI External Corrosion got successfully",
+            "message" => "Data ready",
             "data" => $data
         ], Response::HTTP_OK);
     }
@@ -43,16 +43,16 @@ class PofRbiExCorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateRBIExCorRequest $request)
+    public function store(CreateRBISQRequest $request)
     {
-        $dto = InsertRBIExCorDTO::fromRequest($request);
+        $dto = InsertRBISQDTO::fromRequest($request);
 
         $result = $this->model->create($dto->build());
 
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "POF RBI External Corrosion created successfully",
+                "message" => "Damage Mechanism created successfully",
                 "data" => $result
             ], Response::HTTP_CREATED);
         };
@@ -63,13 +63,18 @@ class PofRbiExCorController extends Controller
      */
     public function show(string|int $id)
     {
-        $data = $this->model::where($this->model_id, $id)->first();
-
-        if ($data) {
+        $data = $this->model::where($this->model_id, $id);
+        if (!$data->exists()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'RBI Thinning Screening Question not found.',
+                "data" => null
+            ], Response::HTTP_NO_CONTENT);
+        } else if ($data) {
             return response()->json([
                 "status" => true,
-                "message" => "POF RBI External Corrosion showed successfully",
-                "data" => $data
+                "message" => "RBI Thinning Screening Question showed successfully",
+                "data" => $data->first()
             ], Response::HTTP_OK);
         }
     }
@@ -77,7 +82,7 @@ class PofRbiExCorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(pof_plan_thinning $pof_plan_thinning)
+    public function edit(rbi_thinning_screening_question $assetSummary)
     {
         //
     }
@@ -85,9 +90,9 @@ class PofRbiExCorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRBIExCorRequest $request, string|int $id)
+    public function update(UpdateRBISQRequest $request, string|int $id)
     {
-        $dto = UpdateRBIExCorDTO::fromRequest($request);
+        $dto = UpdateRBISQDTO::fromRequest($request);
         $result = $this->model->where($this->model_id, $id)->first();
         $result->update($dto->build());
         $result->refresh();
@@ -95,7 +100,7 @@ class PofRbiExCorController extends Controller
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "POF RBI External Corrosion updated successfully",
+                "message" => "RBI Thinning Screening Question updated successfully",
                 "data" => $result
             ], Response::HTTP_OK);
         };
@@ -112,7 +117,7 @@ class PofRbiExCorController extends Controller
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "POF RBI External Corrosion deleted successfully",
+                "message" => "RBI Thinning Screening Question deleted successfully",
                 "data" => $result
             ], Response::HTTP_OK);
         };

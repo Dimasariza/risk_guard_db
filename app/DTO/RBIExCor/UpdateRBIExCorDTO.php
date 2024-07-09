@@ -7,24 +7,30 @@ use App\Http\Requests\RBIExCor\UpdateRBIExCorRequest;
 class UpdateRBIExCorDTO
 {
     public function __construct(
-        public readonly string $item_tagOfItem,
-        public readonly string $item_nameOfItem,
+        public readonly ?string $rbiExCor_equationDesign = null,
+        public readonly ?string $rbiExCor_interface = null,
+        public readonly ?string $rbiExCor_tMinMM = null,
+        public readonly ?string $rbiExCor_tMinInch = null,
     ) {
     }
 
     public static function fromRequest(UpdateRBIExCorRequest $request): self
     {
         return new self(
-            item_tagOfItem: $request->validated('item_tagOfItem'),
-            item_nameOfItem: $request->validated('item_nameOfItem')
+            rbiExCor_equationDesign: $request->validated("rbiExCor_equationDesign"),
+            rbiExCor_interface: $request->validated("rbiExCor_interface"),
+            rbiExCor_tMinMM: $request->validated("rbiExCor_tMinMM"),
+            rbiExCor_tMinInch: $request->validated("rbiExCor_tMinInch"),
         );
     }
 
     public function build(): array
     {
         $arr = [
-            'item_tagOfItem' => $this->item_tagOfItem,
-            'item_nameOfItem' => $this->item_nameOfItem,
+            "rbiExCor_equationDesign" => $this->rbiExCor_equationDesign,
+            "rbiExCor_interface" => $this->rbiExCor_interface,
+            "rbiExCor_tMinMM" => $this->rbiExCor_tMinMM,
+            "rbiExCor_tMinInch" => $this->rbiExCor_tMinInch,
         ];
 
         // if (!is_null($this->year)) {

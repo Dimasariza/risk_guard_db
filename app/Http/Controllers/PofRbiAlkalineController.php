@@ -13,7 +13,7 @@ class PofRbiAlkalineController extends Controller
 {
     public function __construct(
         protected pof_rbi_alkaline $model,
-        protected $model_id = "rbiAlkaline_id"
+        protected $model_id = "rbiAlkaline_componentId"
     ) {
     }
     /**

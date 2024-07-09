@@ -9,13 +9,11 @@ class InsertRBIAlkalineDTO
 {
     public function __construct(
         public readonly string $rbiAlkaline_componentId,
-        public readonly ?string $rbiAlkaline_shellSusceptibility = null,
-        public readonly ?string $rbiAlkaline_headSusceptibility = null,
-        public readonly ?string $rbiAlkaline_shellSeverityId = null,
-        public readonly ?string $rbiAlkaline_headSeverityId = null,
-        public readonly ?string $rbiAlkaline_ageTimeInService = null,
-        public readonly ?string $rbiAlkaline_sheelSection = null,
-        public readonly ?string $rbiAlkaline_headSection = null,
+        public readonly ?string $rbiAlkaline_ph = null,
+        public readonly ?string $rbiAlkaline_co3Consentration = null,
+        public readonly ?string $rbiAlkaline_dfacscc = null,
+        public readonly ?string $rbiAlkaline_shellPwht = null,
+        public readonly ?string $rbiAlkaline_headPwht = null,
     ) {
     }
 
@@ -37,13 +35,12 @@ class InsertRBIAlkalineDTO
     {
         return [
             'rbiAlkaline_id' => Str::random(9),
-            "rbiAlkaline_shellSusceptibility" => $this->rbiAlkaline_shellSusceptibility,
-            "rbiAlkaline_headSusceptibility" => $this->rbiAlkaline_headSusceptibility,
-            "rbiAlkaline_shellSeverityId" => $this->rbiAlkaline_shellSeverityId,
-            "rbiAlkaline_headSeverityId" => $this->rbiAlkaline_headSeverityId,
-            "rbiAlkaline_ageTimeInService" => $this->rbiAlkaline_ageTimeInService,
-            "rbiAlkaline_sheelSection" => $this->rbiAlkaline_sheelSection,
-            "rbiAlkaline_headSection" => $this->rbiAlkaline_headSection,
+            "rbiAlkaline_componentId" => $this->rbiAlkaline_componentId,
+            "rbiAlkaline_ph" => $this->rbiAlkaline_ph,
+            "rbiAlkaline_co3Consentration" => $this->rbiAlkaline_co3Consentration,
+            "rbiAlkaline_dfacscc" => $this->rbiAlkaline_dfacscc,
+            "rbiAlkaline_shellPwht" => $this->rbiAlkaline_shellPwht,
+            "rbiAlkaline_headPwht" => $this->rbiAlkaline_headPwht,
         ];
     }
 }

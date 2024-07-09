@@ -11,7 +11,7 @@ class UpdateRBIExCorRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,10 @@ class UpdateRBIExCorRequest extends FormRequest
     {
         return [
             //
+            "rbiExCor_equationDesign" => [],
+            "rbiExCor_interface" => [],
+            "rbiExCor_tMinMM" => [],
+            "rbiExCor_tMinInch" => [],
         ];
     }
 }

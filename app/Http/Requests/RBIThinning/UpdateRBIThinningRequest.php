@@ -22,22 +22,20 @@ class UpdateRBIThinningRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "rbiThinning_startDate" => ["required", "date"],
-            "rbiThinning_thickness" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_corrosionAllowance" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_designTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_designPressure" => ["required", "integer"],
-            "rbiThinning_operatingTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_operatingPressure" => ["required", "integer"],
-            "rbiThinning_designCode" => ["required", "string"],
-            "rbiThinning_equipmentType" => ["required", "string"],
-            "rbiThinning_componentType" => ["required", "string"],
-            "rbiThinning_geometryData" => ["required", "string"],
-            "rbiThinning_materialSpecification" => ["required", "string"],
-            "rbiThinning_yieldStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_tensileStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_weldJointEfficiency" => ["required", "integer"],
-            "rbiThinning_heatTracing" => ["required", "boolean"],
+            "rbiThinning_corrosionRate" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_rbiDate" => ["date"],
+            "rbiThinning_tMinInch" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_tMinMM" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_nInspA" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_nInspB" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_nInspC" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_nInspD" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_injectionPoints" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_deadLegs" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_weldingConstruction" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_astMaintenance" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_settlement" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_onlineMonitoring" => ["regex:/^\d+(\.\d{1,9})?$/"],
         ];
     }
 

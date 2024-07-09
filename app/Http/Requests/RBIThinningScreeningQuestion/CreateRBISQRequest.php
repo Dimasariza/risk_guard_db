@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\RBIAlkaline;
+namespace App\Http\Requests\RBIThinningScreeningQuestion;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateRBIAlkalineRequest extends FormRequest
+class CreateRBISQRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,12 @@ class CreateRBIAlkalineRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "rbiAlkaline_componentId" => ["required", "string", "max:255"],
+            "rbiSQ_componentId" => ["required", "string", "max:255"],
         ];
+    }
+
+    public function messages()
+    {
+        return [];
     }
 }

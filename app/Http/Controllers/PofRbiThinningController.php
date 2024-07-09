@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\DTO\Items\UpdateRBIThinningDTO;
 use App\DTO\RBIThinning\InsertRBIThinningDTO;
+use App\DTO\RBIThinning\UpdateRBIThinningDTO;
 use App\Http\Requests\RBIThinning\CreateRBIThinningRequest;
 use App\Http\Requests\RBIThinning\UpdateRBIThinningRequest;
 use App\Models\pof_rbi_thinning;
@@ -13,7 +13,7 @@ class PofRbiThinningController extends Controller
 {
     public function __construct(
         protected pof_rbi_thinning $model,
-        protected $model_id = "rbiThinning_id"
+        protected $model_id = "rbiThinning_componentId"
     ) {
     }
     /**

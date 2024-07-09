@@ -17,7 +17,9 @@ use App\Http\Controllers\PofRbiAlkalineController;
 use App\Http\Controllers\PofRbiExCorController;
 use App\Http\Controllers\PofRbiThinningController;
 use App\Http\Controllers\PofRbiValueController;
+use App\Http\Controllers\RbiThinningScreeningQuestionController;
 use App\Http\Controllers\UserController;
+use App\Models\rbi_thinning_screening_question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -56,6 +58,7 @@ Route::group(['prefix' => 'v1'], function () {
         Route::apiResource('ex_cor', PofRbiExCorController::class);
         Route::apiResource('alkaline', PofRbiAlkalineController::class);
         Route::apiResource('value', PofRbiValueController::class);
+        Route::apiResource('screeningQuestion', RbiThinningScreeningQuestionController::class);
     });
 
     Route::group(['prefix' => 'pof_plan'], function () {
