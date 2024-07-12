@@ -4,6 +4,7 @@ use App\Http\Controllers\AssetsByUserController;
 use App\Http\Controllers\AssetSummaryController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ComponentController;
+use App\Http\Controllers\CorrosionLoopController;
 use App\Http\Controllers\DamageMechanismController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\FileController;
@@ -71,6 +72,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::apiResource('components', ComponentController::class);
     Route::apiResource('equipments', EquipmentController::class);
     Route::apiResource('items', ItemController::class);
+    Route::apiResource('corrosion_loop', CorrosionLoopController::class);
 
     Route::post('componentByUser', [AssetsByUserController::class, 'component']);
     Route::post('equipmentByUser', [AssetsByUserController::class, 'equipment']);

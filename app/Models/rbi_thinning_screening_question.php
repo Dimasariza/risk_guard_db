@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class rbi_thinning_screening_question extends Model
 {
     use HasFactory;
-    
+        
     protected $fillable = [
         "rbiSQ_componentId",
         "rbiSQ_HCLContain",
