@@ -15,7 +15,7 @@ class CorrosionLoopController extends Controller
 {
     public function __construct(
         protected CorrosionLoop $model,
-        protected $model_id = "cl_id"
+        protected $model_id = "cl_userId"
     )
     {
         

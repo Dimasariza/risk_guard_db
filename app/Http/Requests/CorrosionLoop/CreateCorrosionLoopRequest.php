@@ -24,6 +24,7 @@ class CreateCorrosionLoopRequest extends FormRequest
         return [
             'cl_name' => ['string', 'max:255'],
             'cl_fileId' => ['string', 'max:255'],
+            'cl_userId' => ['string', 'max:255'],
         ];
     }
 }

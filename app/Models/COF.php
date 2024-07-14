@@ -5,13 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CorrosionLoop extends Model
+class COF extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        "cl_name",
-        "cl_fileId",
-        "cl_id",
-        "cl_userId"
-    ];
 }

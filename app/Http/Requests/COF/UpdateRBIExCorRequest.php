@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\RBIValue;
+namespace App\Http\Requests\COF;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRBIValueRequest extends FormRequest
+class UpdateCOFRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,11 @@ class UpdateRBIValueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "rbiValue_FMS" => ["required"],
-            "rbiValue_failureFrequency" => ["required"],
+            //
+            "rbiExCor_equationDesign" => [],
+            "rbiExCor_interface" => [],
+            "rbiExCor_tMinMM" => [],
+            "rbiExCor_tMinInch" => [],
         ];
     }
 }

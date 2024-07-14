@@ -28,6 +28,8 @@ class CreateRBISQRequest extends FormRequest
 
     public function messages()
     {
-        return [];
+        return [
+            
+        ];
     }
 }

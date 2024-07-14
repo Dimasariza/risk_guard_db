@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rbi_thinning_screening_questions', function (Blueprint $table) {
+            $table->string("rbiSQ_id")->unique();
             $table->string("rbiSQ_componentId")->unique();
             $table->boolean("rbiSQ_HCLContain")->nullable()->default(null);
             $table->boolean("rbiSQ_HCLIsFreeWater")->nullable()->default(null);

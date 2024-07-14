@@ -15,6 +15,8 @@ return new class extends Migration
             $table->string("rbiAlkaline_id", 30)->unique();
             $table->string("rbiAlkaline_componentId");
             $table->double("rbiAlkaline_ph")->nullable();
+            $table->string("rbiAlkaline_inspection")->nullable();
+            $table->double("rbiAlkaline_numOfInspection")->nullable();
             $table->double("rbiAlkaline_co3Consentration")->nullable();
             $table->double("rbiAlkaline_dfacscc")->nullable();
             $table->boolean("rbiAlkaline_shellPwht")->nullable();

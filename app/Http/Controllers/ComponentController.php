@@ -19,6 +19,7 @@ use App\Models\pof_rbi_alkaline;
 use App\Models\pof_rbi_ex_cor;
 use App\Models\pof_rbi_thinning;
 use App\Models\pof_rbi_value;
+use App\Models\rbi_thinning_screening_question;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Response;
@@ -117,6 +118,11 @@ class ComponentController extends Controller
             $rbi_value->rbiValue_componentId = $component->comp_id;
             $rbi_value->rbiValue_id = Str::random(9);
             $rbi_value->save();
+
+            $rbi_sq = new rbi_thinning_screening_question();
+            $rbi_sq->rbiSQ_ComponentId = $component->comp_id;
+            $rbi_sq->rbiSQ_id = Str::random(9);
+            $rbi_sq->save();
 
             DB::commit();
             return response()->json([

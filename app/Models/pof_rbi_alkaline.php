@@ -12,10 +12,12 @@ class pof_rbi_alkaline extends Model
         "rbiAlkaline_id",
         "rbiAlkaline_componentId",
         "rbiAlkaline_ph",
+        "rbiAlkaline_numOfInspection",
         "rbiAlkaline_co3Consentration",
         "rbiAlkaline_dfacscc",
         "rbiAlkaline_shellPwht",
         "rbiAlkaline_headPwht",
+        "rbiAlkaline_inspection"
     ];
 
     protected $casts = [

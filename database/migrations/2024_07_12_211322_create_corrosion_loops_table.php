@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('corrosion_loops', function (Blueprint $table) {
             $table->string("cl_id")->unique();
+            $table->string("cl_userId")->unique();
             $table->string("cl_name");
             $table->string("cl_fileId");
             $table->id();

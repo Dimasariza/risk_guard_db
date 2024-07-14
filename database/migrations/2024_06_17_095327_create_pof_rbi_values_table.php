@@ -14,15 +14,8 @@ return new class extends Migration
         Schema::create('pof_rbi_values', function (Blueprint $table) {
             $table->string("rbiValue_id", 30)->unique();
             $table->string("rbiValue_componentId");
-            $table->double("rbiValue_gffTotal")->nullable();
-            $table->double("rbiValue_shellThinning")->nullable();
-            $table->double("rbiValue_headThinning")->nullable();
-            $table->double("rbiValue_shellExternal")->nullable();
-            $table->double("rbiValue_headExternal")->nullable();
-            $table->double("rbiValue_shellTotal")->nullable();
-            $table->double("rbiValue_headTotal")->nullable();
-            $table->double("rbiValue_shellSection")->nullable();
-            $table->double("rbiValue_headSection")->nullable();
+            $table->double("rbiValue_FMS")->nullable();
+            $table->string("rbiValue_failureFrequency")->nullable();
             $table->id();
             $table->timestamps();
         });

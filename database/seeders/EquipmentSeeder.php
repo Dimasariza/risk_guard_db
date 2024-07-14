@@ -18,8 +18,8 @@ class EquipmentSeeder extends Seeder
         DB::table('equipment')->insert([
             [
                 "eq_id" => "rndEq01",
-                "eq_tagOfEquipment" => "Left Main Engine",
-                "eq_nameOfEquipment" => "Main Engine 1",
+                "eq_tagOfEquipment" => "Midle top oil processing",
+                "eq_nameOfEquipment" => "Oil Processing",
                 "eq_equipmentType" => "FWKO Separator",
                 "eq_itemId" => "rndItem01",
                 "eq_userId" => "rndmUser05",
@@ -28,8 +28,8 @@ class EquipmentSeeder extends Seeder
             ],
             [
                 "eq_id" => "rndEq02",
-                "eq_tagOfEquipment" => "Right Main Engine",
-                "eq_nameOfEquipment" => "Main Engine 2",
+                "eq_tagOfEquipment" => "Midle gas processing",
+                "eq_nameOfEquipment" => "Gas Processing",
                 "eq_equipmentType" => "FWKO Separator",
                 "eq_itemId" => "rndItem02",
                 "eq_userId" => "rndmUser05",

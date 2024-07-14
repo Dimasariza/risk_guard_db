@@ -23,6 +23,13 @@ class UpdateRBIAlkalineRequest extends FormRequest
     {
         return [
             //
+            "rbiAlkaline_ph" => [],
+            "rbiAlkaline_inspection" => [],
+            "rbiAlkaline_numOfInspection" => [],
+            "rbiAlkaline_co3Consentration" => [],
+            "rbiAlkaline_dfacscc" => [],
+            "rbiAlkaline_shellPwht" => [],
+            "rbiAlkaline_headPwht" => [],
         ];
     }
 }

@@ -13,7 +13,7 @@ class PofRbiValueController extends Controller
 {
     public function __construct(
         protected pof_rbi_value $model,
-        protected $model_id = "rbiValue_id"
+        protected $model_id = "rbiValue_componentId"
     ) {
     }
     /**

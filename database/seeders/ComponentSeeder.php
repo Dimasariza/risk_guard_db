@@ -20,9 +20,9 @@ class ComponentSeeder extends Seeder
         DB::table('component')->insert([
             [
                 "comp_id" => "rndComp01",
-                "comp_tagOfComponent" => "Oil Filter",
-                "comp_nameOfComponent" => "Caterpillar Oil Filter Machine",
-                "comp_componentType" => "Filter",
+                "comp_tagOfComponent" => "Pressure Vessel",
+                "comp_nameOfComponent" => "PV JNE MAM 106",
+                "comp_componentType" => "Pressure Vessel",
                 "comp_equipmentId" => "rndEq01",
                 "comp_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
@@ -30,14 +30,34 @@ class ComponentSeeder extends Seeder
             ],
             [
                 "comp_id" => "rndComp02",
-                "comp_tagOfComponent" => "Main Air Filter",
-                "comp_nameOfComponent" => "Mitsubishi Air Filter",
-                "comp_componentType" => "Filter",
+                "comp_tagOfComponent" => "Pressure Vessel Example",
+                "comp_nameOfComponent" => "PRD XHR EXY 11",
+                "comp_componentType" => "Pressure Relief Device",
                 "comp_equipmentId" => "rndEq01",
-                "comp_userId" => "rndmUser05",
+                "comp_userId" => "rndmUser04",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
-            ]
+            ],
+            [
+                "comp_id" => "rndComp03",
+                "comp_tagOfComponent" => "Pressure Vessel Example",
+                "comp_nameOfComponent" => "Tank INK XXZ 001",
+                "comp_componentType" => "Tank",
+                "comp_equipmentId" => "rndEq01",
+                "comp_userId" => "rndmUser03",
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
+            ],
+            [
+                "comp_id" => "rndComp04",
+                "comp_tagOfComponent" => "Pressure Vessel Example",
+                "comp_nameOfComponent" => "Pipe TDE XXY 110",
+                "comp_componentType" => "Pipe",
+                "comp_equipmentId" => "rndEq01",
+                "comp_userId" => "rndmUser03",
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
+            ],
         ]);
     }
 }
