@@ -22,26 +22,19 @@ class UpdatePlanAlkalineRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "planAlkaline_shellSusceptibility" => ["required", "boolean"],
-            "planAlkaline_headSusceptibility" => ["required", "boolean"],
-            "planAlkaline_shellSeverityId" => ["required", "integer"],
-            "planAlkaline_headSeverityId" => ["required", "integer"],
-            "planAlkaline_ageTimeInService" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planAlkaline_sheelSection" => ["required", "integer"],
-            "planAlkaline_headSection" => ["required", "integer"],
+            "planAlkaline_ph" => [],
+            "planAlkaline_inspection" => [],
+            "planAlkaline_numOfInspection" => [],
+            "planAlkaline_co3Consentration" => [],
+            "planAlkaline_dfacscc" => [],
+            "planAlkaline_shellPwht" => [],
+            "planAlkaline_headPwht" => [],
         ];
     }
 
     public function messages()
     {
         return [
-            "planAlkaline_shellSusceptibility" => "Type must be correct",
-            "planAlkaline_headSusceptibility" => "Type must be correct",
-            "planAlkaline_shellSeverityId" => "Type must be correct",
-            "planAlkaline_headSeverityId" => "Type must be correct",
-            "planAlkaline_ageTimeInService.regex" => "Type must be correct",
-            "planAlkaline_sheelSection" => "Type must be correct",
-            "planAlkaline_headSection" => "Type must be correct",
         ];
     }
 }

@@ -14,7 +14,7 @@ class PofPlanAlkalineController extends Controller
 {
     public function __construct(
         protected pof_plan_alkaline $model,
-        protected $model_id = "planAlkaline_id"
+        protected $model_id = "planAlkaline_componentId"
     ) {
     }
     /**

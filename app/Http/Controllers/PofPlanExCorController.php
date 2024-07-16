@@ -14,7 +14,7 @@ class PofPlanExCorController extends Controller
 {
     public function __construct(
         protected pof_plan_ex_cor $model,
-        protected $model_id = "planExCor_id"
+        protected $model_id = "planExCor_componentId"
     ) {
     }
     /**

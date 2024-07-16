@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('pof_plan_alkalines', function (Blueprint $table) {
             $table->string("planAlkaline_id", 30)->unique();
             $table->string("planAlkaline_componentId");
-            $table->boolean("planAlkaline_shellSusceptibility")->nullable()->default(false);
-            $table->boolean("planAlkaline_headSusceptibility")->nullable()->default(false);
-            $table->integer("planAlkaline_shellSeverityId")->nullable();
-            $table->integer("planAlkaline_headSeverityId")->nullable();
-            $table->integer("planAlkaline_sheelSection")->nullable();
-            $table->integer("planAlkaline_headSection")->nullable();
-            $table->double("planAlkaline_ageTimeInService")->nullable();
+            $table->double("planAlkaline_ph")->nullable();
+            $table->string("planAlkaline_inspection")->nullable();
+            $table->double("planAlkaline_numOfInspection")->nullable();
+            $table->double("planAlkaline_co3Consentration")->nullable();
+            $table->double("planAlkaline_dfacscc")->nullable();
+            $table->boolean("planAlkaline_shellPwht")->nullable();
+            $table->boolean("planAlkaline_headPwht")->nullable();
             $table->id();
             $table->timestamps();
         });

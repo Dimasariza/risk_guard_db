@@ -14,15 +14,8 @@ return new class extends Migration
         Schema::create('pof_plan_values', function (Blueprint $table) {
             $table->string("planValue_id", 30)->unique();
             $table->string("planValue_componentId");
-            $table->double("planValue_gffTotal")->nullable();
-            $table->double("planValue_shellThinning")->nullable();
-            $table->double("planValue_headThinning")->nullable();
-            $table->double("planValue_shellExternal")->nullable();
-            $table->double("planValue_headExternal")->nullable();
-            $table->double("planValue_shellTotal")->nullable();
-            $table->double("planValue_headTotal")->nullable();
-            $table->double("planValue_shellSection")->nullable();
-            $table->double("planValue_headSection")->nullable();
+            $table->double("planValue_FMS")->nullable();
+            $table->string("planValue_failureFrequency")->nullable();
             $table->id();
             $table->timestamps();
         });

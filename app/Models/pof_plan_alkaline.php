@@ -10,12 +10,18 @@ class pof_plan_alkaline extends Model
     use HasFactory;
     protected $fillable = [
         "planAlkaline_id",
-        "planAlkaline_shellSusceptibility",
-        "planAlkaline_headSusceptibility",
-        "planAlkaline_shellSeverityId",
-        "planAlkaline_headSeverityId",
-        "planAlkaline_ageTimeInService",
-        "planAlkaline_sheelSection",
-        "planAlkaline_headSection",
+        "planAlkaline_componentId",
+        "planAlkaline_ph",
+        "planAlkaline_numOfInspection",
+        "planAlkaline_co3Consentration",
+        "planAlkaline_dfacscc",
+        "planAlkaline_shellPwht",
+        "planAlkaline_headPwht",
+        "planAlkaline_inspection"
+    ];
+
+    protected $casts = [
+        "planAlkaline_shellPwht" => "boolean",
+        "planAlkaline_headPwht" => "boolean",
     ];
 }

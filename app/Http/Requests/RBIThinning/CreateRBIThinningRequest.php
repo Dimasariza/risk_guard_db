@@ -23,22 +23,6 @@ class CreateRBIThinningRequest extends FormRequest
     {
         return [
             "rbiThinning_componentId" => ["required", "string", "max:255"],
-            // "rbiThinning_startDate" => ["required", "date"],
-            // "rbiThinning_thickness" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            // "rbiThinning_corrosionAllowance" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            // "rbiThinning_designTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            // "rbiThinning_designPressure" => ["required", "integer"],
-            // "rbiThinning_operatingTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            // "rbiThinning_operatingPressure" => ["required", "integer"],
-            // "rbiThinning_designCode" => ["required", "string"],
-            // "rbiThinning_equipmentType" => ["required", "string"],
-            // "rbiThinning_componentType" => ["required", "string"],
-            // "rbiThinning_geometryData" => ["required", "string"],
-            // "rbiThinning_materialSpecification" => ["required", "string"],
-            // "rbiThinning_yieldStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            // "rbiThinning_tensileStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            // "rbiThinning_weldJointEfficiency" => ["required", "integer"],
-            // "rbiThinning_heatTracing" => ["required", "boolean"],
         ];
     }
 
@@ -50,12 +34,6 @@ class CreateRBIThinningRequest extends FormRequest
     public function messages()
     {
         return [
-            // 'rbiThinning_thickness.regex' => 'Thickness must be a float type',
-            // 'rbiThinning_corrosionAllowance.regex' => 'Corrosion Allowance must be a float type',
-            // 'rbiThinning_designTemperature.regex' => 'Design Temperature must be a float type',
-            // 'rbiThinning_operatingTemperature.regex' => 'Operating Temperature must be a float type',
-            // 'rbiThinning_yieldStrength.regex' => 'Yield Strength must be a float type',
-            // 'rbiThinning_tensileStrength.regex' => 'Tensile Strength must be a float type',
         ];
     }
 }

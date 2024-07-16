@@ -22,15 +22,8 @@ class UpdatePlanValueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "planValue_gffTotal" => ["required"],
-            "planValue_shellThinning" => ["required"],
-            "planValue_headThinning" => ["required"],
-            "planValue_shellExternal" => ["required"],
-            "planValue_headExternal" => ["required"],
-            "planValue_shellTotal" => ["required"],
-            "planValue_headTotal" => ["required"],
-            "planValue_shellSection" => ["required"],
-            "planValue_headSection" => ["required"],
+            "planValue_FMS" => ["required"],
+            "planValue_failureFrequency" => ["required"],
         ];
     }
 }

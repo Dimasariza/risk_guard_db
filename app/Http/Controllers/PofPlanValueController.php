@@ -13,7 +13,7 @@ class PofPlanValueController extends Controller
 {
     public function __construct(
         protected pof_plan_value $model,
-        protected $model_id = "planValue_id"
+        protected $model_id = "planValue_componentId"
     ) {
     }
     /**

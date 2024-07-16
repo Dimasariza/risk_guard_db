@@ -7,13 +7,14 @@ use App\DTO\PlanThinning\UpdatePlanThinningDTO;
 use App\Http\Requests\PlanThinning\CreatePlanThinningRequest;
 use App\Http\Requests\PlanThinning\UpdatePlanThinningRequest;
 use App\Models\pof_plan_thinning;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class PofPlanThinningController extends Controller
 {
     public function __construct(
         protected pof_plan_thinning $model,
-        protected $model_id = "planThinning_id"
+        protected $model_id = "planThinning_componentId"
     ) {
     }
     /**
@@ -43,6 +44,7 @@ class PofPlanThinningController extends Controller
      */
     public function store(CreatePlanThinningRequest $request)
     {
+        // dd($request);
         $dto = InsertPlanThinningDTO::fromRequest($request);
 
         $result = $this->model->create($dto->build());

@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             FileSeeder::class,
             CorrosionLoopSeeder::class,
             DamageMechanismSeeder::class,
+            COFSeeder::class,
             POFRBIThinningsSeeder::class,
             POFRBIExCorsSeeder::class,
             POFRBIAlkalinesSeeder::class,

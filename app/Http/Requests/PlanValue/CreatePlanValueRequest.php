@@ -23,15 +23,6 @@ class CreatePlanValueRequest extends FormRequest
     {
         return [
             "planValue_componentId" => ["required", "string", "max:255"],
-            // "planValue_gffTotal" => ["required"],
-            // "planValue_shellThinning" => ["required"],
-            // "planValue_headThinning" => ["required"],
-            // "planValue_shellExternal" => ["required"],
-            // "planValue_headExternal" => ["required"],
-            // "planValue_shellTotal" => ["required"],
-            // "planValue_headTotal" => ["required"],
-            // "planValue_shellSection" => ["required"],
-            // "planValue_headSection" => ["required"],
         ];
     }
 }

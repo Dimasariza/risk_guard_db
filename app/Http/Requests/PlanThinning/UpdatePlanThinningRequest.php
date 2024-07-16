@@ -22,22 +22,20 @@ class UpdatePlanThinningRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "planThinning_startDate" => ["required", "date"],
-            "planThinning_thickness" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_corrosionAllowance" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_designTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_designPressure" => ["required", "integer"],
-            "planThinning_operatingTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_operatingPressure" => ["required", "integer"],
-            "planThinning_designCode" => ["required", "string"],
-            "planThinning_equipmentType" => ["required", "string"],
-            "planThinning_componentType" => ["required", "string"],
-            "planThinning_geometryData" => ["required", "string"],
-            "planThinning_materialSpecification" => ["required", "string"],
-            "planThinning_yieldStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_tensileStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_weldJointEfficiency" => ["required", "integer"],
-            "planThinning_heatTracing" => ["required", "boolean"],
+            "planThinning_corrosionRate" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_planDate" => ["date"],
+            "planThinning_tMinInch" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_tMinMM" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_nInspA" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_nInspB" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_nInspC" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_nInspD" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_injectionPoints" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_deadLegs" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_weldingConstruction" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_astMaintenance" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_settlement" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_onlineMonitoring" => ["regex:/^\d+(\.\d{1,9})?$/"],
         ];
     }
 

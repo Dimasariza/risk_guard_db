@@ -24,6 +24,7 @@ class InsertRBIValueDTO
     public function build(): array
     {
         return [
+            'rbiValue_id' => Str::random(9),
             "rbiValue_componentId" => $this->rbiValue_componentId,
             "rbiValue_FMS" => $this->rbiValue_FMS,
             "rbiValue_failureFrequency" => $this->rbiValue_failureFrequency,

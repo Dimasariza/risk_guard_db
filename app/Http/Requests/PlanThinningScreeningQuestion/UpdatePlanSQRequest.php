@@ -4,7 +4,7 @@ namespace App\Http\Requests\PlanThinning;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePlanThinningRequest extends FormRequest
+class UpdatePlanThinningSQRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -13,8 +13,8 @@ class UpdateRBIAlkalineDTO
         public readonly ?string $rbiAlkaline_co3Consentration = null,
         public readonly ?string $rbiAlkaline_dfacscc = null,
         public readonly ?string $rbiAlkaline_shellPwht = null,
-        public readonly ?string $rbiAlkaline_headPwht = null,
-        public readonly ?string $rbiAlkaline_numOfInspection = null,
+        public readonly ?bool $rbiAlkaline_headPwht = null,
+        public readonly ?bool $rbiAlkaline_numOfInspection = null,
     ) {
     }
 

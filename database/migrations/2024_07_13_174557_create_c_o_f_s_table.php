@@ -18,15 +18,16 @@ return new class extends Migration
             $table->double("cof_massInventory")->nullable();
             $table->string("cof_representativeFluid")->nullable();
             $table->string("cof_phaseOfFluid")->nullable();
-            $table->double("cof_releaseHoleSizeD1")->default(6.4);
-            $table->double("cof_releaseHoleSizeD2")->default(25);
-            $table->double("cof_releaseHoleSizeD3")->default(102);
-            $table->double("cof_releaseHoleSizeD4")->default(16);
+            $table->double("cof_releaseHoleSizeD1")->nullable()->default(6.4);
+            $table->double("cof_releaseHoleSizeD2")->nullable()->default(25);
+            $table->double("cof_releaseHoleSizeD3")->nullable()->default(102);
+            $table->double("cof_releaseHoleSizeD4")->nullable()->default(16);
             $table->string("cof_liquidInventories")->nullable();
             $table->string("cof_detectionSystem")->nullable();
             $table->string("cof_isolationSystem")->nullable();
             $table->string("cof_flamableCons")->nullable();
             $table->string("cof_damageCons")->nullable();
+            $table->string("cof_adjToFlamable")->nullable();
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ namespace App\Http\Requests\COF;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateCOFRequest extends FormRequest
+class UpdateCOFRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,6 @@ class CreateCOFRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
-            "cof_componentId" => ["required", "string", "max:255"],
             "cof_massComponent" => [],
             "cof_massInventory" => [],
             "cof_representativeFluid" => [],
