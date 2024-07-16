@@ -22,8 +22,8 @@ class UpdatePlanValueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "planValue_FMS" => ["required"],
-            "planValue_failureFrequency" => ["required"],
+            "planValue_FMS" => [""],
+            "planValue_failureFrequency" => [""],
         ];
     }
 }

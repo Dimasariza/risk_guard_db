@@ -22,8 +22,8 @@ class UpdateRBIValueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "rbiValue_FMS" => ["required"],
-            "rbiValue_failureFrequency" => ["required"],
+            "rbiValue_FMS" => [""],
+            "rbiValue_failureFrequency" => [""],
         ];
     }
 }

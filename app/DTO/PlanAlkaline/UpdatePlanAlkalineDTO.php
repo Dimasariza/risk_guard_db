@@ -13,8 +13,8 @@ class UpdatePlanAlkalineDTO
         public readonly ?string $planAlkaline_co3Consentration = null,
         public readonly ?string $planAlkaline_dfacscc = null,
         public readonly ?string $planAlkaline_shellPwht = null,
-        public readonly ?bool $planAlkaline_headPwht = null,
-        public readonly ?bool $planAlkaline_numOfInspection = null,
+        public readonly ?bool $planAlkaline_headPwht,
+        public readonly ?bool $planAlkaline_numOfInspection,
     ) {
     }
 
