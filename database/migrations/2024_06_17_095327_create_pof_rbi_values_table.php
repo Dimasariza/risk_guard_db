@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pof_rbi_values', function (Blueprint $table) {
             $table->string("rbiValue_id", 30)->unique();
-            $table->string("rbiValue_componentId");
+            $table->string("rbiValue_componentId")->unique();
             $table->double("rbiValue_FMS")->nullable();
             $table->string("rbiValue_failureFrequency")->nullable();
             $table->id();

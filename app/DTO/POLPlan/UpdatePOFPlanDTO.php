@@ -1,11 +1,10 @@
 <?php
 
-namespace App\DTO\RBIAlkaline;
+namespace App\DTO\POLPlan;
 
-use App\Http\Requests\PlanThinning\UpdatePlanThinningRequest;
-use App\Http\Requests\RBIAlkaline\UpdateRBIAlkalineRequest;
+use App\Http\Requests\POLPlan\UpdatePOLPlanRequest;
 
-class UpdateRBIAlkalineDTO
+class UpdatePOLPlanDTO
 {
     public function __construct(
         public readonly ?string $rbiAlkaline_ph = null,
@@ -18,7 +17,7 @@ class UpdateRBIAlkalineDTO
     ) {
     }
 
-    public static function fromRequest(UpdateRBIAlkalineRequest $request): self
+    public static function fromRequest(UpdatePOLPlanRequest $request): self
     {
         return new self(
             rbiAlkaline_ph: $request->validated("rbiAlkaline_ph"),

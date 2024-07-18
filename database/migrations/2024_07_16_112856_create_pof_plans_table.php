@@ -11,11 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pof_plan_values', function (Blueprint $table) {
-            $table->string("planValue_id", 30)->unique();
-            $table->string("planValue_componentId")->unique();
-            $table->double("planValue_FMS")->nullable();
-            $table->string("planValue_failureFrequency")->nullable();
+        Schema::create('pof_plans', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pof_plan_values');
+        Schema::dropIfExists('pof_plans');
     }
 };

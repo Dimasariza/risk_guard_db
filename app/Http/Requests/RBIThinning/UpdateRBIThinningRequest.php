@@ -22,20 +22,20 @@ class UpdateRBIThinningRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "rbiThinning_corrosionRate" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_rbiDate" => ["date"],
-            "rbiThinning_tMinInch" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_tMinMM" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_nInspA" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_nInspB" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_nInspC" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_nInspD" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_injectionPoints" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_deadLegs" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_weldingConstruction" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_astMaintenance" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_settlement" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "rbiThinning_onlineMonitoring" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "rbiThinning_corrosionRate" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_rbiDate" => ["nullable", "date"],
+            "rbiThinning_tMinInch" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_tMinMM" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_nInspA" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_nInspB" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_nInspC" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_nInspD" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_injectionPoints" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_deadLegs" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_weldingConstruction" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_astMaintenance" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_settlement" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "rbiThinning_onlineMonitoring" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
         ];
     }
 

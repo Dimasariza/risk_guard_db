@@ -22,13 +22,13 @@ class UpdatePlanAlkalineRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "planAlkaline_ph" => [],
-            "planAlkaline_inspection" => [],
-            "planAlkaline_numOfInspection" => [],
-            "planAlkaline_co3Consentration" => [],
-            "planAlkaline_dfacscc" => [],
-            "planAlkaline_shellPwht" => [],
-            "planAlkaline_headPwht" => [],
+            "planAlkaline_ph" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
+            "planAlkaline_inspection" => ["nullable", 'string'],
+            "planAlkaline_numOfInspection" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
+            "planAlkaline_co3Consentration" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
+            "planAlkaline_dfacscc" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
+            "planAlkaline_shellPwht" => ["nullable", "boolean"],
+            "planAlkaline_headPwht" => ["nullable", "boolean"],
         ];
     }
 

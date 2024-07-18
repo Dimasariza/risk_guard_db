@@ -23,13 +23,13 @@ class UpdateRBIAlkalineRequest extends FormRequest
     {
         return [
             //
-            "rbiAlkaline_ph" => [],
-            "rbiAlkaline_inspection" => [],
-            "rbiAlkaline_numOfInspection" => [],
-            "rbiAlkaline_co3Consentration" => [],
-            "rbiAlkaline_dfacscc" => [],
-            "rbiAlkaline_shellPwht" => [],
-            "rbiAlkaline_headPwht" => [],
+            "rbiAlkaline_ph" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
+            "rbiAlkaline_inspection" => ["nullable", 'string'],
+            "rbiAlkaline_numOfInspection" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
+            "rbiAlkaline_co3Consentration" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
+            "rbiAlkaline_dfacscc" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
+            "rbiAlkaline_shellPwht" => ["nullable", "boolean"],
+            "rbiAlkaline_headPwht" => ["nullable", "boolean"],
         ];
     }
 }

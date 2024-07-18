@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\DTO\RBIThinning\InsertRBIThinningDTO;
-use App\DTO\RBIThinning\UpdateRBIThinningDTO;
-use App\Http\Requests\RBIThinning\CreateRBIThinningRequest;
-use App\Http\Requests\RBIThinning\UpdateRBIThinningRequest;
-use App\Models\pof_rbi_thinning;
+use App\DTO\POFPlan\InsertPOFPlanDTO;
+use App\Models\pof_plan;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\POFPlan\CreatePOFPlanRequest;
+use App\Http\Requests\POFPlan\UpdatePOFPlanRequest;
 use Illuminate\Http\Response;
 
-class PofRbiThinningController extends Controller
+class PofPlanController extends Controller
 {
     public function __construct(
-        protected pof_rbi_thinning $model,
-        protected $model_id = "rbiThinning_componentId"
+        protected pof_plan $model,
+        protected $model_id = "planAlkaline_componentId"
     ) {
     }
     /**
@@ -25,7 +25,7 @@ class PofRbiThinningController extends Controller
 
         return response()->json([
             "status" => true,
-            "message" => "POF RBI thinning got successfully",
+            "message" => "POF Plan Alkaline got successfully",
             "data" => $data
         ], Response::HTTP_OK);
     }
@@ -41,16 +41,16 @@ class PofRbiThinningController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateRBIThinningRequest $request)
+    public function store(CreatePOFPlanRequest $request)
     {
-        $dto = InsertRBIThinningDTO::fromRequest($request);
+        $dto = InsertPOFPlanDTO::fromRequest($request);
 
         $result = $this->model->create($dto->build());
 
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "POF RBI thinning created successfully",
+                "message" => "POF Plan Alkaline created successfully",
                 "data" => $result
             ], Response::HTTP_CREATED);
         };
@@ -63,25 +63,24 @@ class PofRbiThinningController extends Controller
     {
         $data = $this->model::where($this->model_id, $id);
 
-        if ($data->exists()) {
-            return response()->json([
-                "status" => true,
-                "message" => "POF RBI thinning showed successfully",
-                "data" => $data->first()
-            ], Response::HTTP_OK);
-        } else {
+        if (!$data->exists()) {
             return response()->json([
                 "status" => false,
-                "message" => "No Content",
-                "data" => null
-            ], Response::HTTP_NO_CONTENT);
+                "message" => "POF Plan Alkaline not found",
+            ], Response::HTTP_NOT_FOUND);
+        } else {
+            return response()->json([
+                "status" => true,
+                "message" => "POF Plan Alkaline showed successfully",
+                "data" => $data->first()
+            ], Response::HTTP_OK);
         }
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(pof_rbi_thinning $pof_rbi_thinning)
+    public function edit( $pof_plan_thinning)
     {
         //
     }
@@ -89,10 +88,9 @@ class PofRbiThinningController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRBIThinningRequest $request, string|int $id)
+    public function update(UpdatePOFPlanRequest $request, string|int $id)
     {
-        $dto = UpdateRBIThinningDTO::fromRequest($request);
-        // dd($id);
+        $dto = UpdatePOFPlanRequest::fromRequest($request);
         $result = $this->model->where($this->model_id, $id)->first();
         $result->update($dto->build());
         $result->refresh();
@@ -100,7 +98,7 @@ class PofRbiThinningController extends Controller
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "POF RBI thinning updated successfully",
+                "message" => "POF Plan Alkaline updated successfully",
                 "data" => $result
             ], Response::HTTP_OK);
         };
@@ -117,7 +115,7 @@ class PofRbiThinningController extends Controller
         if ($result) {
             return response()->json([
                 "status" => true,
-                "message" => "POF RBI thinning deleted successfully",
+                "message" => "POF Plan Alkaline deleted successfully",
                 "data" => $result
             ], Response::HTTP_OK);
         };

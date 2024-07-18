@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\PlanValue;
+namespace App\Http\Requests\POFPlan;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePlanValueRequest extends FormRequest
+class CreatePOFPlanRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,7 @@ class UpdatePlanValueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "planValue_FMS" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
-            "planValue_failureFrequency" => ["nullable", "string"],
+            "plan_componentId" => ["required", "string", "max:255"],
         ];
     }
 }

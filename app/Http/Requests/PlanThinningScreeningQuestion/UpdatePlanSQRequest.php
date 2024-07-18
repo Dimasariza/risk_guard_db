@@ -22,22 +22,22 @@ class UpdatePlanThinningSQRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "planThinning_startDate" => ["required", "date"],
-            "planThinning_thickness" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_corrosionAllowance" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_designTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_designPressure" => ["required", "integer"],
-            "planThinning_operatingTemperature" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_operatingPressure" => ["required", "integer"],
-            "planThinning_designCode" => ["required", "string"],
-            "planThinning_equipmentType" => ["required", "string"],
-            "planThinning_componentType" => ["required", "string"],
-            "planThinning_geometryData" => ["required", "string"],
-            "planThinning_materialSpecification" => ["required", "string"],
-            "planThinning_yieldStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_tensileStrength" => ["required", "regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_weldJointEfficiency" => ["required", "integer"],
-            "planThinning_heatTracing" => ["required", "boolean"],
+            "planThinning_startDate" => ["nullable", "date"],
+            "planThinning_thickness" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_corrosionAllowance" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_designTemperature" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_designPressure" => ["nullable", "integer"],
+            "planThinning_operatingTemperature" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_operatingPressure" => ["nullable", "integer"],
+            "planThinning_designCode" => ["nullable", "string"],
+            "planThinning_equipmentType" => ["nullable", "string"],
+            "planThinning_componentType" => ["nullable", "string"],
+            "planThinning_geometryData" => ["nullable", "string"],
+            "planThinning_materialSpecification" => ["nullable", "string"],
+            "planThinning_yieldStrength" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_tensileStrength" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_weldJointEfficiency" => ["nullable", "integer"],
+            "planThinning_heatTracing" => ["nullable", "boolean"],
         ];
     }
 

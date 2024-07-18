@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pof_plan_thinnings', function (Blueprint $table) {
             $table->string("planThinning_id", 30)->unique();
-            $table->string("planThinning_componentId");
+            $table->string("planThinning_componentId")->unique();
             $table->double("planThinning_corrosionRate")->nullable();
             $table->date("planThinning_planDate")->nullable();
             $table->double("planThinning_tMinInch")->nullable();

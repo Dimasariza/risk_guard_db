@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pof_plan_ex_cors', function (Blueprint $table) {
             $table->string("planExCor_id", 30)->unique();
-            $table->string("planExCor_componentId");
+            $table->string("planExCor_componentId")->unique();
             $table->double("planExCor_equationDesign")->nullable()->default(null);
             $table->double("planExCor_interface")->nullable()->default(null);
             $table->double("planExCor_tMinMM")->nullable()->default(null);

@@ -22,20 +22,20 @@ class UpdatePlanThinningRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "planThinning_corrosionRate" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_planDate" => ["date"],
-            "planThinning_tMinInch" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_tMinMM" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_nInspA" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_nInspB" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_nInspC" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_nInspD" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_injectionPoints" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_deadLegs" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_weldingConstruction" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_astMaintenance" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_settlement" => ["regex:/^\d+(\.\d{1,9})?$/"],
-            "planThinning_onlineMonitoring" => ["regex:/^\d+(\.\d{1,9})?$/"],
+            "planThinning_corrosionRate" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_planDate" => ["nullable", "date"],
+            "planThinning_tMinInch" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_tMinMM" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_nInspA" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_nInspB" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_nInspC" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_nInspD" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_injectionPoints" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_deadLegs" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_weldingConstruction" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_astMaintenance" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_settlement" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planThinning_onlineMonitoring" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
         ];
     }
 

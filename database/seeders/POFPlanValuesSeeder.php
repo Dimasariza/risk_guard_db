@@ -21,7 +21,7 @@ class POFPlanValuesSeeder extends Seeder
                 "rbiValue_componentId" => "rndComp01",
                 "rbiValue_FMS" => 1,
                 "rbiValue_failureFrequency" => "genericFailure1020",
-                "created_at" => Carbon::now(),
+                "created_at" => Carbon  ::now(),
                 "updated_at" => Carbon::now(),
             ],
         ]);

@@ -22,8 +22,8 @@ class UpdateRBIValueRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "rbiValue_FMS" => [""],
-            "rbiValue_failureFrequency" => [""],
+            "rbiValue_FMS" => ["nullable", 'regex:/^-?\d+(\.\d{1,10})?$/'],
+            "rbiValue_failureFrequency" => ["nullable", "string"],
         ];
     }
 }

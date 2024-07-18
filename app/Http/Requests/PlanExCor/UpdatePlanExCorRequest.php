@@ -22,10 +22,10 @@ class UpdatePlanExCorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "planExCor_equationDesign" => [],
-            "planExCor_interface" => [],
-            "planExCor_tMinMM" => [],
-            "planExCor_tMinInch" => [],
+            "planExCor_equationDesign" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planExCor_interface" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planExCor_tMinMM" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
+            "planExCor_tMinInch" => ["nullable", "regex:/^-?\d+(\.\d{1,10})?$/"],
         ];
     }
 
