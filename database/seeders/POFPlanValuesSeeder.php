@@ -24,6 +24,30 @@ class POFPlanValuesSeeder extends Seeder
                 "created_at" => Carbon  ::now(),
                 "updated_at" => Carbon::now(),
             ],
+            [
+                "rbiValue_id" => "rndExcor02",
+                "rbiValue_componentId" => "rndComp02",
+                "rbiValue_FMS" => null,
+                "rbiValue_failureFrequency" => null,
+                "created_at" => Carbon  ::now(),
+                "updated_at" => Carbon::now(),
+            ],
+            [
+                "rbiValue_id" => "rndExcor03",
+                "rbiValue_componentId" => "rndComp03",
+                "rbiValue_FMS" => null,
+                "rbiValue_failureFrequency" => null,
+                "created_at" => Carbon  ::now(),
+                "updated_at" => Carbon::now(),
+            ],
+            [
+                "rbiValue_id" => "rndExcor04",
+                "rbiValue_componentId" => "rndComp04",
+                "rbiValue_FMS" => null,
+                "rbiValue_failureFrequency" => null,
+                "created_at" => Carbon  ::now(),
+                "updated_at" => Carbon::now(),
+            ],
         ]);
     }
 }
