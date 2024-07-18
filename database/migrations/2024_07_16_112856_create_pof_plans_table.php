@@ -12,6 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pof_plans', function (Blueprint $table) {
+            $table->string("plan_id")->unique();
+
             $table->id();
             $table->timestamps();
         });

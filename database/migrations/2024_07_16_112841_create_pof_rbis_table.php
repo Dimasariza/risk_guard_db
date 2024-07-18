@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pof_rbis', function (Blueprint $table) {
+            $table->string("rbi_id")->unique();
             $table->string("rbi_componentId")->unique();
             $table->string("rbi_fluidService")->nullable();
             $table->string("rbi_typicalTempF")->nullable();
