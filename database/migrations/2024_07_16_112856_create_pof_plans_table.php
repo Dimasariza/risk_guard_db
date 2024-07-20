@@ -13,6 +13,19 @@ return new class extends Migration
     {
         Schema::create('pof_plans', function (Blueprint $table) {
             $table->string("plan_id")->unique();
+            $table->string("plan_componentId")->unique();
+            $table->string("plan_fluidService")->nullable();
+            $table->double("plan_typicalTempF")->nullable();
+            $table->string("plan_designType")->nullable();
+            $table->string("plan_discharge")->nullable();
+            $table->string("plan_adjusmentFactor")->nullable();
+            $table->string("plan_serviceSeverity")->nullable();
+            $table->string("plan_envAdjusmentFactor")->nullable();
+            $table->string("plan_inspEffectiveness")->nullable();
+            $table->string("plan_confidenceFactor")->nullable();
+            $table->string("plan_eventFreq")->nullable();
+            $table->string("plan_protectedEquipment")->nullable();
+            $table->date("plan_rbiDate")->nullable();
 
             $table->id();
             $table->timestamps();

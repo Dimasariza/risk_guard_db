@@ -21,7 +21,8 @@ class pof_rbi extends Model
         "rbi_envAdjusmentFactor",
         "rbi_inspEffectiveness",
         "rbi_confidenceFactor",
-        "rbi_eventFreq",
+        "rbi_eventFreqFire",
+        "rbi_eventFreqOverFilling",
         "rbi_protectedEquipment",
         "rbi_rbiDate",
     ];

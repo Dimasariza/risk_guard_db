@@ -14,7 +14,7 @@ class PofRbiController extends Controller
 {
     public function __construct(
         protected pof_rbi $model,
-        protected $model_id = "planAlkaline_componentId"
+        protected $model_id = "rbi_componentId"
     ) {
     }
     /**
@@ -63,7 +63,7 @@ class PofRbiController extends Controller
     public function show(string|int $id)
     {
         $data = $this->model::where($this->model_id, $id);
-
+        // dd($data);
         if (!$data->exists()) {
             return response()->json([
                 "status" => false,

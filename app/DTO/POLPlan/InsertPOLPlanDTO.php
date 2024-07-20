@@ -8,41 +8,46 @@ use Illuminate\Support\Str;
 class InsertPOLPlanDTO
 {
     public function __construct(
-        public readonly string $rbiAlkaline_componentId,
-        public readonly ?string $rbiAlkaline_ph = null,
-        public readonly ?string $rbiAlkaline_inspection = null,
-        public readonly ?string $rbiAlkaline_co3Consentration = null,
-        public readonly ?string $rbiAlkaline_dfacscc = null,
-        public readonly ?bool $rbiAlkaline_shellPwht = null,
-        public readonly ?bool $rbiAlkaline_headPwht = null,
+        public readonly string $plan_componentId,
+        public readonly ?string $plan_fluidService = null,
+        public readonly ?string $plan_typicalTempF = null,
+        public readonly ?string $plan_designType = null,
+        public readonly ?string $plan_discharge = null,
+        public readonly ?string $plan_adjusmentFactor = null,
+        public readonly ?string $plan_serviceSeverity = null,
+        public readonly ?string $plan_envAdjusmentFactor = null,
+        public readonly ?string $plan_inspEffectiveness = null,
+        public readonly ?string $plan_confidenceFactor = null,
+        public readonly ?string $plan_eventFreq = null,
+        public readonly ?string $plan_protectedEquipment = null,
+        public readonly ?string $plan_rbiDate = null,
     ) {
     }
 
     public static function fromRequest(CreatePOLPlanRequest $request): self
     {
         return new self(
-            rbiAlkaline_componentId: $request->validated("rbiAlkaline_componentId"),
-            // rbiAlkaline_shellSusceptibility: $request->validated("rbiAlkaline_shellSusceptibility"),
-            // rbiAlkaline_headSusceptibility: $request->validated("rbiAlkaline_headSusceptibility"),
-            // rbiAlkaline_shellSeverityId: $request->validated("rbiAlkaline_shellSeverityId"),
-            // rbiAlkaline_headSeverityId: $request->validated("rbiAlkaline_headSeverityId"),
-            // rbiAlkaline_ageTimeInService: $request->validated("rbiAlkaline_ageTimeInService"),
-            // rbiAlkaline_sheelSection: $request->validated("rbiAlkaline_sheelSection"),
-            // rbiAlkaline_headSection: $request->validated("rbiAlkaline_headSection"),
+            plan_componentId: $request->validated("plan_componentId"),
         );
     }
 
     public function build(): array
     {
         return [
-            'rbiAlkaline_id' => Str::random(9),
-            "rbiAlkaline_componentId" => $this->rbiAlkaline_componentId,
-            "rbiAlkaline_ph" => $this->rbiAlkaline_ph,
-            "rbiAlkaline_inspection" => $this->rbiAlkaline_inspection,
-            "rbiAlkaline_co3Consentration" => $this->rbiAlkaline_co3Consentration,
-            "rbiAlkaline_dfacscc" => $this->rbiAlkaline_dfacscc,
-            "rbiAlkaline_shellPwht" => $this->rbiAlkaline_shellPwht,
-            "rbiAlkaline_headPwht" => $this->rbiAlkaline_headPwht,
+            'plan_id' => Str::random(9),
+            "plan_componentId" => $this->plan_componentId,
+            "plan_fluidService" => $this->plan_fluidService,
+            "plan_typicalTempF" => $this->plan_typicalTempF,
+            "plan_designType" => $this->plan_designType,
+            "plan_discharge" => $this->plan_discharge,
+            "plan_adjusmentFactor" => $this->plan_adjusmentFactor,
+            "plan_serviceSeverity" => $this->plan_serviceSeverity,
+            "plan_envAdjusmentFactor" => $this->plan_envAdjusmentFactor,
+            "plan_inspEffectiveness" => $this->plan_inspEffectiveness,
+            "plan_confidenceFactor" => $this->plan_confidenceFactor,
+            "plan_eventFreq" => $this->plan_eventFreq,
+            "plan_protectedEquipment" => $this->plan_protectedEquipment,
+            "plan_rbiDate" => $this->plan_rbiDate,
         ];
     }
 }

@@ -30,6 +30,13 @@ class FileSeeder extends Seeder
                 "updated_at" => Carbon::now(),
             ],
             [
+                "file_id" => "dimas",
+                "file_name" => "Dimas.png",
+                "file_path" => "/profile/Dimas.png",
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
+            ],
+            [
                 "file_id" => "aar",
                 "file_name" => "AAR.png",
                 "file_path" => "/profile/AAR.png",

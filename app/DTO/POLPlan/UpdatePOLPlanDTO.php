@@ -1,10 +1,10 @@
 <?php
 
-namespace App\DTO\POFPlan;
+namespace App\DTO\POLPlan;
 
-use App\Http\Requests\POFPlan\UpdatePOFPlanRequest;
+use App\Http\Requests\POLPlan\UpdatePOLPlanRequest;
 
-class UpdatePOFPlanDTO
+class UpdatePOLPlanDTO
 {
     public function __construct(
         public readonly ?string $plan_fluidService = null,
@@ -22,7 +22,7 @@ class UpdatePOFPlanDTO
     ) {
     }
 
-    public static function fromRequest(UpdatePOFPlanRequest $request): self
+    public static function fromRequest(UpdatePOLPlanRequest $request): self
     {
         return new self(
             plan_fluidService: $request->validated("plan_fluidService"),

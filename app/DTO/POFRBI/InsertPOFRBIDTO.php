@@ -18,7 +18,8 @@ class InsertPOFRBIDTO
         public readonly ?string $rbi_envAdjusmentFactor = null,
         public readonly ?string $rbi_inspEffectiveness = null,
         public readonly ?string $rbi_confidenceFactor = null,
-        public readonly ?string $rbi_eventFreq = null,
+        public readonly ?string $rbi_eventFreqFire = null,
+        public readonly ?string $rbi_eventFreqOverFilling = null,
         public readonly ?string $rbi_protectedEquipment = null,
         public readonly ?string $rbi_rbiDate = null,
     ) {
@@ -45,7 +46,8 @@ class InsertPOFRBIDTO
             "rbi_envAdjusmentFactor" => $this->rbi_envAdjusmentFactor,
             "rbi_inspEffectiveness" => $this->rbi_inspEffectiveness,
             "rbi_confidenceFactor" => $this->rbi_confidenceFactor,
-            "rbi_eventFreq" => $this->rbi_eventFreq,
+            "rbi_eventFreqFire" => $this->rbi_eventFreqFire,
+            "rbi_eventFreqOverFilling" => $this->rbi_eventFreqOverFilling,
             "rbi_protectedEquipment" => $this->rbi_protectedEquipment,
             "rbi_rbiDate" => $this->rbi_rbiDate,
         ];

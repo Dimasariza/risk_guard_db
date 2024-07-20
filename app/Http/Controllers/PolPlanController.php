@@ -8,14 +8,13 @@ use App\Models\PolPlan;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\POLPlan\CreatePOLPlanRequest;
 use App\Http\Requests\POLPlan\UpdatePOLPlanRequest;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class PolPlanController extends Controller
 {
     public function __construct(
         protected PolPlan $model,
-        protected $model_id = "planAlkaline_componentId"
+        protected $model_id = "plan_componentId"
     ) {
     }
     /**

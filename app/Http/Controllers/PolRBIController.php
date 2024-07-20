@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DTO\POLPlan\InsertPOLPlanDTO;
 use App\DTO\POLPlan\UpdatePOLPlanDTO;
+use App\DTO\POLRBI\InsertPOLRBIDTO;
 use App\Models\PolRBI;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\POLPlan\CreatePOLPlanRequest;
 use App\Http\Requests\POLPlan\UpdatePOLPlanRequest;
+use App\Http\Requests\POLRBI\CreatePOLRBIRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -15,7 +17,7 @@ class PolRBIController extends Controller
 {
     public function __construct(
         protected PolRBI $model,
-        protected $model_id = "planAlkaline_componentId"
+        protected $model_id = "rbi_componentId"
     ) {
     }
     /**
@@ -43,9 +45,10 @@ class PolRBIController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreatePOLPlanRequest $request)
+    public function store(CreatePOLRBIRequest $request)
     {
-        $dto = InsertPOLPlanDTO::fromRequest($request);
+        // dd("Store");
+        $dto = InsertPOLRBIDTO::fromRequest($request);
 
         $result = $this->model->create($dto->build());
 

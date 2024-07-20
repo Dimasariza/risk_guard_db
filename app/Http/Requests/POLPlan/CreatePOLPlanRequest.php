@@ -22,7 +22,7 @@ class CreatePOLPlanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "rbi_componentId" => ["required", "string", "max:255"],
+            "plan_componentId" => ["required", "string", "max:255"],
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DTO\POFPlan\InsertPOFPlanDTO;
+use App\DTO\POFPlan\UpdatePOFPlanDTO;
 use App\Models\pof_plan;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\POFPlan\CreatePOFPlanRequest;
@@ -13,7 +14,7 @@ class PofPlanController extends Controller
 {
     public function __construct(
         protected pof_plan $model,
-        protected $model_id = "planAlkaline_componentId"
+        protected $model_id = "plan_componentId"
     ) {
     }
     /**
@@ -44,7 +45,7 @@ class PofPlanController extends Controller
     public function store(CreatePOFPlanRequest $request)
     {
         $dto = InsertPOFPlanDTO::fromRequest($request);
-
+        
         $result = $this->model->create($dto->build());
 
         if ($result) {
@@ -90,7 +91,7 @@ class PofPlanController extends Controller
      */
     public function update(UpdatePOFPlanRequest $request, string|int $id)
     {
-        $dto = UpdatePOFPlanRequest::fromRequest($request);
+        $dto = UpdatePOFPlanDTO::fromRequest($request);
         $result = $this->model->where($this->model_id, $id)->first();
         $result->update($dto->build());
         $result->refresh();

@@ -32,7 +32,8 @@ class UpdatePOLPlanRequest extends FormRequest
             "rbi_envAdjusmentFactor" => ["nullable"],
             "rbi_inspEffectiveness" => ["nullable"],
             "rbi_confidenceFactor" => ["nullable"],
-            "rbi_eventFreq" => ["nullable"],
+            "rbi_eventFreqFire" => ["nullable"],
+            "rbi_eventFreqOverFilling" => ["nullable"],
             "rbi_protectedEquipment" => ["nullable"],
             "rbi_rbiDate" => ["nullable", "date"],
         ];

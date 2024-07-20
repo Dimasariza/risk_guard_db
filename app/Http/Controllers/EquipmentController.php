@@ -6,6 +6,7 @@ use App\DTO\Equipments\InsertEquipmentsDTO;
 use App\DTO\Equipments\UpdateEquipmentsDTO;
 use App\Http\Requests\Equipments\CreateEquipmentRequest;
 use App\Http\Requests\Equipments\UpdateEquipmentRequest;
+use App\Http\Resources\Equipments\EquipmentCreatedResource;
 use App\Models\Equipment;
 use Illuminate\Http\Response;
 
@@ -23,6 +24,8 @@ class EquipmentController extends Controller
     public function index()
     {
         $data = Equipment::all();
+        $data = EquipmentCreatedResource::collection($data);
+        // dd($data);
         return response()->json([
             "status" => true,
             "message" => "Data ready",

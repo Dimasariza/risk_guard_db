@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string("rbi_envAdjusmentFactor")->nullable();
             $table->string("rbi_inspEffectiveness")->nullable();
             $table->string("rbi_confidenceFactor")->nullable();
-            $table->string("rbi_eventFreq")->nullable();
+            $table->string("rbi_eventFreqFire")->nullable();
+            $table->string("rbi_eventFreqOverFilling")->nullable();
             $table->string("rbi_protectedEquipment")->nullable();
             $table->date("rbi_rbiDate")->nullable();
             $table->id();

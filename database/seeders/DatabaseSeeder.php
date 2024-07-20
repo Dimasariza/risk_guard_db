@@ -35,6 +35,8 @@ class DatabaseSeeder extends Seeder
             POFRBIExCorsSeeder::class,
             POFRBIAlkalinesSeeder::class,
             POFRBIValuesSeeder::class,
+            POFRBISeeder::class,
+            POFPlanSeeder::class,
             // POFPlanThinningsSeeder::class,
             // POFPlanExCorsSeeder::class,
             // POFPlanAlkalinesSeeder::class,

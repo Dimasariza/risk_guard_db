@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Items;
 
+use App\Http\Resources\Equipments\EquipmentCreatedResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -15,9 +16,8 @@ class ItemCreatedResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            "item_idItem" => $this->item_idItem,
-            "item_tagOfItem" => $this->item_tagOfItem,
-            "item_nameOfItem" => $this->item_nameOfItem
+            ...parent::toArray($request),
+            "system" => EquipmentCreatedResource::collection($this->system) 
         ];
     }
 }

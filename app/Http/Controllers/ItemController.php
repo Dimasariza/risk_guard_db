@@ -6,6 +6,7 @@ use App\DTO\Items\InsertItemsDTO;
 use App\Http\Requests\Items\CreateitemRequest;
 use App\Http\Requests\Items\UpdateItemRequest;
 use App\DTO\Items\UpdateItemsDTO;
+use App\Http\Resources\Items\ItemCreatedResource;
 use App\Models\Item;
 use Illuminate\Http\Response;
 
@@ -23,6 +24,7 @@ class ItemController extends Controller
     public function index()
     {
         $data = $this->model::all();
+        $data = ItemCreatedResource::collection($data);
 
         return response()->json([
             "status" => true,
