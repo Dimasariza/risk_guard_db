@@ -21,7 +21,8 @@ class pof_plan extends Model
         "plan_envAdjusmentFactor",
         "plan_inspEffectiveness",
         "plan_confidenceFactor",
-        "plan_eventFreq",
+        "plan_eventFreqFire",
+        "plan_eventFreqOverFilling",
         "plan_protectedEquipment",
         "plan_rbiDate",
     ];

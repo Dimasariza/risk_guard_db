@@ -16,7 +16,8 @@ class UpdatePOLPlanDTO
         public readonly ?string $plan_envAdjusmentFactor = null,
         public readonly ?string $plan_inspEffectiveness = null,
         public readonly ?string $plan_confidenceFactor = null,
-        public readonly ?string $plan_eventFreq = null,
+        public readonly ?string $plan_eventFreqFire = null,
+        public readonly ?string $plan_eventFreqOverFilling = null,
         public readonly ?string $plan_protectedEquipment = null,
         public readonly ?string $plan_rbiDate = null,
     ) {
@@ -34,7 +35,8 @@ class UpdatePOLPlanDTO
             plan_envAdjusmentFactor: $request->validated("plan_envAdjusmentFactor"),
             plan_inspEffectiveness: $request->validated("plan_inspEffectiveness"),
             plan_confidenceFactor: $request->validated("plan_confidenceFactor"),
-            plan_eventFreq: $request->validated("plan_eventFreq"),
+            plan_eventFreqFire: $request->validated("plan_eventFreqFire"),
+            plan_eventFreqOverFilling: $request->validated("plan_eventFreqOverFilling"),
             plan_protectedEquipment: $request->validated("plan_protectedEquipment"),
             plan_rbiDate: $request->validated("plan_rbiDate"),
         );
@@ -52,7 +54,8 @@ class UpdatePOLPlanDTO
             "plan_envAdjusmentFactor" => $this->plan_envAdjusmentFactor,
             "plan_inspEffectiveness" => $this->plan_inspEffectiveness,
             "plan_confidenceFactor" => $this->plan_confidenceFactor,
-            "plan_eventFreq" => $this->plan_eventFreq,
+            "plan_eventFreqFire" => $this->plan_eventFreqFire,
+            "plan_eventFreqOverFilling" => $this->plan_eventFreqOverFilling,
             "plan_protectedEquipment" => $this->plan_protectedEquipment,
             "plan_rbiDate" => $this->plan_rbiDate,
         ];

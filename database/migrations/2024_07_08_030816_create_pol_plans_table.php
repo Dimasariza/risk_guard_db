@@ -23,7 +23,8 @@ return new class extends Migration
             $table->string("plan_envAdjusmentFactor")->nullable();
             $table->string("plan_inspEffectiveness")->nullable();
             $table->string("plan_confidenceFactor")->nullable();
-            $table->string("plan_eventFreq")->nullable();
+            $table->string("plan_eventFreqFire")->nullable();
+            $table->string("plan_eventFreqOverFilling")->nullable();
             $table->string("plan_protectedEquipment")->nullable();
             $table->date("plan_rbiDate")->nullable();
             $table->id();

@@ -18,7 +18,8 @@ class InsertPOFPlanDTO
         public readonly ?string $plan_envAdjusmentFactor = null,
         public readonly ?string $plan_inspEffectiveness = null,
         public readonly ?string $plan_confidenceFactor = null,
-        public readonly ?string $plan_eventFreq = null,
+        public readonly ?string $plan_eventFreqFire = null,
+        public readonly ?string $plan_eventFreqOverFilling = null,
         public readonly ?string $plan_protectedEquipment = null,
         public readonly ?string $plan_rbiDate = null,
     ) {
@@ -45,7 +46,8 @@ class InsertPOFPlanDTO
             "plan_envAdjusmentFactor" => $this->plan_envAdjusmentFactor,
             "plan_inspEffectiveness" => $this->plan_inspEffectiveness,
             "plan_confidenceFactor" => $this->plan_confidenceFactor,
-            "plan_eventFreq" => $this->plan_eventFreq,
+            "plan_eventFreqFire" => $this->plan_eventFreqFire,
+            "plan_eventFreqOverFilling" => $this->plan_eventFreqOverFilling,
             "plan_protectedEquipment" => $this->plan_protectedEquipment,
             "plan_rbiDate" => $this->plan_rbiDate,
         ];
