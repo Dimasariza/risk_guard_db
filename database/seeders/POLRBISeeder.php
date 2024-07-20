@@ -15,7 +15,7 @@ class POLRBISeeder extends Seeder
     public function run(): void
     {
         //
-        DB::table('pol_rbis')->insert([
+        DB::table('pol_r_b_i_s')->insert([
             "rbi_id" => "rndRBI001",
             "rbi_componentId" => "rndComp02",
             "rbi_fluidService" => null,

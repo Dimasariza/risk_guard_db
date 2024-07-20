@@ -24,6 +24,6 @@ class pof_plan extends Model
         "plan_eventFreqFire",
         "plan_eventFreqOverFilling",
         "plan_protectedEquipment",
-        "plan_rbiDate",
+        "plan_planDate",
     ];
 }

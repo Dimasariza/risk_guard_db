@@ -30,7 +30,7 @@ class POLPlanSeeder extends Seeder
             "plan_eventFreqFire" => null,
             "plan_eventFreqOverFilling" => null,
             "plan_protectedEquipment" => null,
-            "plan_rbiDate" => null,
+            "plan_planDate" => null,
             "created_at" => Carbon::now(),
             "updated_at" => Carbon::now(),
         ]);

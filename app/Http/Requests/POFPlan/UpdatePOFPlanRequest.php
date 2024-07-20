@@ -35,7 +35,7 @@ class UpdatePOFPlanRequest extends FormRequest
             "plan_eventFreqFire" => ["nullable"],
             "plan_eventFreqOverFilling" => ["nullable"],
             "plan_protectedEquipment" => ["nullable"],
-            "plan_rbiDate" => ["nullable", "date"],
+            "plan_planDate" => ["nullable", "date"],
         ];
     }
 }

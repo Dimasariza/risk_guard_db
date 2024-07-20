@@ -21,7 +21,7 @@ class InsertPOFPlanDTO
         public readonly ?string $plan_eventFreqFire = null,
         public readonly ?string $plan_eventFreqOverFilling = null,
         public readonly ?string $plan_protectedEquipment = null,
-        public readonly ?string $plan_rbiDate = null,
+        public readonly ?string $plan_planDate = null,
     ) {
     }
 
@@ -49,7 +49,7 @@ class InsertPOFPlanDTO
             "plan_eventFreqFire" => $this->plan_eventFreqFire,
             "plan_eventFreqOverFilling" => $this->plan_eventFreqOverFilling,
             "plan_protectedEquipment" => $this->plan_protectedEquipment,
-            "plan_rbiDate" => $this->plan_rbiDate,
+            "plan_planDate" => $this->plan_planDate,
         ];
     }
 }

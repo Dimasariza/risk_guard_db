@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\DTO\POLPlan\InsertPOLPlanDTO;
 use App\DTO\POLPlan\UpdatePOLPlanDTO;
 use App\DTO\POLRBI\InsertPOLRBIDTO;
+use App\DTO\POLRBI\UpdatePOLRBIDTO;
 use App\Models\PolRBI;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\POLPlan\CreatePOLPlanRequest;
 use App\Http\Requests\POLPlan\UpdatePOLPlanRequest;
 use App\Http\Requests\POLRBI\CreatePOLRBIRequest;
+use App\Http\Requests\POLRBI\UpdatePOLRBIRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -93,9 +95,9 @@ class PolRBIController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePOLPlanRequest $request, string|int $id)
+    public function update(UpdatePOLRBIRequest $request, string|int $id)
     {
-        $dto = UpdatePOLPlanDTO::fromRequest($request);
+        $dto = UpdatePOLRBIDTO::fromRequest($request);
         $result = $this->model->where($this->model_id, $id)->first();
         $result->update($dto->build());
         $result->refresh();

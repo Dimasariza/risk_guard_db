@@ -23,19 +23,19 @@ class UpdatePOLPlanRequest extends FormRequest
     {
         return [
             //
-            "rbi_fluidService" => ["nullable"],
-            "rbi_typicalTempF" => ["nullable"],
-            "rbi_designType" => ["nullable"],
-            "rbi_discharge" => ["nullable"],
-            "rbi_adjusmentFactor" => ["nullable"],
-            "rbi_serviceSeverity" => ["nullable"],
-            "rbi_envAdjusmentFactor" => ["nullable"],
-            "rbi_inspEffectiveness" => ["nullable"],
-            "rbi_confidenceFactor" => ["nullable"],
-            "rbi_eventFreqFire" => ["nullable"],
-            "rbi_eventFreqOverFilling" => ["nullable"],
-            "rbi_protectedEquipment" => ["nullable"],
-            "rbi_rbiDate" => ["nullable", "date"],
+            "plan_fluidService" => ["nullable"],
+            "plan_typicalTempF" => ["nullable"],
+            "plan_designType" => ["nullable"],
+            "plan_discharge" => ["nullable"],
+            "plan_adjusmentFactor" => ["nullable"],
+            "plan_serviceSeverity" => ["nullable"],
+            "plan_envAdjusmentFactor" => ["nullable"],
+            "plan_inspEffectiveness" => ["nullable"],
+            "plan_confidenceFactor" => ["nullable"],
+            "plan_eventFreqFire" => ["nullable"],
+            "plan_eventFreqOverFilling" => ["nullable"],
+            "plan_protectedEquipment" => ["nullable"],
+            "plan_planDate" => ["nullable", "date"],
         ];
     }
 }

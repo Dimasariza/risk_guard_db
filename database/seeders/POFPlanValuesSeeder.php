@@ -19,8 +19,8 @@ class POFPlanValuesSeeder extends Seeder
             [
                 "planValue_id" => "rndExcor01",
                 "planValue_componentId" => "rndComp01",
-                "planValue_FMS" => 1,
-                "planValue_failureFrequency" => "genericFailure1020",
+                "planValue_FMS" => null,
+                "planValue_failureFrequency" => null,
                 "created_at" => Carbon  ::now(),
                 "updated_at" => Carbon::now(),
             ],

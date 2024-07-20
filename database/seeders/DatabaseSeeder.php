@@ -40,7 +40,9 @@ class DatabaseSeeder extends Seeder
             POFPlanThinningsSeeder::class,
             POFPlanExCorsSeeder::class,
             POFPlanAlkalinesSeeder::class,
-            POFPlanValuesSeeder::class
+            POFPlanValuesSeeder::class,
+            POLPlanSeeder::class,
+            POLRBISeeder::class
         ]);
     }
 }
