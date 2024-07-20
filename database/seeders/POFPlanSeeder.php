@@ -17,7 +17,7 @@ class POFPlanSeeder extends Seeder
         //
         DB::table('pof_plans')->insert([
             "plan_id" => "rndPlan001",
-            "plan_componentId" => "rndComp04",
+            "plan_componentId" => "rndComp02",
             "plan_fluidService" => null,
             "plan_typicalTempF" => null,
             "plan_designType" => null,
@@ -34,6 +34,5 @@ class POFPlanSeeder extends Seeder
             "created_at" => Carbon::now(),
             "updated_at" => Carbon::now(),
         ]);
-
     }
 }

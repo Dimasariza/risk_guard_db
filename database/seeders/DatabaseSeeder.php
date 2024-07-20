@@ -37,10 +37,10 @@ class DatabaseSeeder extends Seeder
             POFRBIValuesSeeder::class,
             POFRBISeeder::class,
             POFPlanSeeder::class,
-            // POFPlanThinningsSeeder::class,
-            // POFPlanExCorsSeeder::class,
-            // POFPlanAlkalinesSeeder::class,
-            // POFPlanValuesSeeder::class
+            POFPlanThinningsSeeder::class,
+            POFPlanExCorsSeeder::class,
+            POFPlanAlkalinesSeeder::class,
+            POFPlanValuesSeeder::class
         ]);
     }
 }

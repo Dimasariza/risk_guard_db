@@ -16,7 +16,7 @@ class POFRBISeeder extends Seeder
         //
         DB::table('pof_rbis')->insert([
             "rbi_id" => "rndRBI001",
-            "rbi_componentId" => "rndComp04",
+            "rbi_componentId" => "rndComp02",
             "rbi_fluidService" => null,
             "rbi_typicalTempF" => null,
             "rbi_designType" => null,
