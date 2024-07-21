@@ -19,6 +19,8 @@ class UpdatePOFPlanDTO
         public readonly ?string $plan_eventFreqFire = null,
         public readonly ?string $plan_eventFreqOverFilling = null,
         public readonly ?string $plan_protectedEquipment = null,
+        public readonly ?string $plan_failureFrequency = null,
+        public readonly ?string $plan_damageFactor = null,
         public readonly ?string $plan_planDate = null,
     ) {
     }
@@ -38,6 +40,8 @@ class UpdatePOFPlanDTO
             plan_eventFreqFire: $request->validated("plan_eventFreqFire"),
             plan_eventFreqOverFilling: $request->validated("plan_eventFreqOverFilling"),
             plan_protectedEquipment: $request->validated("plan_protectedEquipment"),
+            plan_failureFrequency: $request->validated("plan_failureFrequency"),
+            plan_damageFactor: $request->validated("plan_damageFactor"),
             plan_planDate: $request->validated("plan_planDate"),
         );
     }
@@ -57,6 +61,8 @@ class UpdatePOFPlanDTO
             "plan_eventFreqFire" => $this->plan_eventFreqFire,
             "plan_eventFreqOverFilling" => $this->plan_eventFreqOverFilling,
             "plan_protectedEquipment" => $this->plan_protectedEquipment,
+            "plan_failureFrequency" => $this->plan_failureFrequency,
+            "plan_damageFactor" => $this->plan_damageFactor,
             "plan_planDate" => $this->plan_planDate,
         ];
 

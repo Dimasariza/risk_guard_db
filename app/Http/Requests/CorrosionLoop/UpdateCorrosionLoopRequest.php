@@ -22,8 +22,8 @@ class UpdateCorrosionLoopRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'cl_name' => ['string', 'max:255'],
-            'cl_fileId' => ['string', 'max:255'],
+            'cl_name' => ['nullable'],
+            'cl_fileId' => ['nullable'],
         ];
     }
 }

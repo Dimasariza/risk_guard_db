@@ -8,7 +8,7 @@ class UpdateCorrosionLoopDTO
 {
     public function __construct(
         public readonly string $cl_name,
-        public readonly string $cl_fileId,
+        public readonly ?string $cl_fileId,
     ) {
     }
 

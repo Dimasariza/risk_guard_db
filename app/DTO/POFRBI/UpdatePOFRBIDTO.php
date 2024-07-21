@@ -19,6 +19,8 @@ class UpdatePOFRBIDTO
         public readonly ?string $rbi_eventFreqFire = null,
         public readonly ?string $rbi_eventFreqOverFilling = null,
         public readonly ?string $rbi_protectedEquipment = null,
+        public readonly ?string $rbi_failureFrequency = null,
+        public readonly ?string $rbi_damageFactor = null,
         public readonly ?string $rbi_rbiDate = null,
     ) {
     }
@@ -38,6 +40,8 @@ class UpdatePOFRBIDTO
             rbi_eventFreqFire: $request->validated("rbi_eventFreqFire"),
             rbi_eventFreqOverFilling: $request->validated("rbi_eventFreqOverFilling"),
             rbi_protectedEquipment: $request->validated("rbi_protectedEquipment"),
+            rbi_failureFrequency: $request->validated("rbi_failureFrequency"),
+            rbi_damageFactor: $request->validated("rbi_damageFactor"),
             rbi_rbiDate: $request->validated("rbi_rbiDate"),
         );
     }
@@ -57,6 +61,8 @@ class UpdatePOFRBIDTO
             "rbi_eventFreqFire" => $this->rbi_eventFreqFire,
             "rbi_eventFreqOverFilling" => $this->rbi_eventFreqOverFilling,
             "rbi_protectedEquipment" => $this->rbi_protectedEquipment,
+            "rbi_failureFrequency" => $this->rbi_failureFrequency,
+            "rbi_damageFactor" => $this->rbi_damageFactor,
             "rbi_rbiDate" => $this->rbi_rbiDate,
         ];
 

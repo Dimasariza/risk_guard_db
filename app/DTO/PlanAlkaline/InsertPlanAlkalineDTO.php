@@ -13,8 +13,8 @@ class InsertPlanAlkalineDTO
         public readonly ?string $planAlkaline_inspection = null,
         public readonly ?string $planAlkaline_co3Consentration = null,
         public readonly ?string $planAlkaline_dfacscc = null,
-        public readonly ?string $planAlkaline_shellPwht = null,
-        public readonly ?string $planAlkaline_headPwht = null,
+        public readonly ?bool $planAlkaline_shellPwht = null,
+        public readonly ?bool $planAlkaline_headPwht = null,
     ) {
     }
 

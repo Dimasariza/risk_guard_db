@@ -30,6 +30,8 @@ class POLRBISeeder extends Seeder
             "rbi_eventFreqFire" => null,
             "rbi_eventFreqOverFilling" => null,
             "rbi_protectedEquipment" => null,
+            "rbi_failureFrequency" => null,
+            "rbi_damageFactor" => null,
             "rbi_rbiDate" => null,
             "created_at" => Carbon::now(),
             "updated_at" => Carbon::now(),

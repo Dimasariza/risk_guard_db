@@ -11,11 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('corrosion_loops', function (Blueprint $table) {
-            $table->string("cl_id")->unique();
-            $table->string("cl_userId")->unique();
-            $table->string("cl_name");
-            $table->string("cl_fileId")->nullable();
+        Schema::create('corrosion_loop_groups', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('corrosion_loops');
+        Schema::dropIfExists('corrosion_loop_groups');
     }
 };

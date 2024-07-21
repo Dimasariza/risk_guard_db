@@ -12,9 +12,9 @@ class UpdatePlanAlkalineDTO
         public readonly ?string $planAlkaline_inspection = null,
         public readonly ?string $planAlkaline_co3Consentration = null,
         public readonly ?string $planAlkaline_dfacscc = null,
-        public readonly ?string $planAlkaline_shellPwht = null,
-        public readonly ?bool $planAlkaline_headPwht,
-        public readonly ?bool $planAlkaline_numOfInspection,
+        public readonly ?string $planAlkaline_numOfInspection,
+        public readonly ?bool $planAlkaline_shellPwht = null,
+        public readonly ?bool $planAlkaline_headPwht = null,
     ) {
     }
 
@@ -25,9 +25,9 @@ class UpdatePlanAlkalineDTO
             planAlkaline_inspection: $request->validated("planAlkaline_inspection"),
             planAlkaline_co3Consentration: $request->validated("planAlkaline_co3Consentration"),
             planAlkaline_dfacscc: $request->validated("planAlkaline_dfacscc"),
+            planAlkaline_numOfInspection: $request->validated("planAlkaline_numOfInspection"),
             planAlkaline_shellPwht: $request->validated("planAlkaline_shellPwht"),
             planAlkaline_headPwht: $request->validated("planAlkaline_headPwht"),
-            planAlkaline_numOfInspection: $request->validated("planAlkaline_numOfInspection"),
         );
     }
 
@@ -38,9 +38,9 @@ class UpdatePlanAlkalineDTO
             "planAlkaline_inspection" => $this->planAlkaline_inspection,
             "planAlkaline_co3Consentration" => $this->planAlkaline_co3Consentration,
             "planAlkaline_dfacscc" => $this->planAlkaline_dfacscc,
+            "planAlkaline_numOfInspection" => $this->planAlkaline_numOfInspection,
             "planAlkaline_shellPwht" => $this->planAlkaline_shellPwht,
             "planAlkaline_headPwht" => $this->planAlkaline_headPwht,
-            "planAlkaline_numOfInspection" => $this->planAlkaline_numOfInspection,
         ];
 
         // if (!is_null($this->year)) {

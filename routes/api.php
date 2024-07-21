@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\COFController;
 use App\Http\Controllers\ComponentController;
 use App\Http\Controllers\CorrosionLoopController;
+use App\Http\Controllers\CorrosionLoopGroupController;
 use App\Http\Controllers\DamageMechanismController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\FileController;
@@ -78,6 +79,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::apiResource('equipments', EquipmentController::class);
     Route::apiResource('items', ItemController::class);
     Route::apiResource('corrosion_loop', CorrosionLoopController::class);
+    Route::apiResource('corrosion_loop_group', CorrosionLoopGroupController::class);
 
     Route::post('componentByUser', [AssetsByUserController::class, 'component']);
     Route::post('equipmentByUser', [AssetsByUserController::class, 'equipment']);

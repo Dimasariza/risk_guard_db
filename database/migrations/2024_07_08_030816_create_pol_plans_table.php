@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string("plan_eventFreqFire")->nullable();
             $table->string("plan_eventFreqOverFilling")->nullable();
             $table->string("plan_protectedEquipment")->nullable();
+            $table->string("plan_failureFrequency")->nullable();
+            $table->double("plan_damageFactor")->nullable();
             $table->date("plan_planDate")->nullable();
             $table->id();
             $table->timestamps();
