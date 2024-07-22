@@ -19,8 +19,8 @@ class POFRBIValuesSeeder extends Seeder
             [
                 "rbiValue_id" => "pofValue01",
                 "rbiValue_componentId" => "rndComp01",
-                "rbiValue_FMS" => null,
-                "rbiValue_failureFrequency" => null,
+                "rbiValue_FMS" => 1,
+                "rbiValue_failureFrequency" => "genericFailure1001",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ],

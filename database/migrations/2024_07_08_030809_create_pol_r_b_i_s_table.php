@@ -26,9 +26,10 @@ return new class extends Migration
             $table->string("rbi_eventFreqFire")->nullable();
             $table->string("rbi_eventFreqOverFilling")->nullable();
             $table->string("rbi_protectedEquipment")->nullable();
+            $table->string("rbi_dfValue")->nullable();
             $table->string("rbi_failureFrequency")->nullable();
-            $table->date("rbi_rbiDate")->nullable();
             $table->double("rbi_damageFactor")->nullable();
+            $table->date("rbi_rbiDate")->nullable();
             $table->id();
             $table->timestamps();
         });

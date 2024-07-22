@@ -24,6 +24,7 @@ class pof_rbi extends Model
         "rbi_eventFreqFire",
         "rbi_eventFreqOverFilling",
         "rbi_protectedEquipment",
+        "rbi_dfValue",
         "rbi_failureFrequency",
         "rbi_damageFactor",
         "rbi_rbiDate",

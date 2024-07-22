@@ -35,6 +35,7 @@ class UpdatePOFRBIRequest extends FormRequest
             "rbi_eventFreqFire" => ["nullable"],
             "rbi_eventFreqOverFilling" => ["nullable"],
             "rbi_protectedEquipment" => ["nullable"],
+            "rbi_dfValue" => ["nullable"],
             "rbi_failureFrequency" => ["nullable"],
             "rbi_damageFactor" => ["nullable"],
             "rbi_rbiDate" => ["nullable", "date"],

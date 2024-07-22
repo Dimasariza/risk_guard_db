@@ -35,6 +35,7 @@ class UpdatePOLPlanRequest extends FormRequest
             "plan_eventFreqFire" => ["nullable"],
             "plan_eventFreqOverFilling" => ["nullable"],
             "plan_protectedEquipment" => ["nullable"],
+            "plan_dfValue" => ["nullable"],
             "plan_failureFrequency" => ["nullable"],
             "plan_damageFactor" => ["nullable"],
             "plan_planDate" => ["nullable", "date"],

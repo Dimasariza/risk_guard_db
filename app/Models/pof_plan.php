@@ -24,6 +24,7 @@ class pof_plan extends Model
         "plan_eventFreqFire",
         "plan_eventFreqOverFilling",
         "plan_protectedEquipment",
+        "plan_dfValue",
         "plan_failureFrequency",
         "plan_damageFactor",
         "plan_planDate",

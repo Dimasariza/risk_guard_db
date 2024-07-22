@@ -29,6 +29,7 @@ class POFRBISeeder extends Seeder
             "rbi_eventFreqFire" => null,
             "rbi_eventFreqOverFilling" => null,
             "rbi_protectedEquipment" => null,
+            "rbi_dfValue" => null,
             "rbi_failureFrequency" => null,
             "rbi_damageFactor" => null,
             "rbi_rbiDate" => null,
