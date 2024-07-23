@@ -9,6 +9,7 @@ class COF extends Model
 {
     use HasFactory;
     protected $fillable = [
+        "cof_id",
         "cof_componentId",
         "cof_massComponent",
         "cof_massInventory",
@@ -24,5 +25,7 @@ class COF extends Model
         "cof_flamableCons",
         "cof_damageCons",
         "cof_adjToFlamable",
+        "cof_C1mfracTox",
+        "cof_ps",
     ];
 }

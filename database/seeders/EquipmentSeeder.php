@@ -28,8 +28,8 @@ class EquipmentSeeder extends Seeder
             ],
             [
                 "eq_id" => "rndEq02",
-                "eq_tagOfEquipment" => "Midle gas processing",
-                "eq_nameOfEquipment" => "Gas Processing",
+                "eq_tagOfEquipment" => "Midle Oil processing",
+                "eq_nameOfEquipment" => "Oil Processing",
                 "eq_equipmentType" => "FWKO Separator",
                 "eq_itemId" => "rndItem02",
                 "eq_userId" => "rndmUser05",

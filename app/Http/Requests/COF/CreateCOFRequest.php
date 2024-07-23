@@ -38,6 +38,8 @@ class CreateCOFRequest extends FormRequest
             "cof_flamableCons" => ["nullable"],
             "cof_damageCons" => ["nullable"],
             "cof_adjToFlamable" => ["nullable"],
+            "cof_C1mfracTox" => ["nullable"],
+            "cof_ps" => ["nullable"],
         ];
     }
 }

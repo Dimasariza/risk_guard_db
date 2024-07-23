@@ -23,6 +23,8 @@ class InsertCOFDTO
         public readonly ?string $cof_flamableCons = null,
         public readonly ?string $cof_damageCons = null,
         public readonly ?string $cof_adjToFlamable = null,
+        public readonly ?string $cof_C1mfracTox = null,
+        public readonly ?string $cof_ps = null,
     ) {
     }
 
@@ -52,6 +54,8 @@ class InsertCOFDTO
             "cof_flamableCons" => $this->cof_flamableCons,
             "cof_damageCons" => $this->cof_damageCons,
             "cof_adjToFlamable" => $this->cof_adjToFlamable,
+            "cof_C1mfracTox" => $this->cof_C1mfracTox,
+            "cof_ps" => $this->cof_ps,
         ];
     }
 }

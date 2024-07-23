@@ -36,6 +36,8 @@ class UpdateCOFRequest extends FormRequest
             "cof_flamableCons" => [],
             "cof_damageCons" => [],
             "cof_adjToFlamable" => [],
+            "cof_C1mfracTox" => [],
+            "cof_ps" => [],
         ];
     }
 }

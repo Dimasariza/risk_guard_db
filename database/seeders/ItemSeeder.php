@@ -19,7 +19,7 @@ class ItemSeeder extends Seeder
             [
                 "item_id" => "rndItem01",
                 "item_tagOfItem" => "Marine Tech Industri",
-                "item_nameOfItem" => "PT X",
+                "item_nameOfItem" => "PT ITS Risk Guardian",
                 "item_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
@@ -27,7 +27,7 @@ class ItemSeeder extends Seeder
             [
                 "item_id" => "rndItem02",
                 "item_tagOfItem" => "Asset Management and Realibility",
-                "item_nameOfItem" => "PT ITS Risk Guardian",
+                "item_nameOfItem" => "PT X",
                 "item_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),

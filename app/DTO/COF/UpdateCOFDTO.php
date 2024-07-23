@@ -21,6 +21,8 @@ class UpdateCOFDTO
         public readonly ?string $cof_flamableCons = null,
         public readonly ?string $cof_damageCons = null,
         public readonly ?string $cof_adjToFlamable = null,
+        public readonly ?string $cof_C1mfracTox = null,
+        public readonly ?string $cof_ps = null,
     ) {
     }
 
@@ -41,6 +43,8 @@ class UpdateCOFDTO
             cof_flamableCons: $request->validated("cof_flamableCons"),
             cof_damageCons: $request->validated("cof_damageCons"),
             cof_adjToFlamable: $request->validated("cof_adjToFlamable"),
+            cof_C1mfracTox: $request->validated("cof_C1mfracTox"),
+            cof_ps: $request->validated("cof_ps"),
         );
     }
 
@@ -61,6 +65,8 @@ class UpdateCOFDTO
             "cof_flamableCons" => $this->cof_flamableCons,
             "cof_damageCons" => $this->cof_damageCons,
             "cof_adjToFlamable" => $this->cof_adjToFlamable,
+            "cof_C1mfracTox" => $this->cof_C1mfracTox,
+            "cof_ps" => $this->cof_ps,
         ];
 
         // if (!is_null($this->year)) {

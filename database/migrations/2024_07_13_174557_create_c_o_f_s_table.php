@@ -28,6 +28,8 @@ return new class extends Migration
             $table->string("cof_flamableCons")->nullable();
             $table->string("cof_damageCons")->nullable();
             $table->string("cof_adjToFlamable")->nullable();
+            $table->string("cof_C1mfracTox")->nullable();
+            $table->string("cof_ps")->nullable();
             $table->timestamps();
         });
     }

@@ -33,6 +33,8 @@ class COFSeeder extends Seeder
                 "cof_flamableCons" => "flamable001",
                 "cof_damageCons" => "damage001",
                 "cof_adjToFlamable" => "mitigation1001",
+                "cof_C1mfracTox" => "mitigation1001",
+                "cof_ps" => "mitigation1001",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ],
@@ -52,6 +54,8 @@ class COFSeeder extends Seeder
                 "cof_flamableCons" => null,
                 "cof_damageCons" => null,
                 "cof_adjToFlamable" => null,
+                "cof_C1mfracTox" => null,
+                "cof_ps" => null,
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ],
@@ -71,6 +75,8 @@ class COFSeeder extends Seeder
                 "cof_flamableCons" => null,
                 "cof_damageCons" => null,
                 "cof_adjToFlamable" => null,
+                "cof_C1mfracTox" => null,
+                "cof_ps" => null,
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ],
@@ -85,11 +91,20 @@ class COFSeeder extends Seeder
                 "cof_releaseHoleSizeD3" => 102,
                 "cof_releaseHoleSizeD4" => 16,
                 "cof_liquidInventories" => null,
+
+
+
+
+
+
+                
                 "cof_detectionSystem" => null,
                 "cof_isolationSystem" => null,
                 "cof_flamableCons" => null,
                 "cof_damageCons" => null,
                 "cof_adjToFlamable" => null,
+                "cof_C1mfracTox" => null,
+                "cof_ps" => null,
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ]

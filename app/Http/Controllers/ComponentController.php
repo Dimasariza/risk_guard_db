@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\DTO\Components\InsertComponentsDTO;
 use App\DTO\Components\UpdateComponentsDTO;
-use App\DTO\GeneralData\InsertGeneralDataDTO;
 use App\Http\Requests\Components\CreateComponentRequest;
 use App\Http\Requests\Components\UpdateComponentRequest;
-use App\Http\Requests\GeneralData\CreateGeneralDataRequest;
+use App\Models\COF;
 use App\Models\Component;
 use App\Models\damage_mechanism;
 use App\Models\GeneralData;
@@ -19,9 +18,8 @@ use App\Models\pof_rbi_alkaline;
 use App\Models\pof_rbi_ex_cor;
 use App\Models\pof_rbi_thinning;
 use App\Models\pof_rbi_value;
+use App\Models\PolRBI;
 use App\Models\rbi_thinning_screening_question;
-use GuzzleHttp\Psr7\Request;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -123,6 +121,21 @@ class ComponentController extends Controller
             $rbi_sq->rbiSQ_ComponentId = $component->comp_id;
             $rbi_sq->rbiSQ_id = Str::random(9);
             $rbi_sq->save();
+
+            $cof = new COF();
+            $cof->cof_componentId = $component->comp_id;
+            $cof->cof_id = Str::random(9);
+            $cof->save();
+
+            $pol_rbi = new PolRBI();
+            $pol_rbi->rbi_componentId = $component->comp_id;
+            $pol_rbi->rbi_id = Str::random(9);
+            $pol_rbi->save();
+
+            $pol_plan = new PolRBI();
+            $pol_plan->plan_componentId = $component->comp_id;
+            $pol_plan->plan_id = Str::random(9);
+            $pol_plan->save();
 
             DB::commit();
             return response()->json([
