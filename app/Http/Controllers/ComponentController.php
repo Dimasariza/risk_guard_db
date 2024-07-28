@@ -11,10 +11,12 @@ use App\Models\COF;
 use App\Models\Component;
 use App\Models\damage_mechanism;
 use App\Models\GeneralData;
+use App\Models\pof_plan;
 use App\Models\pof_plan_alkaline;
 use App\Models\pof_plan_ex_cor;
 use App\Models\pof_plan_thinning;
 use App\Models\pof_plan_value;
+use App\Models\pof_rbi;
 use App\Models\pof_rbi_alkaline;
 use App\Models\pof_rbi_ex_cor;
 use App\Models\pof_rbi_thinning;
@@ -63,7 +65,6 @@ class ComponentController extends Controller
      */
     public function store(CreateComponentRequest $request)
     {
-
         DB::beginTransaction();
         try {
             $dto = InsertComponentsDTO::fromRequest($request);
@@ -129,15 +130,27 @@ class ComponentController extends Controller
             $cof->cof_id = Str::random(9);
             $cof->save();
 
-            $pol_rbi = new PolRBI();
-            $pol_rbi->rbi_componentId = $component->comp_id;
-            $pol_rbi->rbi_id = Str::random(9);
-            $pol_rbi->save();
+            if($request->comp_componentType == "Pressure Relief Device") {
+                $pof_rbi = new pof_rbi();
+                $pof_rbi->rbi_componentId = $component->comp_id;
+                $pof_rbi->rbi_id = Str::random(9);
+                $pof_rbi->save();
+    
+                $pof_plan = new pof_plan();
+                $pof_plan->plan_componentId = $component->comp_id;
+                $pof_plan->plan_id = Str::random(9);
+                $pof_plan->save();
 
-            $pol_plan = new PolPlan();
-            $pol_plan->plan_componentId = $component->comp_id;
-            $pol_plan->plan_id = Str::random(9);
-            $pol_plan->save();
+                $pol_rbi = new PolRBI();
+                $pol_rbi->rbi_componentId = $component->comp_id;
+                $pol_rbi->rbi_id = Str::random(9);
+                $pol_rbi->save();
+    
+                $pol_plan = new PolPlan();
+                $pol_plan->plan_componentId = $component->comp_id;
+                $pol_plan->plan_id = Str::random(9);
+                $pol_plan->save();
+            }
 
             DB::commit();
             return response()->json([
