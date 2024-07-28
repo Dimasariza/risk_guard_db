@@ -27,6 +27,7 @@ class CreateComponentRequest extends FormRequest
             'comp_componentType' => ['required', 'string', 'max:255'],
             'comp_equipmentId' => ['nullable', 'string', 'max:255'],
             'comp_userId' => ['required', 'string', 'max:255'],
+            'comp_addToCalculation' => ['nullable', 'bool'],
         ];
     }
 }

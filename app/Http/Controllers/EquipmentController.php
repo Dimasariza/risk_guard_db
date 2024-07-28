@@ -14,7 +14,7 @@ class EquipmentController extends Controller
 {
     public function __construct(
         protected Equipment $model,
-        protected $model_id = "eq_idEquipment"
+        protected $model_id = "eq_id"
     ) {
     }
     //
@@ -25,7 +25,6 @@ class EquipmentController extends Controller
     {
         $data = Equipment::all();
         $data = EquipmentCreatedResource::collection($data);
-        // dd($data);
         return response()->json([
             "status" => true,
             "message" => "Data ready",

@@ -21,4 +21,9 @@ class Item extends Model
     {
         return $this->hasMany(Equipment::class, 'eq_itemId', 'item_id');
     }
+
+    public function systemByUser() 
+    {
+        return $this->hasMany(Equipment::class, 'eq_itemId', 'item_id');
+    }
 }

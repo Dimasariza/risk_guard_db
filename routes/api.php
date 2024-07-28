@@ -84,6 +84,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('componentByUser', [AssetsByUserController::class, 'component']);
     Route::post('equipmentByUser', [AssetsByUserController::class, 'equipment']);
     Route::post('itemByUser', [AssetsByUserController::class, 'item']);
+    Route::post('assetRegister', [AssetsByUserController::class, 'assetRegister']);
     
     Route::apiResource('general_data', GeneralDataController::class);
     Route::apiResource('asset_summary', AssetSummaryController::class);

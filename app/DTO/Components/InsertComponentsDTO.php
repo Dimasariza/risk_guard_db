@@ -13,6 +13,7 @@ class InsertComponentsDTO
         public readonly string $comp_nameOfComponent,
         public readonly string $comp_componentType,
         public readonly ?string $comp_equipmentId = null,
+        public readonly ?bool $comp_addToCalculation = null,
         public readonly string $comp_userId,
     ) {
     }
@@ -26,6 +27,7 @@ class InsertComponentsDTO
             comp_componentType: $request->validated('comp_componentType'),
             comp_equipmentId: $request->validated('comp_equipmentId'),
             comp_userId: $request->validated('comp_userId'),
+            comp_addToCalculation: $request->validated('comp_addToCalculation'),
         );
     }
 
@@ -38,6 +40,7 @@ class InsertComponentsDTO
             'comp_componentType' => $this->comp_componentType,
             'comp_equipmentId' => $this->comp_equipmentId,
             'comp_userId' => $this->comp_userId,
+            'comp_addToCalculation' => $this->comp_addToCalculation,
         ];
     }
 }

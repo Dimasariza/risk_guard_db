@@ -11,7 +11,7 @@ class InsertEquipmentsDTO
         public readonly string $eq_id,
         public readonly string $eq_tagOfEquipment,
         public readonly string $eq_nameOfEquipment,
-        public readonly string $eq_equipmentType,
+        public readonly ?string $eq_equipmentType = null,
         public readonly string $eq_itemId,
         public readonly string $eq_userId,
     ) {

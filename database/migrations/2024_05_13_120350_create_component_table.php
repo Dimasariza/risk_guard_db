@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("comp_componentType");
             $table->string("comp_equipmentId")->nullable();
             $table->string("comp_userId");
+            $table->boolean("comp_addToCalculation")->nullable()->default(false);
             $table->id();
             $table->timestamps();
         });

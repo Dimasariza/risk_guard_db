@@ -18,16 +18,24 @@ class ItemSeeder extends Seeder
         DB::table('items')->insert([
             [
                 "item_id" => "rndItem01",
-                "item_tagOfItem" => "Marine Tech Industri",
+                "item_tagOfItem" => "Jakarta",
                 "item_nameOfItem" => "PT ITS Risk Guardian",
-                "item_userId" => "rndmUser05",
+                "item_userId" => "rndmUser01",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
             ],
             [
                 "item_id" => "rndItem02",
-                "item_tagOfItem" => "Asset Management and Realibility",
+                "item_tagOfItem" => "Jakarta",
                 "item_nameOfItem" => "PT X",
+                "item_userId" => "rndmUser01",
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
+            ],
+            [
+                "item_id" => "rndItem03",
+                "item_tagOfItem" => "Surabaya",
+                "item_nameOfItem" => "PT A",
                 "item_userId" => "rndmUser05",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),

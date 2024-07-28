@@ -6,6 +6,7 @@ use App\DTO\Components\InsertComponentsDTO;
 use App\DTO\Components\UpdateComponentsDTO;
 use App\Http\Requests\Components\CreateComponentRequest;
 use App\Http\Requests\Components\UpdateComponentRequest;
+use App\Http\Resources\Components\ComopnentCreatedResource;
 use App\Models\COF;
 use App\Models\Component;
 use App\Models\damage_mechanism;
@@ -18,6 +19,7 @@ use App\Models\pof_rbi_alkaline;
 use App\Models\pof_rbi_ex_cor;
 use App\Models\pof_rbi_thinning;
 use App\Models\pof_rbi_value;
+use App\Models\PolPlan;
 use App\Models\PolRBI;
 use App\Models\rbi_thinning_screening_question;
 use Illuminate\Http\Response;
@@ -132,7 +134,7 @@ class ComponentController extends Controller
             $pol_rbi->rbi_id = Str::random(9);
             $pol_rbi->save();
 
-            $pol_plan = new PolRBI();
+            $pol_plan = new PolPlan();
             $pol_plan->plan_componentId = $component->comp_id;
             $pol_plan->plan_id = Str::random(9);
             $pol_plan->save();
@@ -168,13 +170,14 @@ class ComponentController extends Controller
      */
     public function show(string | int $id)
     {
-        // dd($request);
         $data = $this->model::where($this->model_id, $id);
+        $data = new ComopnentCreatedResource($data->first());
+
         if ($data) {
             return response()->json([
                 "status" => true,
                 "message" => "Data ready",
-                "data" => $data->first()
+                "data" => $data
             ], Response::HTTP_OK);
         }
     }

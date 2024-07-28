@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\AssetRegister\ItemsRegisterResources;
+use App\Http\Resources\Items\ItemCreatedResource;
 use App\Models\Component;
 use App\Models\Equipment;
 use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
 
 class AssetsByUserController extends Controller
 {
@@ -104,7 +105,7 @@ class AssetsByUserController extends Controller
             return response()->json([
                 "status" => true,
                 "message" => "Item show successfully",
-                "data" => $this->item->all()
+                "data" => ItemCreatedResource::collection($this->item->all()) 
             ], Response::HTTP_OK);
         }
 
@@ -112,7 +113,7 @@ class AssetsByUserController extends Controller
         if($data->exists()) {
             return response()->json([
                 "status" => true,
-                "data" => $data->get()
+                "data" => ItemCreatedResource::collection($data->get()) 
             ], Response::HTTP_OK);
         } else {
             return response()->json([
@@ -120,5 +121,23 @@ class AssetsByUserController extends Controller
                 "data" => null
             ], Response::HTTP_NO_CONTENT);
         }
+    }
+
+    public function assetRegister(Request $request) 
+    {
+        $user = $this->user->where("user_id", $request->user_id);
+        
+        if(!$user->exists()) {
+            return response()->json([
+                "status" => false,
+                "message" => "No User",
+            ], Response::HTTP_NO_CONTENT);
+        }
+
+        return response()->json([
+            "status" => true,
+            "message" => "Equipment show succesfully",
+            "data" => ItemsRegisterResources::collection($this->item->all())
+        ]);
     }
 }

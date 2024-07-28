@@ -31,9 +31,9 @@ class POFPlanSeeder extends Seeder
             "plan_eventFreqOverFilling" => "eventfreq013",
             "plan_protectedEquipment" => null,
             "plan_dfValue" => null,
-            "plan_failureFrequency" => null,
+            "plan_failureFrequency" => "genericFailure1020",
             "plan_damageFactor" => null,
-            "plan_planDate" => null,
+            "plan_planDate" => "2027-03-21",
             "created_at" => Carbon::now(),
             "updated_at" => Carbon::now(),
         ]);

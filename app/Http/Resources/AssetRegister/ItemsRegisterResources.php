@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Items;
+namespace App\Http\Resources\AssetRegister;
 
-use App\Http\Resources\Equipments\EquipmentCreatedResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ItemCreatedResource extends JsonResource
+class ItemsRegisterResources extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +14,9 @@ class ItemCreatedResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        // dd($request);
         return [
             ...parent::toArray($request),
-            "system" => EquipmentCreatedResource::collection($this->system) 
+            "system" => EquipmentsRegisterResources::collection($this->systemByUser) 
         ];
-    }
+    } 
 }

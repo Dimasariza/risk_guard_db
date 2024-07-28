@@ -2,18 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\DTO\CorrosionLoopGroup\InsertCorrosionLoopGroupDTO;
+use App\DTO\CorrosionLoopGroup\UpdateCorrosionLoopGroupDTO;
 use App\Models\CorrosionLoopGroup;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CorrosionLoopGroup\CreateCorrosionLoopGroupRequest;
+use App\Http\Requests\CorrosionLoopGroup\UpdateCorrosionLoopGroupRequest;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class CorrosionLoopGroupController extends Controller
 {
+    public function __construct(
+        protected CorrosionLoopGroup $model,
+        protected $model_id = "clGroup_clId"
+    ) {
+    }
+    //
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $data = $this->model::all();
+        // $data = EquipmentCreatedResource::collection($data);
+        return response()->json([
+            "status" => true,
+            "message" => "Data ready",
+            "data" => $data
+        ], Response::HTTP_OK);
     }
 
     /**
@@ -29,26 +47,51 @@ class CorrosionLoopGroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $group_result = [];
+        DB::beginTransaction();
+        foreach($request->toArray() as $group) {
+            try {
+                $result = $this->model->create($group);
+                array_push($group_result, $result);
+            }
+            catch( \Illuminate\Database\QueryException $exception ) {
+                $errorInfo = $exception->errorInfo;
+                DB::rollback();
+                return response()->json([
+                    "status" => false,
+                    "info" => $errorInfo,
+                    "message" => "Duplicate name for" . $errorInfo[2]
+                ], Response::HTTP_BAD_REQUEST);
+            }
+        };
+        DB::commit();
+
         return response()->json([
-            "req" => $request->toArray()
-        ], 200);
-        // dd($request);
-        // dd("sotre");
+            "status" => true,
+            "message" => "Item created successfully",
+            "data" => $group_result
+        ], Response::HTTP_CREATED);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(CorrosionLoopGroup $corrosionLoopGroup)
+    public function show(string|int $id)
     {
-        //
+        $data = $this->model::where($this->model_id, $id);
+        if ($data) {
+            return response()->json([
+                "status" => true,
+                "message" => "Data ready",
+                "data" => $data->get()
+            ]);
+        }
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CorrosionLoopGroup $corrosionLoopGroup)
+    public function edit($assetSummary)
     {
         //
     }
@@ -56,16 +99,36 @@ class CorrosionLoopGroupController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CorrosionLoopGroup $corrosionLoopGroup)
+    public function update(UpdateCorrosionLoopGroupRequest $request, string|int $id)
     {
-        //
+        $dto = UpdateCorrosionLoopGroupDTO::fromRequest($request);
+        $result = $this->model->where($this->model_id, $id)->first();
+        $result->update($dto->build());
+        $result->refresh();
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "Item updated successfully",
+                "data" => $result
+            ], Response::HTTP_OK);
+        };
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CorrosionLoopGroup $corrosionLoopGroup)
+    public function destroy(string|int $id)
     {
-        //
+        $result = $this->model->where($this->model_id, $id)->first();
+        $result->delete();
+
+        if ($result) {
+            return response()->json([
+                "status" => true,
+                "message" => "Item deleted successfully",
+                "data" => $result
+            ], Response::HTTP_OK);
+        };
     }
 }

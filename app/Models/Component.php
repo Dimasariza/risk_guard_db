@@ -16,6 +16,16 @@ class Component extends Model
         'comp_nameOfComponent',
         'comp_componentType',
         'comp_equipmentId',
-        'comp_userId'
+        'comp_userId',
+        'comp_addToCalculation',
     ];
+
+    protected $casts = [
+        "comp_addToCalculation" => "boolean"
+    ];
+
+    public function Equipment()
+    {
+        return $this->belongsTo(Equipment::class, 'eq_itemId', 'item_id');
+    }
 }

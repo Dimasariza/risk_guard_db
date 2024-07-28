@@ -22,4 +22,9 @@ class Equipment extends Model
     {
         return $this->hasMany(Component::class, 'comp_equipmentId', 'eq_id');
     }
+
+    public function equipmentByUser() 
+    {
+        return $this->hasMany(Component::class, 'comp_equipmentId', 'eq_id');
+    }
 }

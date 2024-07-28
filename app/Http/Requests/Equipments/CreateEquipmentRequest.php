@@ -24,8 +24,7 @@ class CreateEquipmentRequest extends FormRequest
         return [
             'eq_tagOfEquipment' => ['required', 'string', 'max:255'],
             'eq_nameOfEquipment' => ['required', 'string', 'max:255'],
-            'eq_equipmentType' => ['required', 'string', 'max:255'],
-            'eq_userId' => ['required', 'string', 'max:255'],
+            'eq_equipmentType' => ['nullable', 'string', 'max:255'],
             'eq_itemId' => ['required', 'string', 'max:255'],
             'eq_userId' => ['required', 'string', 'max:255'],
         ];

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Equipments;
+namespace App\Http\Requests\CorrosionLoopGroup;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateEquipmentRequest extends FormRequest
+class UpdateCorrosionLoopGroupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,11 +22,8 @@ class UpdateEquipmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'eq_tagOfEquipment' => ['required', 'string', 'max:255'],
-            'eq_nameOfEquipment' => ['required', 'string', 'max:255'],
-            'eq_equipmentType' => ['nullable', 'string', 'max:255'],
-            'eq_userId' => ['required', 'string', 'max:255'],
-            'eq_itemId' => ['required', 'string', 'max:255'],
+            'clGroup_name' => ['string', 'max:255'],
+            'clGroup_componentId' => ['string', 'max:255'],
         ];
     }
 }

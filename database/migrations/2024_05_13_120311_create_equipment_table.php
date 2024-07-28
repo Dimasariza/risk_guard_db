@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string("eq_id")->unique();
             $table->string("eq_tagOfEquipment");
             $table->string("eq_nameOfEquipment");
-            $table->string("eq_equipmentType");
+            $table->string("eq_equipmentType")->nullable();
             $table->string("eq_itemId")->nullable();
             $table->string("eq_userId");
             $table->id();

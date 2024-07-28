@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class CorrosionLoopGroup extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        "clGroup_name",
+        "clGroup_clId",
+        "clGroup_componentId"
+    ];
 }

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('c_o_f_s', function (Blueprint $table) {
             $table->id();
             $table->string("cof_componentId")->unique();
+            $table->string("cof_id")->unique();
             $table->double("cof_massComponent")->nullable();
             $table->double("cof_massInventory")->nullable();
             $table->string("cof_representativeFluid")->nullable();
