@@ -25,7 +25,7 @@ return new class extends Migration
             $table->boolean('user_status')->default(true);
             $table->string('user_email')->unique();
             $table->string('user_picture')->nullable();
-            $table->string('user_role');
+            $table->string('user_role')->default("guest");
             $table->timestamp('user_emailVerifiedAt')->nullable();
             $table->rememberToken();
             $table->timestamps();

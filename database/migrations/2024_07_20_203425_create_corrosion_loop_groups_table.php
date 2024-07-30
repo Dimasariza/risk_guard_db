@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('corrosion_loop_groups', function (Blueprint $table) {
             $table->string("clGroup_name");
+            $table->string("clGroup_id")->unique();
             $table->string("clGroup_clId")->nullable();
             $table->string("clGroup_componentId")->unique();
             $table->timestamps();

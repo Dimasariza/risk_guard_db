@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\DTO\CorrosionLoopGroup\InsertCorrosionLoopGroupDTO;
 use App\DTO\CorrosionLoopGroup\UpdateCorrosionLoopGroupDTO;
 use App\Models\CorrosionLoopGroup;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CorrosionLoopGroup\CreateCorrosionLoopGroupRequest;
 use App\Http\Requests\CorrosionLoopGroup\UpdateCorrosionLoopGroupRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
 
 class CorrosionLoopGroupController extends Controller
 {
@@ -49,8 +49,10 @@ class CorrosionLoopGroupController extends Controller
     {
         $group_result = [];
         DB::beginTransaction();
+        $id = Str::random(9);
         foreach($request->toArray() as $group) {
             try {
+                $group["clGroup_id"] = $id;
                 $result = $this->model->create($group);
                 array_push($group_result, $result);
             }

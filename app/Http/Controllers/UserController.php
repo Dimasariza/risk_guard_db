@@ -45,7 +45,6 @@ class UserController extends Controller
     public function store(CreateUserRequest $request)
     {
         $dto = InsertUserDTO::fromRequest($request);
-        // dd($dto);
         $result = $this->model->create($dto->build());
 
         if ($result) {

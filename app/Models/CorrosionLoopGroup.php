@@ -11,6 +11,11 @@ class CorrosionLoopGroup extends Model
     protected $fillable = [
         "clGroup_name",
         "clGroup_clId",
-        "clGroup_componentId"
+        "clGroup_componentId",
+        "clGroup_id"
     ];
+
+    public function corrosionLoop() {
+        return $this->hasManyThrough(Component::class, 'comp_equipmentId', 'eq_id');
+    }
 }

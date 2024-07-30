@@ -29,13 +29,13 @@ class UpdateUserRequest extends FormRequest
             "user_jobTitle" => ["required"],
             "user_phoneNumber" => ["required"],
             "user_address" => ["required"],
-            "user_status" => ["required"],
-            "user_email" => ["required"],
-            "user_picture" => [],
-            "user_role" => [],
-            "user_emailVerifiedAt" => ["required"],
+            "user_status" => ["nullable"],
+            "user_email" => ["required", "email"],
+            "user_picture" => ["nullable"],
+            "user_role" => ["nullable"],
+            "user_emailVerifiedAt" => [],
             "password" => ["required"],
-            "remember_token" => ["required"],
+            "remember_token" => [],
         ];
     }
 }
