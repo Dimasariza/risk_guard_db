@@ -58,10 +58,10 @@ class POFRBIAlkalinesSeeder extends Seeder
             [
                 "rbiAlkaline_id" => "rndAlkaline04",
                 "rbiAlkaline_componentId" => "rndComp04",
-                "rbiAlkaline_ph" => null, 
+                "rbiAlkaline_ph" => 7.5, 
                 "rbiAlkaline_inspection" => null,
-                "rbiAlkaline_numOfInspection" => null, 
-                "rbiAlkaline_co3Consentration" => null,
+                "rbiAlkaline_numOfInspection" => 1, 
+                "rbiAlkaline_co3Consentration" => 95,
                 "rbiAlkaline_dfacscc" => null,
                 "rbiAlkaline_shellPwht" => null,
                 "rbiAlkaline_headPwht" => null,

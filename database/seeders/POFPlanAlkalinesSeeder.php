@@ -58,10 +58,10 @@ class POFPlanAlkalinesSeeder extends Seeder
             [
                 "planAlkaline_id" => "rndAlkaline04",
                 "planAlkaline_componentId" => "rndComp04",
-                "planAlkaline_ph" => null, 
+                "planAlkaline_ph" => 7.5, 
                 "planAlkaline_inspection" => null,
-                "planAlkaline_numOfInspection" => null, 
-                "planAlkaline_co3Consentration" =>null,
+                "planAlkaline_numOfInspection" => 1, 
+                "planAlkaline_co3Consentration" =>95,
                 "planAlkaline_dfacscc" =>null,
                 "planAlkaline_shellPwht" =>null,
                 "planAlkaline_headPwht" =>null,
